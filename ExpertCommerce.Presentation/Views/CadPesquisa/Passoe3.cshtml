@@ -1,0 +1,73 @@
+﻿<div class="row passo3">
+
+    <form novalidate name="cadastroform" ng-submit="submitCadastro(cadastroform.$valid)" class="" style="border: 1px solid white;float: left;margin: auto;width:100%;">
+        <div class="form-group grupoEndereco">
+
+            <input type="text" class="form-control cadNome txtBusca1" placeholder="Nome completo" value="{{usuario.Nome}}" ng-model="usuario.Nome" required ng-required="true" maxlength="150" tabindex="1">
+
+            <div style="max-width: 950px;margin:auto;">
+                <input ng-class="{ 'emailinvalido': cadastroform.Email.$error.email }" name="Email" type="email" class="form-control cadEmail txtBusca1" placeholder="Email" ng-model="usuario.Email" required ng-required="true" maxlength="200" tabindex="2">
+                <input id="CelularDDD" type="number" class="form-control cadDDD txtBusca1" placeholder="DDD" ng-model="usuario.CelularDDD" required ng-required="true" maxlength="2" tabindex="3">
+                <input id="CelularNumero" type="tel" class="form-control cadTelefone txtBusca1" placeholder="Telefone" ng-model="usuario.CelularNumero" required ng-required="true" tabindex="4">
+            </div>
+
+            <div style="clear:both;"></div>
+
+            <div style="max-width: 950px;margin:auto;margin-top:20px;">
+                <input disabled id="cpf" type="tel" class="form-control cadCpf2 txtBusca1" placeholder="CPF" ng-model="Cpfusuario" required ng-required="true" maxlength="14" tabindex="5">
+                @*<select class="form-control cadSexo" placeholder="CPF" ng-model="usuario.Sexo" required ng-required="true" tabindex="6">
+                        <option value="">Sexo</option>
+                        <option id="1"  value="1">Masculino</option>
+                        <option id="0"  value="0">Feminino</option>
+                    </select>*@
+                <input id="nascimento" type="tel" class="form-control cadDtNas txtBusca1" placeholder="Data de nascimento" ng-model="usuario.DataNascimento" required ng-required="true" tabindex="7">
+            </div>
+
+            <div style="clear:both;"></div>
+
+            <div style="max-width: 950px;margin:auto;">
+                <p ng-bind-html="info"></p>
+               
+            </div>
+           
+            <div style="">
+              
+                    
+                <h2>Interesses</h2>
+                <div style="margin-left: 43px;">
+                   
+                    <p ng-bind-html="preferenciasSite"></p>
+                </div>
+             
+            </div>
+            
+            @*<div style="" class="alinhaEsquerdaMobile">
+                <div style="text-align: left;">
+                    <div style="">
+                        <span style="color:#464555;font-size:17px;font-weight:bold;">{{tipoocasiaonome}}</span>
+                        <div style="padding-left: 15px;margin-top:5px;">
+                            <div class="alinharOcasiaoMobile" style="font-size: 11px;text-align: left;">
+                                <div style="max-width: 950px;margin:auto;">
+                                    <h4 style="font-weight: bold;margin-left: -8px;margin-bottom: 16px;">Interesses</h4>
+                                    <div class="cadINt">
+                                        <p ng-bind-html="preferenciasSite"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>*@
+
+            <div style="clear:both;"></div>
+            <br />
+
+            <div class="">
+                <button style="margin-top: 20px;font-size: 16px;width: 205px;" type="submit" class="btn active BotaoVerItens btnAlterarOrigem4" ng-disabled="cadastroform.$invalid">Salvar</button>
+            </div>
+            <a style="margin-top: 20px;font-size: 16px;width: 205px;" href="/#!/cadpesquisa/passoe-4" class="btn active BotaoVerItens btnAlterarOrigem4">CANCELAR</a>
+        </div>
+
+    </form>
+</div>

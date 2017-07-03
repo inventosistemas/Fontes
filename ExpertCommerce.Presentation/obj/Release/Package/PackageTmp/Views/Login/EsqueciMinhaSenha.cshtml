@@ -1,0 +1,28 @@
+﻿<div class="main-placeholder esqueci-minha-senha container">
+    <div class="grey">
+        <div class="row">
+            <div class="small-12 medium-11 medium-centered columns">
+                <h1 style="font-weight: bold;" class="h1PrincipalTelas">ESQUECI MINHA SENHA</h1>
+            </div>  
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="small-12 medium-4 medium-centered columns">
+            <form class="form-login" ng-if="!credentials.isAuthorized" novalidate name="esqueciform" ng-submit="submitEsqueci(esqueciform.$valid, esqueciform)">
+                <h1 style="font-weight: bold;font-size: 24px;">Esqueceu sua senha? <br />não tem problema.</h1>
+                <p style="text-align: center;width: 82%;margin: auto;padding-top: 20px;font-size: 18px;">
+                    Informe seu E-mail de cadastro para enviarmos instruções de como resetar a sua senha.
+                    
+                    <br /><br />
+                </p>
+                
+                <input style="width: 250px;text-transform: inherit !important;" type="email" class="fd-input" placeholder="email" ng-model="$parent.esqueci" required ng-required="true" />
+                <br />
+                <button style="width: 250px;margin-top:25px;margin-right: 7px;" type="submit" class="small-12 medium-4 columns fd-button fd-primary fd-full-width fd-small-font" ng-disabled="esqueciform.$invalid">Enviar</button>
+
+                <p style="text-align: center;width: 70%;margin: auto;padding-top: 20px;font-size: 18px;">Atenção: A validação enviada por e-mail expira em 12 horas.</p> 
+            </form>
+        </div>
+    </div>
+</div>

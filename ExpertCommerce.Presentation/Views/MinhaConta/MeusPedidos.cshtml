@@ -1,0 +1,112 @@
+﻿<div class="container">
+    <div class="small-12 medium-12 medium-centered">
+   
+ 
+        <table class="small-12 medium-10 medium-centered columns fd-table alinhaTabelaIphone" ng-show="pedidos.length > 0" style="width:80%; margin: auto;margin-top: 25px;">
+            <thead>
+                <tr class="small-12 columns paddingless">
+                    <th style="text-align:center;" class="small-4 medium-3 columns">pedido</th>
+                    <th style="text-align:center;" class="small-4 medium-3 columns" >data</th>
+                    <th style="text-align:center;" class="small-4 medium-3 columns">valor</th>
+                    <th style="text-align:center; width:200px;" class="medium-3 columns borderless show-for-medium" >&nbsp;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="    border-bottom: 1px solid whitesmoke;" ng-repeat="item in pedidos" class="small-12 columns paddingless list" id="{{item.ID}}" ng-click="openDetailFor(item.ID);">
+                    <td class="small-4 medium-3 columns">{{item.ID}}</td>
+                    <td class="small-4 medium-3 columns">{{item.DataVenda | date:'dd/MM/yyyy'}}</td>
+                    <td class="small-4 medium-3 columns valor borderless">{{item.ValorTotal | currency:"R$ "}}</td>
+                    <td style="width:200px;" class="medium-3 columns action borderless show-for-medium">Detalhe</td>
+                </tr>
+
+                <tr class="small-12 columns paddingless details hide" id="detail-tr">
+                    <td colspan="4" class="small-12 columns paddingless">
+                        <div class="small-12 medium-12 columns paddingless sumario">
+                        
+                            <div class="small-12 medium-6 columns left">
+                                <table class="small-12 columns fd-table product-table" style="margin: auto;">
+                                    <thead>
+                                        <tr class="small-12 columns paddingless">
+                                            <th class="small-4 columns">produto</th>
+                                            <th class="small-4 columns">Qtd.</th>
+                                            <th class="small-4 columns">Valor</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                  
+                                        <tr ng-repeat="item in pedidodetail.PedidoItens" class="small-12 columns paddingless list" style="">
+                                            <td class="small-4 columns">{{item.NomeProduto}}</td>
+                                            <td class="small-4 columns">{{item.Quantidade}}</td>
+                                            <td class="small-4 columns valor borderless">{{item.ValorUnit | currency:"R$ "}}</td>
+                                        </tr>
+
+                                        <tr class="small-12 columns paddingless list total">
+                                            <td class="small-4 columns">&nbsp;</td>
+                                            <td class="small-4 columns">Subtotal</td>
+                                            <td class="small-4 columns borderless">
+                                                {{pedidodetail.ValorTotal | currency:"R$ "}}
+                                            </td>
+                                        </tr>
+
+                                        <tr class="small-12 columns paddingless list">
+                                            <td class="small-4 columns">&nbsp;</td>
+                                            <td class="small-4 columns">Frete</td>
+                                            <td class="small-4 columns borderless">
+                                                {{pedidodetail.ValorFrete | currency:"R$ "}}
+                                            </td>
+                                        </tr>
+
+                                        <tr class="small-12 columns paddingless list">
+                                            <td class="small-4 columns">&nbsp;</td>
+                                            <td class="small-4 columns">Desconto</td>
+                                            <td class="small-4 columns borderless">
+                                                {{pedidodetail.ValorDesconto | currency:"R$ "}}
+                                            </td>
+                                        </tr>
+
+                                        <tr class="small-12 columns paddingless list">
+                                            <td class="small-4 columns">&nbsp;</td>
+                                            <td class="small-4 columns total">Total</td>
+                                            <td class="small-4 columns total valor borderless">
+                                                {{pedidodetail.ValorTotal + pedidodetail.ValorFrete - pedidodetail.ValorDesconto | currency:"R$ "}}
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+
+                       
+                            <div class="small-12 medium-6 columns paddingless right">
+                                <div class="small-12 columns grey box-content-sumario">
+                                    <h3>Forma de pagamento</h3>
+                                    <p>{{pedidodetail.FormaPagamento}}</p>
+                                    <div class="status">
+                                        <div class="text">{{pedidodetail.Status}}</div>
+                               
+                                    </div>
+                                    <br />
+                                    <button ng-show="!pedidodetail.PagamentoEfetuado" type="button" class="fd-button fd-primary" ui-sref="carrinho.reprocessa-pagamento({pid:pedidodetail.ID})">Reprocessar pagamento</button>
+                                </div>
+
+                                <div class="small-12 medium-12 columns box-content-sumario">
+                                    <h3>local de entrega</h3>
+                                    {{pedidodetail.EnderecoCompleto}}
+                                </div>
+
+                                <div class="small-12 medium-12 grey columns box-content-sumario">
+                                    <h3>Data da entrega</h3>
+                                    <p>{{pedidodetail.DataEntrega | date:'dd/MM/yyyy'}}</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <p ng-show="pedidos.length == 0" class="sem-pedido">Você ainda não possui nenhum pedido</p>
+    </div>
+</div>

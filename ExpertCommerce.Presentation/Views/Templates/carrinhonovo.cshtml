@@ -1,0 +1,66 @@
+﻿<nav class="barra-nav-carrinho baixarCarEMenu" ng-controller="CarrinhoProdutosController">
+    <p style="color: white;margin-top: 10px;font-size: 32px;margin-left: 310px;cursor: pointer;" class="menu-fechar-carrinho grow" onclick="fecharMenuCarrinho()">X</p>
+    <div style="margin-top:37px; color:white;font-size: 18px;font-weight: 900;">
+        <div style="float:left;text-align: left;width: 30%;padding-left: 5%;">
+            <img   style="margin-top: -27px;" src="~/Images/Imagens/carrinhoDoCarrinho.jpg" alt=""> <span class="fecharagora" style="font-size: 12px;" ng-class="totalItens == null ? 'esconderDeDoCarrinho' : ''">{{totalProdDif}} DE {{totalItens}} </span>
+        </div>
+        <div style="float:left;text-align: right;width: 70%;padding-right: 10%;">
+            <span class="menu-fechar-carrinho" style="font-size: 13px;cursor: pointer;" ng-click="gotocarrinho()" onclick="fechaCarrinho()">VER CARRINHO COMPLETO</span>
+        </div>
+    </div>
+    <p style="height:50px;color:white;margin-bottom: 50px;"></p>
+   
+    <div ng-repeat="item in meucarrinho | limitTo: 3 ">
+        <div class="divExcluir" style="width:433px;height:160px;background-color:#193541;margin-bottom:10px;clear: both;">
+            <div class="grow deletar" style="cursor: pointer;float:left;width: 85px;color: white;height: 100%;padding-top: 67px;font-weight: 900;font-size: 24px;" onclick="atualizarCarrinho()" ng-click="removeItemCarrinho(item)">X</div>
+            <div style="float:left;width: 117px;color: white;height: 85%;padding-top: 51px;font-weight: 900;font-size: 21px;">
+                <img fallback-src="/Images/assets/unavailable.png" src="{{item.ProdutoImagem}}" style="margin-top: -29px;width: 117px;height: 117px;">
+            </div>
+            <div style="float:left;width: 117px;color: white;height: 85%;font-size: 12px;margin-top: 10px; text-align:left;margin-left:10px;">
+                <p class="descProdutosCarrinho" style="margin-top: 5px;font-weight: 900;">{{item.SubCategoria}}</p>
+                <p class="descProdutosCarrinho">{{item.Tipo}}</p>
+                <p class="descProdutosCarrinho">{{item.Peso}} Kg</p>
+                <p class="descProdutosCarrinho">
+                    <button class="left" ng-click="changeQtd(item, 'remove')" ng-disabled="item.Quantidade == 1" style="background-color: #193541;font-weight: 900;font-size: 20px;border: 0px; margin-top: 0px;" onclick="atualizarCarrinho()">-</button>
+                    QTD : <span class="multiplicarProd"> {{item.Quantidade}}</span>
+                    <button class="right" ng-click="changeQtd(item, 'add')" style="background-color: #193541;font-weight: 900;font-size: 20px;border: 0px; margin-top: 0px;" onclick="atualizarCarrinho()">+</button>
+                </p>
+                <p class="descProdutosCarrinho SomarIten "> {{item.ValorUnit | currency:"R$"}}</p>
+
+            </div>
+        </div>
+    </div>
+    <div style="margin-top:37px; color:white;font-size: 18px;font-weight: 900;">
+        <div style="float:left;text-align: left;width: 50%;padding-left: 10%;">
+            <span style="">SUBTOTAL</span>
+        </div>
+        <div style="float:left;text-align: right;width: 50%;padding-right: 10%;">
+            <span style=""> {{$root.subtotal | currency:"R$"}}</span>
+        </div>
+    </div>
+    <p style="" class="btn active BotaoEncerrarCompra menu-fechar-carrinho" ng-click="keepgoing()" onclick="fechaCarrinho()">ENCERRAR COMPRA</p>
+    <p class="" id="disparar" ng-click="submitEnvio('asdasd')"></p>
+
+</nav>
+
+@*<div class="small-12 columns paddingless list" ng-model="carrinho" ng-repeat="item in carrinho.Itens">
+        <div class="small-4 medium-7 columns">
+            <a ui-sref="produto({id:item.ProdutoID})">
+                <strong>{{item.SubCategoria}} - {{item.Marca}}</strong><br />
+                <span class="hide-for-small-only">{{item.Tipo}} - {{item.ProdutoDescricao}} -  {{item.Peso}} Kg - {{item.ValorUnit | currency:"R$ "}} </span>
+            </a>
+        </div>
+        <div class="small-4 medium-2 columns text-center paddingless-on-mobile">
+            <div class="fd-qtd-field">
+                <button class="left" ng-click="changeQtd(item, 'remove')" ng-disabled="item.Quantidade == 1">-</button>
+                <input type="text" value="{{item.Quantidade}}" readonly="readonly" />
+                <button class="right" ng-click="changeQtd(item, 'add')">+</button>
+            </div>
+        </div>
+        <div class="small-4 medium-3 columns valor borderless" data-value="{{item.ValorUnit * item.Quantidade}}">
+            {{item.ValorUnit * item.Quantidade | currency:"R$ "}}<br /><a ng-click="removeItem(item)">Excluir</a>
+            <span class="sumvalues hide">{{item.ValorUnit * item.Quantidade}}</span>
+        </div>
+    </div>*@
+
+

@@ -1,0 +1,71 @@
+﻿<div class="row passo2">
+    <div class="small-12 medium-10 columns medium-centered">
+        <form class="form-new-address" novalidate name="enderecoform" ng-submit="submitEndereco(enderecoform.$valid, endereco)">
+            <div class="row">
+                <div class="small-12 medium-6 columns">
+                    <label class="fd-label">
+                        <span>Nome do local</span>
+                        <input type="text" class="fd-input fd-medium fd-lt-spacing" ng-model="endereco.Identificacao" required ng-required="true" placeholder="Nome do local" />
+                    </label>
+                </div>
+
+                <div class="small-12 medium-6 columns">
+                    <label class="fd-label">
+                        <span>CEP</span>
+                        <input id="cepfield" type="text" class="fd-input fd-medium fd-lt-spacing" ng-model="endereco.CEP" required ng-required="true" ng-blur="endereco.CEP != null ? getCep(endereco) : ''" placeholder="CEP" />
+                    </label>
+                </div>
+
+                <div class="small-12 columns">
+                    <label class="fd-label">
+                        <span>Endereço</span>
+                        <input type="text" class="fd-input fd-medium fd-lt-spacing" ng-model="endereco.Logradouro" required ng-required="true"  placeholder="Endereço"/>
+                    </label>
+                </div>
+
+                <div class="small-12 medium-4 columns">
+                    <label class="fd-label">
+                        <span>Número</span>
+                        <input type="text" class="fd-input fd-medium fd-lt-spacing" ng-model="endereco.Numero" required ng-required="true"  placeholder="Número"/>
+                    </label>
+                </div>
+
+                <div class="small-12 medium-4 columns">
+                    <label class="fd-label">
+                        <span>Complemento</span>
+                        <input type="text" class="fd-input fd-medium fd-lt-spacing" ng-model="endereco.Complemento"  placeholder="Complemento"/>
+                    </label>
+                </div>
+
+                <div class="small-12 medium-4  columns">
+                    <label class="fd-label">
+                        <span>Bairro</span>
+                        <input type="text" class="fd-input fd-medium fd-lt-spacing" ng-model="endereco.Bairro" required ng-required="true"  placeholder="Bairro"/>
+                    </label>
+                </div>
+
+                <div class="small-12 medium-6 columns">
+                    <label class="fd-label">
+                        <span>Cidade</span>
+                        <input type="text" class="fd-input fd-medium fd-lt-spacing" ng-model="endereco.Cidade.Nome"  placeholder="Cidade" />
+                    </label>
+                </div>
+
+                <div class="small-12 medium-6 columns">
+                    <label class="fd-label">
+                        <span>Estado</span>
+                        <input type="text" class="fd-input fd-medium fd-lt-spacing" ng-model="endereco.Cidade.Estado.Nome"   placeholder="Estado"/>
+                    </label>
+                </div>
+
+                <div class="small-12 columns">
+                    <p>Todos os campos acima são obrigatórios</p>
+                </div>
+
+                <div class="small-12 medium-3 columns position-right ">
+                    <button type="submit" class="small-12 medium-4 columns fd-button fd-primary fd-full-width" ng-disabled="enderecoform.$invalid">Salvar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

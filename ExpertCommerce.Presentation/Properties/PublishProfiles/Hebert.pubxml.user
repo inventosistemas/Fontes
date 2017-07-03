@@ -1,0 +1,1246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Expert\Feed-Homol</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>08/10/2016 14:16:26</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>08/10/2016 14:16:30</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>08/10/2016 14:16:30</publishTime>
+    </File>
+    <File Include="bin/Expert.Presentation.dll">
+      <publishTime>03/29/2017 17:47:09</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
+      <publishTime>04/03/2015 17:07:22</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.EntityFramework.dll">
+      <publishTime>04/03/2015 17:07:22</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.Owin.dll">
+      <publishTime>04/03/2015 17:07:22</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>06/15/2015 02:06:24</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.dll">
+      <publishTime>08/10/2016 14:16:38</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Host.SystemWeb.dll">
+      <publishTime>02/13/2015 13:16:34</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Cookies.dll">
+      <publishTime>02/13/2015 13:16:38</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.dll">
+      <publishTime>08/10/2016 14:16:41</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Facebook.dll">
+      <publishTime>02/13/2015 13:16:38</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Google.dll">
+      <publishTime>02/13/2015 13:16:38</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.MicrosoftAccount.dll">
+      <publishTime>02/13/2015 13:16:40</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.OAuth.dll">
+      <publishTime>08/10/2016 14:16:41</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Twitter.dll">
+      <publishTime>02/13/2015 13:16:42</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>08/10/2016 14:16:41</publishTime>
+    </File>
+    <File Include="bin/Owin.dll">
+      <publishTime>08/10/2016 14:16:42</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>06/18/2015 20:19:44</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>01/28/2015 04:04:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>01/28/2015 04:02:18</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>08/10/2016 14:16:35</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>01/28/2015 04:02:32</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>01/28/2015 04:04:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>01/28/2015 04:04:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>01/28/2015 04:04:30</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>08/10/2016 14:16:42</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>08/10/2016 14:13:39</publishTime>
+    </File>
+    <File Include="fonts/generator_config.txt">
+      <publishTime>10/26/2016 12:13:30</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.eot">
+      <publishTime>08/10/2016 14:13:39</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.svg">
+      <publishTime>08/10/2016 14:13:39</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>08/10/2016 14:13:39</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff">
+      <publishTime>08/10/2016 14:13:39</publishTime>
+    </File>
+    <File Include="fonts/montserrat-black-demo.html">
+      <publishTime>10/26/2016 12:13:30</publishTime>
+    </File>
+    <File Include="fonts/montserrat-black-webfont.woff">
+      <publishTime>10/26/2016 12:13:30</publishTime>
+    </File>
+    <File Include="fonts/montserrat-black-webfont.woff2">
+      <publishTime>10/26/2016 12:13:30</publishTime>
+    </File>
+    <File Include="fonts/montserrat-bold-demo.html">
+      <publishTime>10/26/2016 12:13:30</publishTime>
+    </File>
+    <File Include="fonts/montserrat-bold-webfont.woff">
+      <publishTime>10/26/2016 12:13:30</publishTime>
+    </File>
+    <File Include="fonts/montserrat-bold-webfont.woff2">
+      <publishTime>10/26/2016 12:13:30</publishTime>
+    </File>
+    <File Include="fonts/montserrat-extrabold-demo.html">
+      <publishTime>10/26/2016 12:13:30</publishTime>
+    </File>
+    <File Include="fonts/montserrat-extrabold-webfont.woff">
+      <publishTime>10/26/2016 12:13:30</publishTime>
+    </File>
+    <File Include="fonts/montserrat-extrabold-webfont.woff2">
+      <publishTime>10/26/2016 12:13:30</publishTime>
+    </File>
+    <File Include="fonts/montserrat-hairline-demo.html">
+      <publishTime>10/26/2016 12:13:30</publishTime>
+    </File>
+    <File Include="fonts/montserrat-hairline-webfont.woff">
+      <publishTime>10/26/2016 12:13:30</publishTime>
+    </File>
+    <File Include="fonts/montserrat-hairline-webfont.woff2">
+      <publishTime>10/26/2016 12:13:30</publishTime>
+    </File>
+    <File Include="fonts/montserrat-light-demo.html">
+      <publishTime>10/26/2016 12:13:30</publishTime>
+    </File>
+    <File Include="fonts/montserrat-light-webfont.woff">
+      <publishTime>10/26/2016 12:13:30</publishTime>
+    </File>
+    <File Include="fonts/montserrat-light-webfont.woff2">
+      <publishTime>10/26/2016 12:13:30</publishTime>
+    </File>
+    <File Include="fonts/montserrat-regular-demo.html">
+      <publishTime>10/26/2016 12:13:30</publishTime>
+    </File>
+    <File Include="fonts/montserrat-regular-webfont.woff">
+      <publishTime>10/26/2016 12:13:30</publishTime>
+    </File>
+    <File Include="fonts/montserrat-regular-webfont.woff2">
+      <publishTime>10/26/2016 12:13:30</publishTime>
+    </File>
+    <File Include="fonts/montserrat-semibold-demo.html">
+      <publishTime>10/26/2016 12:13:30</publishTime>
+    </File>
+    <File Include="fonts/montserrat-semibold-webfont.woff">
+      <publishTime>10/26/2016 12:13:30</publishTime>
+    </File>
+    <File Include="fonts/montserrat-semibold-webfont.woff2">
+      <publishTime>10/26/2016 12:13:31</publishTime>
+    </File>
+    <File Include="fonts/montserrat-ultralight-demo.html">
+      <publishTime>10/26/2016 12:13:31</publishTime>
+    </File>
+    <File Include="fonts/montserrat-ultralight-webfont.woff">
+      <publishTime>10/26/2016 12:13:31</publishTime>
+    </File>
+    <File Include="fonts/montserrat-ultralight-webfont.woff2">
+      <publishTime>10/26/2016 12:13:31</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>08/10/2016 14:13:39</publishTime>
+    </File>
+    <File Include="Images/assets/aviseme.png">
+      <publishTime>08/10/2016 14:13:39</publishTime>
+    </File>
+    <File Include="Images/assets/Banner-Carnes-Mobile.jpg">
+      <publishTime>02/01/2017 14:52:01</publishTime>
+    </File>
+    <File Include="Images/assets/Banner-Carnes.jpg">
+      <publishTime>02/01/2017 14:52:01</publishTime>
+    </File>
+    <File Include="Images/assets/Banner-Emporio-mobile.jpg">
+      <publishTime>02/01/2017 14:52:01</publishTime>
+    </File>
+    <File Include="Images/assets/Banner-Emporio.jpg">
+      <publishTime>02/01/2017 14:52:01</publishTime>
+    </File>
+    <File Include="Images/assets/bgstripes.png">
+      <publishTime>08/10/2016 14:13:40</publishTime>
+    </File>
+    <File Include="Images/assets/check.png">
+      <publishTime>08/10/2016 14:13:40</publishTime>
+    </File>
+    <File Include="Images/assets/cortes-mobile.jpg">
+      <publishTime>08/10/2016 14:13:40</publishTime>
+    </File>
+    <File Include="Images/assets/cortes.jpg">
+      <publishTime>08/10/2016 14:13:40</publishTime>
+    </File>
+    <File Include="Images/assets/downdetails.png">
+      <publishTime>08/10/2016 14:13:40</publishTime>
+    </File>
+    <File Include="Images/assets/FEED_desktop_pacote1-parte2.png">
+      <publishTime>08/10/2016 14:13:40</publishTime>
+    </File>
+    <File Include="Images/assets/grafismo.png">
+      <publishTime>08/10/2016 14:13:40</publishTime>
+    </File>
+    <File Include="Images/assets/lilarrow.jpg">
+      <publishTime>08/10/2016 14:13:40</publishTime>
+    </File>
+    <File Include="Images/assets/lilarrow.png">
+      <publishTime>08/10/2016 14:13:40</publishTime>
+    </File>
+    <File Include="Images/assets/loader.gif">
+      <publishTime>08/10/2016 14:13:40</publishTime>
+    </File>
+    <File Include="Images/assets/logo.png">
+      <publishTime>08/10/2016 14:13:40</publishTime>
+    </File>
+    <File Include="Images/assets/logoyapp.png">
+      <publishTime>08/10/2016 14:13:40</publishTime>
+    </File>
+    <File Include="Images/assets/lupamobi.png">
+      <publishTime>02/02/2017 20:11:19</publishTime>
+    </File>
+    <File Include="Images/assets/product.jpg">
+      <publishTime>08/10/2016 14:13:40</publishTime>
+    </File>
+    <File Include="Images/assets/produtos/alcatra.png">
+      <publishTime>08/10/2016 14:13:40</publishTime>
+    </File>
+    <File Include="Images/assets/produtos/bife-de-tira.png">
+      <publishTime>08/10/2016 14:13:40</publishTime>
+    </File>
+    <File Include="Images/assets/produtos/costela.png">
+      <publishTime>08/10/2016 14:13:40</publishTime>
+    </File>
+    <File Include="Images/assets/produtos/raquete.png">
+      <publishTime>08/10/2016 14:13:40</publishTime>
+    </File>
+    <File Include="Images/assets/quem-somos-mobile.jpg">
+      <publishTime>08/10/2016 14:13:40</publishTime>
+    </File>
+    <File Include="Images/assets/quem-somos.jpg">
+      <publishTime>08/10/2016 14:13:40</publishTime>
+    </File>
+    <File Include="Images/assets/receitas/receita001.png">
+      <publishTime>08/10/2016 14:13:41</publishTime>
+    </File>
+    <File Include="Images/assets/receitas/receita002.png">
+      <publishTime>08/10/2016 14:13:40</publishTime>
+    </File>
+    <File Include="Images/assets/receitas/receita003.png">
+      <publishTime>08/10/2016 14:13:41</publishTime>
+    </File>
+    <File Include="Images/assets/sad.png">
+      <publishTime>08/10/2016 14:13:40</publishTime>
+    </File>
+    <File Include="Images/assets/slider-imgs/001.png">
+      <publishTime>08/10/2016 14:13:41</publishTime>
+    </File>
+    <File Include="Images/assets/social/f.svg">
+      <publishTime>08/10/2016 14:13:40</publishTime>
+    </File>
+    <File Include="Images/assets/social/face.svg">
+      <publishTime>08/10/2016 14:13:41</publishTime>
+    </File>
+    <File Include="Images/assets/social/google.svg">
+      <publishTime>08/10/2016 14:13:41</publishTime>
+    </File>
+    <File Include="Images/assets/social/insta.svg">
+      <publishTime>08/10/2016 14:13:41</publishTime>
+    </File>
+    <File Include="Images/assets/social/twitter.svg">
+      <publishTime>08/10/2016 14:13:41</publishTime>
+    </File>
+    <File Include="Images/assets/svg/trashcan.svg">
+      <publishTime>08/10/2016 14:13:41</publishTime>
+    </File>
+    <File Include="Images/assets/unavailable-banner.png">
+      <publishTime>08/10/2016 14:13:40</publishTime>
+    </File>
+    <File Include="Images/assets/unavailable.png">
+      <publishTime>08/10/2016 14:13:40</publishTime>
+    </File>
+    <File Include="Images/assets/updetails.png">
+      <publishTime>08/10/2016 14:13:40</publishTime>
+    </File>
+    <File Include="Images/cardflags/bandeira-amex.svg">
+      <publishTime>08/10/2016 14:13:41</publishTime>
+    </File>
+    <File Include="Images/cardflags/bandeira-diners.svg">
+      <publishTime>08/10/2016 14:13:41</publishTime>
+    </File>
+    <File Include="Images/cardflags/bandeira-elo.svg">
+      <publishTime>08/10/2016 14:13:41</publishTime>
+    </File>
+    <File Include="Images/cardflags/bandeira-master.svg">
+      <publishTime>08/10/2016 14:13:41</publishTime>
+    </File>
+    <File Include="Images/cardflags/bandeira-visa.svg">
+      <publishTime>08/10/2016 14:13:41</publishTime>
+    </File>
+    <File Include="Images/favicon.png">
+      <publishTime>12/06/2016 15:32:21</publishTime>
+    </File>
+    <File Include="Images/Imagens/AdicionaCarrinho.jpg">
+      <publishTime>10/26/2016 11:59:43</publishTime>
+    </File>
+    <File Include="Images/Imagens/Banner-Carnes-Mobile.jpg">
+      <publishTime>02/01/2017 14:50:55</publishTime>
+    </File>
+    <File Include="Images/Imagens/Banner-Carnes.jpg">
+      <publishTime>02/01/2017 14:50:55</publishTime>
+    </File>
+    <File Include="Images/Imagens/Banner-Emporio-mobile.jpg">
+      <publishTime>02/01/2017 14:50:55</publishTime>
+    </File>
+    <File Include="Images/Imagens/Banner-Emporio.jpg">
+      <publishTime>02/01/2017 14:50:55</publishTime>
+    </File>
+    <File Include="Images/Imagens/bannerMobile.jpg">
+      <publishTime>10/26/2016 11:59:43</publishTime>
+    </File>
+    <File Include="Images/Imagens/BannerSiteInstitucional_540x281_01.jpg">
+      <publishTime>12/07/2016 12:06:03</publishTime>
+    </File>
+    <File Include="Images/Imagens/BannerSiteInstitucional_540x281_02.jpg">
+      <publishTime>12/07/2016 12:06:03</publishTime>
+    </File>
+    <File Include="Images/Imagens/BannerSiteNovo_1310x600_01.jpg">
+      <publishTime>12/07/2016 12:06:03</publishTime>
+    </File>
+    <File Include="Images/Imagens/BannerSiteNovo_1310x600_02.jpg">
+      <publishTime>12/07/2016 12:06:03</publishTime>
+    </File>
+    <File Include="Images/Imagens/BannerSiteNovo_1310x600_03.jpg">
+      <publishTime>12/07/2016 12:06:03</publishTime>
+    </File>
+    <File Include="Images/Imagens/BannerSiteNovo_1310x600_04.jpg">
+      <publishTime>12/07/2016 12:06:03</publishTime>
+    </File>
+    <File Include="Images/Imagens/BannerSiteNovo_1310x600_05.jpg">
+      <publishTime>12/07/2016 12:06:03</publishTime>
+    </File>
+    <File Include="Images/Imagens/BannerSiteNovo_600x545_01.jpg">
+      <publishTime>12/07/2016 12:06:03</publishTime>
+    </File>
+    <File Include="Images/Imagens/BannerSiteNovo_600x545_02.jpg">
+      <publishTime>12/07/2016 12:06:03</publishTime>
+    </File>
+    <File Include="Images/Imagens/BannerSiteNovo_600x545_03.jpg">
+      <publishTime>12/07/2016 12:06:03</publishTime>
+    </File>
+    <File Include="Images/Imagens/BannerSiteNovo_600x545_04.jpg">
+      <publishTime>12/07/2016 12:06:03</publishTime>
+    </File>
+    <File Include="Images/Imagens/BannerSiteNovo_600x545_05.jpg">
+      <publishTime>12/07/2016 12:06:03</publishTime>
+    </File>
+    <File Include="Images/Imagens/btnFechar.jpg">
+      <publishTime>10/26/2016 11:59:43</publishTime>
+    </File>
+    <File Include="Images/Imagens/carne.jpg">
+      <publishTime>10/26/2016 11:59:43</publishTime>
+    </File>
+    <File Include="Images/Imagens/carneCarrinho.jpg">
+      <publishTime>10/26/2016 11:59:43</publishTime>
+    </File>
+    <File Include="Images/Imagens/carrinho.jpg">
+      <publishTime>10/26/2016 11:59:43</publishTime>
+    </File>
+    <File Include="Images/Imagens/Carrinho31.png">
+      <publishTime>01/31/2017 16:02:37</publishTime>
+    </File>
+    <File Include="Images/Imagens/CarrinhoBraBola.png">
+      <publishTime>02/15/2017 09:30:57</publishTime>
+    </File>
+    <File Include="Images/Imagens/carrinhoDoCarrinho.jpg">
+      <publishTime>10/26/2016 11:59:43</publishTime>
+    </File>
+    <File Include="Images/Imagens/carrinho_.png">
+      <publishTime>12/14/2016 16:57:35</publishTime>
+    </File>
+    <File Include="Images/Imagens/carrinho_novo.png">
+      <publishTime>02/09/2017 09:18:58</publishTime>
+    </File>
+    <File Include="Images/Imagens/carrinho_novo_hover.png">
+      <publishTime>02/09/2017 09:18:58</publishTime>
+    </File>
+    <File Include="Images/Imagens/carrinho_novo_vazio.png">
+      <publishTime>02/16/2017 11:01:11</publishTime>
+    </File>
+    <File Include="Images/Imagens/conteudoInst.jpg">
+      <publishTime>10/26/2016 11:59:43</publishTime>
+    </File>
+    <File Include="Images/Imagens/cropped-logo-inventoBold.png">
+      <publishTime>02/24/2017 13:30:14</publishTime>
+    </File>
+    <File Include="Images/Imagens/Desejo.jpg">
+      <publishTime>10/26/2016 11:59:43</publishTime>
+    </File>
+    <File Include="Images/Imagens/human.png">
+      <publishTime>12/06/2016 13:55:15</publishTime>
+    </File>
+    <File Include="Images/Imagens/ImgBanner.jpg">
+      <publishTime>10/26/2016 11:59:43</publishTime>
+    </File>
+    <File Include="Images/Imagens/ImgBannerMobile.jpg">
+      <publishTime>10/26/2016 11:59:43</publishTime>
+    </File>
+    <File Include="Images/Imagens/login.jpg">
+      <publishTime>10/26/2016 11:59:43</publishTime>
+    </File>
+    <File Include="Images/Imagens/Login31.png">
+      <publishTime>01/31/2017 16:02:37</publishTime>
+    </File>
+    <File Include="Images/Imagens/login_.png">
+      <publishTime>12/14/2016 16:57:35</publishTime>
+    </File>
+    <File Include="Images/Imagens/login_novo.png">
+      <publishTime>02/09/2017 09:18:58</publishTime>
+    </File>
+    <File Include="Images/Imagens/login_novobranco.png">
+      <publishTime>02/14/2017 17:21:13</publishTime>
+    </File>
+    <File Include="Images/Imagens/login_novo_hover.png">
+      <publishTime>02/09/2017 09:18:58</publishTime>
+    </File>
+    <File Include="Images/Imagens/logo-invento-powerd.png">
+      <publishTime>02/24/2017 13:12:15</publishTime>
+    </File>
+    <File Include="Images/Imagens/logo.jpg">
+      <publishTime>10/26/2016 11:59:43</publishTime>
+    </File>
+    <File Include="Images/Imagens/lupa.jpg">
+      <publishTime>10/26/2016 11:59:43</publishTime>
+    </File>
+    <File Include="Images/Imagens/lupa31.png">
+      <publishTime>01/31/2017 16:02:37</publishTime>
+    </File>
+    <File Include="Images/Imagens/lupanovomenuazul.png">
+      <publishTime>02/14/2017 17:04:14</publishTime>
+    </File>
+    <File Include="Images/Imagens/lupanovomenubranco.png">
+      <publishTime>02/14/2017 17:11:13</publishTime>
+    </File>
+    <File Include="Images/Imagens/lupa_.png">
+      <publishTime>12/14/2016 16:57:35</publishTime>
+    </File>
+    <File Include="Images/Imagens/lupa_novo.png">
+      <publishTime>02/09/2017 09:18:58</publishTime>
+    </File>
+    <File Include="Images/Imagens/lupa_novo_hover.png">
+      <publishTime>02/09/2017 09:18:58</publishTime>
+    </File>
+    <File Include="Images/Imagens/mais.jpg">
+      <publishTime>10/26/2016 11:59:43</publishTime>
+    </File>
+    <File Include="Images/Imagens/MenuHamburguerMobile.png">
+      <publishTime>02/03/2017 20:03:05</publishTime>
+    </File>
+    <File Include="Images/Imagens/menu_novo.png">
+      <publishTime>02/17/2017 13:21:35</publishTime>
+    </File>
+    <File Include="Images/Imagens/menu_novo_38x39.png">
+      <publishTime>02/17/2017 13:19:41</publishTime>
+    </File>
+    <File Include="Images/Imagens/NovaLupa.png">
+      <publishTime>12/06/2016 14:29:48</publishTime>
+    </File>
+    <File Include="Images/Imagens/Produto.jpg">
+      <publishTime>10/26/2016 11:59:43</publishTime>
+    </File>
+    <File Include="Images/Imagens/produtoExemplo.jpg">
+      <publishTime>10/26/2016 11:59:43</publishTime>
+    </File>
+    <File Include="Images/Imagens/Selo-Final-162x162.png">
+      <publishTime>02/06/2017 09:30:58</publishTime>
+    </File>
+    <File Include="Images/Imagens/SeloFINAL-15x15.png">
+      <publishTime>02/01/2017 16:04:40</publishTime>
+    </File>
+    <File Include="Images/Imagens/SeloOtimizado.png">
+      <publishTime>10/26/2016 11:59:43</publishTime>
+    </File>
+    <File Include="Images/Imagens/TopoDesenho - Copia.jpg">
+      <publishTime>10/26/2016 11:59:43</publishTime>
+    </File>
+    <File Include="Images/Imagens/TopoDesenho.jpg">
+      <publishTime>10/26/2016 11:59:43</publishTime>
+    </File>
+    <File Include="Images/Imagens/toposite_desktop.png">
+      <publishTime>12/16/2016 09:27:22</publishTime>
+    </File>
+    <File Include="Images/Imagens/toposite_mobile.png">
+      <publishTime>12/16/2016 09:27:22</publishTime>
+    </File>
+    <File Include="Images/Imagens/up.png">
+      <publishTime>02/09/2017 15:57:56</publishTime>
+    </File>
+    <File Include="Images/Imagens/Visualizar.jpg">
+      <publishTime>10/26/2016 11:59:43</publishTime>
+    </File>
+    <File Include="Images/lupamo.png">
+      <publishTime>02/06/2017 12:22:38</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>08/10/2016 14:13:39</publishTime>
+    </File>
+    <File Include="Scripts/angular/angular-animate.js">
+      <publishTime>01/31/2017 14:00:19</publishTime>
+    </File>
+    <File Include="Scripts/angular/angular-cookies.js">
+      <publishTime>08/10/2016 14:13:41</publishTime>
+    </File>
+    <File Include="Scripts/angular/angular-route.js">
+      <publishTime>11/03/2016 10:40:59</publishTime>
+    </File>
+    <File Include="Scripts/angular/angular-ui-router.js">
+      <publishTime>08/10/2016 14:13:41</publishTime>
+    </File>
+    <File Include="Scripts/angular/angular.js">
+      <publishTime>08/10/2016 14:13:41</publishTime>
+    </File>
+    <File Include="Scripts/angular/ngDialog.js">
+      <publishTime>08/10/2016 14:13:41</publishTime>
+    </File>
+    <File Include="Scripts/appconfig.js">
+      <publishTime>02/01/2017 19:47:22</publishTime>
+    </File>
+    <File Include="Scripts/appexpert.js">
+      <publishTime>03/09/2017 14:33:09</publishTime>
+    </File>
+    <File Include="Scripts/compatibility/modernizr-2.6.2.js">
+      <publishTime>08/10/2016 14:13:41</publishTime>
+    </File>
+    <File Include="Scripts/compatibility/respond.js">
+      <publishTime>08/10/2016 14:13:42</publishTime>
+    </File>
+    <File Include="Scripts/controllers/buscacontroller - Copy.js">
+      <publishTime>12/05/2016 16:30:20</publishTime>
+    </File>
+    <File Include="Scripts/controllers/buscacontroller.js">
+      <publishTime>02/20/2017 10:50:52</publishTime>
+    </File>
+    <File Include="Scripts/controllers/cadastrocontroller.js">
+      <publishTime>02/03/2017 10:00:13</publishTime>
+    </File>
+    <File Include="Scripts/controllers/cadpesquisacontroller.js">
+      <publishTime>02/07/2017 15:07:45</publishTime>
+    </File>
+    <File Include="Scripts/controllers/calendariocontroller.js">
+      <publishTime>08/10/2016 14:13:42</publishTime>
+    </File>
+    <File Include="Scripts/controllers/carrinhocontroller.js">
+      <publishTime>03/09/2017 14:35:55</publishTime>
+    </File>
+    <File Include="Scripts/controllers/cortescontroller.js">
+      <publishTime>02/23/2017 10:39:38</publishTime>
+    </File>
+    <File Include="Scripts/controllers/emporiocontroller - Copy.js">
+      <publishTime>08/12/2016 16:30:10</publishTime>
+    </File>
+    <File Include="Scripts/controllers/emporiocontroller.js">
+      <publishTime>02/21/2017 15:25:57</publishTime>
+    </File>
+    <File Include="Scripts/controllers/esqueciminhasenhacontroller.js">
+      <publishTime>02/20/2017 10:33:04</publishTime>
+    </File>
+    <File Include="Scripts/controllers/homecontroller.js">
+      <publishTime>03/09/2017 14:32:13</publishTime>
+    </File>
+    <File Include="Scripts/controllers/hotsitecontroller.js">
+      <publishTime>12/09/2016 16:50:28</publishTime>
+    </File>
+    <File Include="Scripts/controllers/institucionalcontroller.js">
+      <publishTime>12/08/2016 17:00:11</publishTime>
+    </File>
+    <File Include="Scripts/controllers/logincontroller.js">
+      <publishTime>02/13/2017 16:51:13</publishTime>
+    </File>
+    <File Include="Scripts/controllers/minhacontacontroller.js">
+      <publishTime>02/23/2017 14:00:59</publishTime>
+    </File>
+    <File Include="Scripts/controllers/modalcontroller.js">
+      <publishTime>01/30/2017 10:56:25</publishTime>
+    </File>
+    <File Include="Scripts/controllers/produtocontroller.js">
+      <publishTime>03/21/2017 16:26:59</publishTime>
+    </File>
+    <File Include="Scripts/controllers/promocaocontroller - Copy.js">
+      <publishTime>12/09/2016 16:17:14</publishTime>
+    </File>
+    <File Include="Scripts/controllers/promocaocontroller.js">
+      <publishTime>11/30/2016 13:55:22</publishTime>
+    </File>
+    <File Include="Scripts/foundation/foundation-datepicker.js">
+      <publishTime>04/26/2016 11:14:13</publishTime>
+    </File>
+    <File Include="Scripts/foundation/foundation-datepicker.pt-br.js">
+      <publishTime>04/26/2016 11:14:13</publishTime>
+    </File>
+    <File Include="Scripts/foundation/foundation.js">
+      <publishTime>02/21/2017 15:25:57</publishTime>
+    </File>
+    <File Include="Scripts/jquery/jquery-2.1.4.js">
+      <publishTime>08/10/2016 14:13:42</publishTime>
+    </File>
+    <File Include="Scripts/jquery/jquery-2.1.4.min.js">
+      <publishTime>08/10/2016 14:13:42</publishTime>
+    </File>
+    <File Include="Scripts/jquery/jquery-3.1.1.min.js">
+      <publishTime>10/26/2016 15:22:32</publishTime>
+    </File>
+    <File Include="Scripts/jquery/jquery.js">
+      <publishTime>11/18/2016 15:02:55</publishTime>
+    </File>
+    <File Include="Scripts/jquery/jquery.mask.js">
+      <publishTime>08/10/2016 14:13:42</publishTime>
+    </File>
+    <File Include="Scripts/jquery/jquery.validate.js">
+      <publishTime>08/10/2016 14:13:42</publishTime>
+    </File>
+    <File Include="Scripts/jquery/jquery.validate.min.js">
+      <publishTime>08/10/2016 14:13:42</publishTime>
+    </File>
+    <File Include="Scripts/jquery/jquery.validate.unobtrusive.js">
+      <publishTime>08/10/2016 14:13:42</publishTime>
+    </File>
+    <File Include="Scripts/jquery/jquery.validate.unobtrusive.min.js">
+      <publishTime>08/10/2016 14:13:42</publishTime>
+    </File>
+    <File Include="Scripts/novoSite/bootstrap.min.js">
+      <publishTime>10/26/2016 11:43:31</publishTime>
+    </File>
+    <File Include="Scripts/novoSite/bs_leftnavi.js">
+      <publishTime>02/21/2017 15:26:39</publishTime>
+    </File>
+    <File Include="Scripts/novoSite/itemslide.min.js">
+      <publishTime>10/26/2016 11:41:55</publishTime>
+    </File>
+    <File Include="Scripts/novoSite/jquery.modal.js">
+      <publishTime>10/26/2016 11:41:55</publishTime>
+    </File>
+    <File Include="Scripts/novoSite/jquery.vide.js">
+      <publishTime>11/21/2016 17:02:27</publishTime>
+    </File>
+    <File Include="Scripts/novoSite/JsPrincipal.js">
+      <publishTime>11/30/2016 11:51:01</publishTime>
+    </File>
+    <File Include="Scripts/novoSite/materialize.min.js">
+      <publishTime>11/29/2016 10:35:11</publishTime>
+    </File>
+    <File Include="Scripts/novoSite/owl.carousel.js">
+      <publishTime>10/28/2016 11:20:40</publishTime>
+    </File>
+    <File Include="Scripts/novoSite/remodal.js">
+      <publishTime>10/26/2016 11:41:55</publishTime>
+    </File>
+    <File Include="Scripts/novoSite/sliding.js">
+      <publishTime>10/26/2016 11:41:55</publishTime>
+    </File>
+    <File Include="Scripts/plugins/owl.carousel.js">
+      <publishTime>08/10/2016 14:13:43</publishTime>
+    </File>
+    <File Include="Scripts/plugins/scrollmagic.js">
+      <publishTime>08/10/2016 14:13:43</publishTime>
+    </File>
+    <File Include="Scripts/services/AuthFacade.js">
+      <publishTime>02/16/2017 09:58:33</publishTime>
+    </File>
+    <File Include="Scripts/services/CadastroFacade.js">
+      <publishTime>02/02/2017 18:11:30</publishTime>
+    </File>
+    <File Include="Scripts/services/CadPesquisaFacade.js">
+      <publishTime>02/01/2017 19:46:46</publishTime>
+    </File>
+    <File Include="Scripts/services/CarrinhoFacade.js">
+      <publishTime>02/13/2017 17:22:51</publishTime>
+    </File>
+    <File Include="Scripts/services/CortesFacade - Copy.js">
+      <publishTime>02/21/2017 15:26:15</publishTime>
+    </File>
+    <File Include="Scripts/services/CortesFacade.js">
+      <publishTime>01/27/2017 17:21:58</publishTime>
+    </File>
+    <File Include="Scripts/services/EmporioFacade.js">
+      <publishTime>01/27/2017 17:21:58</publishTime>
+    </File>
+    <File Include="Scripts/services/GeneralFacade.js">
+      <publishTime>01/27/2017 17:19:48</publishTime>
+    </File>
+    <File Include="Scripts/services/HotsiteFacade.js">
+      <publishTime>12/09/2016 16:41:20</publishTime>
+    </File>
+    <File Include="Scripts/services/HttpInterceptor.js">
+      <publishTime>08/10/2016 14:13:43</publishTime>
+    </File>
+    <File Include="Scripts/services/MinhaContaFacade.js">
+      <publishTime>12/29/2016 17:28:59</publishTime>
+    </File>
+    <File Include="Scripts/services/ProdutoFacade.js">
+      <publishTime>01/27/2017 17:21:58</publishTime>
+    </File>
+    <File Include="Scripts/services/PromocaoFacade - Copy.js">
+      <publishTime>12/09/2016 16:17:51</publishTime>
+    </File>
+    <File Include="Scripts/services/PromocaoFacade.js">
+      <publishTime>08/10/2016 14:13:43</publishTime>
+    </File>
+    <File Include="Styles/angular/ngdialog/myth/ngDialog-theme-default.css">
+      <publishTime>08/10/2016 14:13:44</publishTime>
+    </File>
+    <File Include="Styles/angular/ngdialog/myth/ngDialog-theme-plain.css">
+      <publishTime>08/10/2016 14:13:44</publishTime>
+    </File>
+    <File Include="Styles/angular/ngdialog/myth/ngDialog.css">
+      <publishTime>08/10/2016 14:13:44</publishTime>
+    </File>
+    <File Include="Styles/angular/ngdialog/ngDialog-custom-width.css">
+      <publishTime>08/10/2016 14:13:43</publishTime>
+    </File>
+    <File Include="Styles/angular/ngdialog/ngDialog-theme-default.css">
+      <publishTime>08/10/2016 14:13:44</publishTime>
+    </File>
+    <File Include="Styles/angular/ngdialog/ngDialog-theme-default.min.css">
+      <publishTime>08/10/2016 14:13:43</publishTime>
+    </File>
+    <File Include="Styles/angular/ngdialog/ngDialog-theme-plain.css">
+      <publishTime>08/10/2016 14:13:44</publishTime>
+    </File>
+    <File Include="Styles/angular/ngdialog/ngDialog-theme-plain.min.css">
+      <publishTime>08/10/2016 14:13:43</publishTime>
+    </File>
+    <File Include="Styles/angular/ngdialog/ngDialog.css">
+      <publishTime>08/10/2016 14:13:43</publishTime>
+    </File>
+    <File Include="Styles/angular/ngdialog/ngDialog.min.css">
+      <publishTime>08/10/2016 14:13:43</publishTime>
+    </File>
+    <File Include="Styles/colors.css">
+      <publishTime>08/10/2016 14:13:43</publishTime>
+    </File>
+    <File Include="Styles/colors.less">
+      <publishTime>08/10/2016 14:13:43</publishTime>
+    </File>
+    <File Include="Styles/colors.min.css">
+      <publishTime>08/10/2016 14:13:43</publishTime>
+    </File>
+    <File Include="Styles/core - Copy.css">
+      <publishTime>10/31/2016 14:22:59</publishTime>
+    </File>
+    <File Include="Styles/core - Copy.less">
+      <publishTime>02/09/2017 15:28:15</publishTime>
+    </File>
+    <File Include="Styles/core - Copy.min.css">
+      <publishTime>10/31/2016 14:22:59</publishTime>
+    </File>
+    <File Include="Styles/core.css">
+      <publishTime>02/20/2017 16:24:18</publishTime>
+    </File>
+    <File Include="Styles/core.less">
+      <publishTime>02/20/2017 16:24:17</publishTime>
+    </File>
+    <File Include="Styles/core.min.css">
+      <publishTime>02/20/2017 16:26:49</publishTime>
+    </File>
+    <File Include="Styles/fonts/fonts.css">
+      <publishTime>08/10/2016 14:13:44</publishTime>
+    </File>
+    <File Include="Styles/fonts/glyphicons-halflings-regular.eot">
+      <publishTime>08/10/2016 14:13:44</publishTime>
+    </File>
+    <File Include="Styles/fonts/glyphicons-halflings-regular.svg">
+      <publishTime>08/10/2016 14:13:44</publishTime>
+    </File>
+    <File Include="Styles/fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>08/10/2016 14:13:44</publishTime>
+    </File>
+    <File Include="Styles/fonts/glyphicons-halflings-regular.woff">
+      <publishTime>08/10/2016 14:13:44</publishTime>
+    </File>
+    <File Include="Styles/fonts/glyphicons-halflings-regular.woff2">
+      <publishTime>08/10/2016 14:13:44</publishTime>
+    </File>
+    <File Include="Styles/fonts/Montserrat-Black.eot">
+      <publishTime>08/10/2016 14:13:44</publishTime>
+    </File>
+    <File Include="Styles/fonts/Montserrat-Black.ttf">
+      <publishTime>08/10/2016 14:13:44</publishTime>
+    </File>
+    <File Include="Styles/fonts/Montserrat-Black.woff">
+      <publishTime>08/10/2016 14:13:44</publishTime>
+    </File>
+    <File Include="Styles/fonts/Montserrat-Bold.eot">
+      <publishTime>08/10/2016 14:13:44</publishTime>
+    </File>
+    <File Include="Styles/fonts/Montserrat-Bold.ttf">
+      <publishTime>08/10/2016 14:13:44</publishTime>
+    </File>
+    <File Include="Styles/fonts/Montserrat-Bold.woff">
+      <publishTime>08/10/2016 14:13:44</publishTime>
+    </File>
+    <File Include="Styles/fonts/Montserrat-ExtraBold.eot">
+      <publishTime>08/10/2016 14:13:44</publishTime>
+    </File>
+    <File Include="Styles/fonts/Montserrat-ExtraBold.ttf">
+      <publishTime>08/10/2016 14:13:44</publishTime>
+    </File>
+    <File Include="Styles/fonts/Montserrat-ExtraBold.woff">
+      <publishTime>08/10/2016 14:13:44</publishTime>
+    </File>
+    <File Include="Styles/fonts/Montserrat-Hairline.eot">
+      <publishTime>08/10/2016 14:13:44</publishTime>
+    </File>
+    <File Include="Styles/fonts/Montserrat-Hairline.ttf">
+      <publishTime>08/10/2016 14:13:44</publishTime>
+    </File>
+    <File Include="Styles/fonts/Montserrat-Hairline.woff">
+      <publishTime>08/10/2016 14:13:44</publishTime>
+    </File>
+    <File Include="Styles/fonts/Montserrat-Light.eot">
+      <publishTime>08/10/2016 14:13:44</publishTime>
+    </File>
+    <File Include="Styles/fonts/Montserrat-Light.ttf">
+      <publishTime>08/10/2016 14:13:44</publishTime>
+    </File>
+    <File Include="Styles/fonts/Montserrat-Light.woff">
+      <publishTime>08/10/2016 14:13:44</publishTime>
+    </File>
+    <File Include="Styles/fonts/Montserrat-Regular.eot">
+      <publishTime>08/10/2016 14:13:44</publishTime>
+    </File>
+    <File Include="Styles/fonts/Montserrat-Regular.ttf">
+      <publishTime>08/10/2016 14:13:45</publishTime>
+    </File>
+    <File Include="Styles/fonts/Montserrat-Regular.woff">
+      <publishTime>08/10/2016 14:13:45</publishTime>
+    </File>
+    <File Include="Styles/fonts/Montserrat-SemiBold.eot">
+      <publishTime>08/10/2016 14:13:45</publishTime>
+    </File>
+    <File Include="Styles/fonts/Montserrat-SemiBold.ttf">
+      <publishTime>08/10/2016 14:13:45</publishTime>
+    </File>
+    <File Include="Styles/fonts/Montserrat-SemiBold.woff">
+      <publishTime>08/10/2016 14:13:45</publishTime>
+    </File>
+    <File Include="Styles/fonts/Montserrat-UltraLight.eot">
+      <publishTime>08/10/2016 14:13:45</publishTime>
+    </File>
+    <File Include="Styles/fonts/Montserrat-UltraLight.ttf">
+      <publishTime>08/10/2016 14:13:45</publishTime>
+    </File>
+    <File Include="Styles/fonts/Montserrat-UltraLight.woff">
+      <publishTime>08/10/2016 14:13:45</publishTime>
+    </File>
+    <File Include="Styles/foundation/foundation-datepicker.css">
+      <publishTime>08/10/2016 14:13:45</publishTime>
+    </File>
+    <File Include="Styles/foundation/foundation.css">
+      <publishTime>08/10/2016 14:13:45</publishTime>
+    </File>
+    <File Include="Styles/novoSite/bootstrap.min.css">
+      <publishTime>02/20/2017 13:55:38</publishTime>
+    </File>
+    <File Include="Styles/novoSite/bs_leftnavi.css">
+      <publishTime>02/17/2017 16:51:17</publishTime>
+    </File>
+    <File Include="Styles/novoSite/docs.theme.min.css">
+      <publishTime>01/18/2017 17:07:13</publishTime>
+    </File>
+    <File Include="Styles/novoSite/materialize.min.css">
+      <publishTime>11/29/2016 10:34:53</publishTime>
+    </File>
+    <File Include="Styles/novoSite/owl.carousel.css">
+      <publishTime>10/28/2016 11:21:14</publishTime>
+    </File>
+    <File Include="Styles/novoSite/owl.theme.default.min.css">
+      <publishTime>10/28/2016 11:21:14</publishTime>
+    </File>
+    <File Include="Styles/novoSite/remodal-default-theme.css">
+      <publishTime>10/26/2016 11:41:38</publishTime>
+    </File>
+    <File Include="Styles/novoSite/remodal.css">
+      <publishTime>10/26/2016 11:41:38</publishTime>
+    </File>
+    <File Include="Styles/novoSite/stiloSite - Copy.css">
+      <publishTime>02/09/2017 15:32:28</publishTime>
+    </File>
+    <File Include="Styles/novoSite/stiloSite.css">
+      <publishTime>03/24/2017 10:45:18</publishTime>
+    </File>
+    <File Include="Styles/pages/home.less">
+      <publishTime>08/10/2016 14:13:45</publishTime>
+    </File>
+    <File Include="Styles/plugins/ajax-loader.gif">
+      <publishTime>08/10/2016 14:13:45</publishTime>
+    </File>
+    <File Include="Styles/plugins/owl.carousel.css">
+      <publishTime>08/10/2016 14:13:45</publishTime>
+    </File>
+    <File Include="Styles/plugins/owl.theme.default.css">
+      <publishTime>08/10/2016 14:13:45</publishTime>
+    </File>
+    <File Include="Styles/plugins/owl.theme.green.css">
+      <publishTime>08/10/2016 14:13:45</publishTime>
+    </File>
+    <File Include="Styles/plugins/owl.video.play.png">
+      <publishTime>08/10/2016 14:13:45</publishTime>
+    </File>
+    <File Include="Styles/utils.css">
+      <publishTime>08/10/2016 14:13:43</publishTime>
+    </File>
+    <File Include="Styles/utils.less">
+      <publishTime>08/10/2016 14:13:43</publishTime>
+    </File>
+    <File Include="Styles/utils.min.css">
+      <publishTime>08/10/2016 14:13:43</publishTime>
+    </File>
+    <File Include="video/ocean.jpg">
+      <publishTime>11/21/2016 17:22:46</publishTime>
+    </File>
+    <File Include="video/ocean.mp4">
+      <publishTime>11/21/2016 17:22:46</publishTime>
+    </File>
+    <File Include="video/ocean.ogv">
+      <publishTime>11/21/2016 17:22:46</publishTime>
+    </File>
+    <File Include="video/ocean.webm">
+      <publishTime>11/21/2016 17:22:46</publishTime>
+    </File>
+    <File Include="video/Petiscos.mp4">
+      <publishTime>11/21/2016 17:04:44</publishTime>
+    </File>
+    <File Include="video/Petiscos.ogv">
+      <publishTime>02/22/2017 10:59:35</publishTime>
+    </File>
+    <File Include="video/PetiscosOriginal.mp4">
+      <publishTime>11/21/2016 17:04:44</publishTime>
+    </File>
+    <File Include="video/Petiscos_.webm">
+      <publishTime>02/22/2017 11:00:28</publishTime>
+    </File>
+    <File Include="video/Petiscos_converted.mp4">
+      <publishTime>02/22/2017 10:59:54</publishTime>
+    </File>
+    <File Include="Views/Busca/Index - Copy.cshtml">
+      <publishTime>12/05/2016 16:29:38</publishTime>
+    </File>
+    <File Include="Views/Busca/Index.cshtml">
+      <publishTime>03/14/2017 10:15:21</publishTime>
+    </File>
+    <File Include="Views/Cadastro/Index.cshtml">
+      <publishTime>02/03/2017 09:24:30</publishTime>
+    </File>
+    <File Include="Views/Cadastro/Passo1 - Copy.cshtml">
+      <publishTime>10/31/2016 09:37:41</publishTime>
+    </File>
+    <File Include="Views/Cadastro/Passo1.cshtml">
+      <publishTime>02/03/2017 09:59:30</publishTime>
+    </File>
+    <File Include="Views/Cadastro/Passo2 - Copy.cshtml">
+      <publishTime>10/31/2016 14:46:35</publishTime>
+    </File>
+    <File Include="Views/Cadastro/Passo2.cshtml">
+      <publishTime>10/31/2016 15:04:37</publishTime>
+    </File>
+    <File Include="Views/CadPesquisa/Index.cshtml">
+      <publishTime>01/04/2017 10:46:20</publishTime>
+    </File>
+    <File Include="Views/CadPesquisa/Passoe1.cshtml">
+      <publishTime>02/01/2017 19:39:32</publishTime>
+    </File>
+    <File Include="Views/CadPesquisa/Passoe2.cshtml">
+      <publishTime>12/29/2016 18:12:44</publishTime>
+    </File>
+    <File Include="Views/CadPesquisa/Passoe3.cshtml">
+      <publishTime>01/04/2017 14:56:26</publishTime>
+    </File>
+    <File Include="Views/CadPesquisa/Passoe4.cshtml">
+      <publishTime>01/04/2017 10:41:44</publishTime>
+    </File>
+    <File Include="Views/CadPesquisa/Passoe5.cshtml">
+      <publishTime>12/29/2016 18:14:43</publishTime>
+    </File>
+    <File Include="Views/CadPesquisa/Passoe6.cshtml">
+      <publishTime>01/04/2017 10:32:43</publishTime>
+    </File>
+    <File Include="Views/CadPesquisa/Passoe7.cshtml">
+      <publishTime>01/04/2017 10:37:13</publishTime>
+    </File>
+    <File Include="Views/Carrinho/Conclusao.cshtml">
+      <publishTime>02/02/2017 21:49:45</publishTime>
+    </File>
+    <File Include="Views/Carrinho/hebert.cshtml">
+      <publishTime>08/10/2016 15:07:09</publishTime>
+    </File>
+    <File Include="Views/Carrinho/Index - Copy.cshtml">
+      <publishTime>02/01/2017 13:33:34</publishTime>
+    </File>
+    <File Include="Views/Carrinho/Index.cshtml">
+      <publishTime>02/14/2017 14:09:10</publishTime>
+    </File>
+    <File Include="Views/Carrinho/Pagamento - Copy.cshtml">
+      <publishTime>02/14/2017 11:04:59</publishTime>
+    </File>
+    <File Include="Views/Carrinho/Pagamento.cshtml">
+      <publishTime>03/02/2017 11:38:56</publishTime>
+    </File>
+    <File Include="Views/Carrinho/Produtos - Copy.cshtml">
+      <publishTime>12/21/2016 13:41:37</publishTime>
+    </File>
+    <File Include="Views/Carrinho/Produtos.cshtml">
+      <publishTime>03/16/2017 16:48:41</publishTime>
+    </File>
+    <File Include="Views/Carrinho/ReprocessaPagamento - Copy.cshtml">
+      <publishTime>11/14/2016 15:31:54</publishTime>
+    </File>
+    <File Include="Views/Carrinho/ReprocessaPagamento.cshtml">
+      <publishTime>11/14/2016 15:38:33</publishTime>
+    </File>
+    <File Include="Views/Cortes/Index - Copy.cshtml">
+      <publishTime>11/03/2016 15:07:58</publishTime>
+    </File>
+    <File Include="Views/Cortes/Index.cshtml">
+      <publishTime>03/24/2017 15:00:20</publishTime>
+    </File>
+    <File Include="Views/Emporio/Index - Copy.cshtml">
+      <publishTime>12/05/2016 16:10:43</publishTime>
+    </File>
+    <File Include="Views/Emporio/Index.cshtml">
+      <publishTime>03/27/2017 10:19:16</publishTime>
+    </File>
+    <File Include="Views/Home/Index - Copy %282%29.cshtml">
+      <publishTime>02/09/2017 15:32:01</publishTime>
+    </File>
+    <File Include="Views/Home/Index - Copy %283%29.cshtml">
+      <publishTime>02/23/2017 18:21:30</publishTime>
+    </File>
+    <File Include="Views/Home/Index - Copy.cshtml">
+      <publishTime>12/02/2016 17:31:54</publishTime>
+    </File>
+    <File Include="Views/Home/Index - Copy4.cshtml">
+      <publishTime>02/21/2017 16:49:30</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>03/24/2017 11:11:19</publishTime>
+    </File>
+    <File Include="Views/Home/Indexvideo.cshtml">
+      <publishTime>03/06/2017 15:38:13</publishTime>
+    </File>
+    <File Include="Views/Hotsite/Index.cshtml">
+      <publishTime>12/09/2016 16:51:02</publishTime>
+    </File>
+    <File Include="Views/Instituicao/FaleConosco - Copy.cshtml">
+      <publishTime>11/01/2016 14:20:20</publishTime>
+    </File>
+    <File Include="Views/Instituicao/FaleConosco.cshtml">
+      <publishTime>02/23/2017 10:22:20</publishTime>
+    </File>
+    <File Include="Views/Instituicao/NossaEntrega.cshtml">
+      <publishTime>08/16/2016 11:23:07</publishTime>
+    </File>
+    <File Include="Views/Instituicao/PoliticaDeFrete.cshtml">
+      <publishTime>11/01/2016 14:07:56</publishTime>
+    </File>
+    <File Include="Views/Instituicao/QuemSomos.cshtml">
+      <publishTime>11/11/2016 10:31:36</publishTime>
+    </File>
+    <File Include="Views/Login/AlterarMinhaSenha.cshtml">
+      <publishTime>08/10/2016 14:13:46</publishTime>
+    </File>
+    <File Include="Views/Login/EsqueciMinhaSenha.cshtml">
+      <publishTime>02/03/2017 20:46:33</publishTime>
+    </File>
+    <File Include="Views/Login/Index.cshtml">
+      <publishTime>02/03/2017 21:19:58</publishTime>
+    </File>
+    <File Include="Views/MinhaConta/Index.cshtml">
+      <publishTime>02/21/2017 14:00:43</publishTime>
+    </File>
+    <File Include="Views/MinhaConta/MeuCadastro - Copy.cshtml">
+      <publishTime>11/11/2016 14:22:55</publishTime>
+    </File>
+    <File Include="Views/MinhaConta/MeuCadastro.cshtml">
+      <publishTime>02/03/2017 15:51:05</publishTime>
+    </File>
+    <File Include="Views/MinhaConta/MeusEnderecos.cshtml">
+      <publishTime>11/14/2016 11:12:59</publishTime>
+    </File>
+    <File Include="Views/MinhaConta/MeusPedidos - Copy.cshtml">
+      <publishTime>02/20/2017 15:37:25</publishTime>
+    </File>
+    <File Include="Views/MinhaConta/MeusPedidos.cshtml">
+      <publishTime>02/21/2017 11:14:47</publishTime>
+    </File>
+    <File Include="Views/Produto/Index - Copy %282%29.cshtml">
+      <publishTime>02/09/2017 15:30:55</publishTime>
+    </File>
+    <File Include="Views/Produto/Index - Copy.cshtml">
+      <publishTime>11/22/2016 17:10:21</publishTime>
+    </File>
+    <File Include="Views/Produto/Index.cshtml">
+      <publishTime>03/20/2017 09:38:14</publishTime>
+    </File>
+    <File Include="Views/Promocao/Index.cshtml">
+      <publishTime>12/09/2016 16:39:58</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>03/17/2017 13:17:05</publishTime>
+    </File>
+    <File Include="Views/Templates/App/App.cshtml">
+      <publishTime>10/31/2016 17:15:19</publishTime>
+    </File>
+    <File Include="Views/Templates/App/Footer.cshtml">
+      <publishTime>03/29/2017 17:48:21</publishTime>
+    </File>
+    <File Include="Views/Templates/App/Footerfuturo.cshtml">
+      <publishTime>03/24/2017 12:35:26</publishTime>
+    </File>
+    <File Include="Views/Templates/App/FooterN.cshtml">
+      <publishTime>03/17/2017 17:46:21</publishTime>
+    </File>
+    <File Include="Views/Templates/App/FooterNovo.cshtml">
+      <publishTime>11/11/2016 10:53:52</publishTime>
+    </File>
+    <File Include="Views/Templates/App/FooterOriginal.cshtml">
+      <publishTime>03/24/2017 12:35:07</publishTime>
+    </File>
+    <File Include="Views/Templates/App/Header - Copy %282%29.cshtml">
+      <publishTime>02/16/2017 14:52:16</publishTime>
+    </File>
+    <File Include="Views/Templates/App/Header - Copy.cshtml">
+      <publishTime>01/30/2017 15:48:53</publishTime>
+    </File>
+    <File Include="Views/Templates/App/Header.cshtml">
+      <publishTime>02/21/2017 16:36:21</publishTime>
+    </File>
+    <File Include="Views/Templates/App/Menu - Copy %282%29.cshtml">
+      <publishTime>02/14/2017 16:11:55</publishTime>
+    </File>
+    <File Include="Views/Templates/App/Menu - Copy.cshtml">
+      <publishTime>02/03/2017 16:19:18</publishTime>
+    </File>
+    <File Include="Views/Templates/App/Menu.cshtml">
+      <publishTime>02/17/2017 16:14:09</publishTime>
+    </File>
+    <File Include="Views/Templates/App/menucarrinho.cshtml">
+      <publishTime>10/31/2016 17:18:58</publishTime>
+    </File>
+    <File Include="Views/Templates/App/MenuLogin.cshtml">
+      <publishTime>02/03/2017 21:18:51</publishTime>
+    </File>
+    <File Include="Views/Templates/App/MenuMobile.cshtml">
+      <publishTime>08/10/2016 14:13:46</publishTime>
+    </File>
+    <File Include="Views/Templates/carrinhonovo.cshtml">
+      <publishTime>02/13/2017 11:44:04</publishTime>
+    </File>
+    <File Include="Views/Templates/carrinhoprincipal - Copy.cshtml">
+      <publishTime>01/23/2017 16:56:16</publishTime>
+    </File>
+    <File Include="Views/Templates/carrinhoprincipal.cshtml">
+      <publishTime>02/24/2017 10:57:01</publishTime>
+    </File>
+    <File Include="Views/Templates/cortes.cshtml">
+      <publishTime>09/09/2016 10:48:14</publishTime>
+    </File>
+    <File Include="Views/Templates/Exp.cshtml">
+      <publishTime>11/04/2016 14:34:32</publishTime>
+    </File>
+    <File Include="Views/Templates/Loader.cshtml">
+      <publishTime>11/30/2016 15:37:26</publishTime>
+    </File>
+    <File Include="Views/Templates/Modals/Alltypes.cshtml">
+      <publishTime>08/10/2016 14:13:46</publishTime>
+    </File>
+    <File Include="Views/Templates/OrientationLock.cshtml">
+      <publishTime>08/10/2016 14:13:46</publishTime>
+    </File>
+    <File Include="Views/Templates/Plugins/Calendario.cshtml">
+      <publishTime>11/16/2016 13:41:49</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>08/10/2016 14:13:45</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>08/10/2016 14:13:45</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>03/23/2017 14:16:50</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,68 @@
+﻿<section class="header" style="position: relative;  z-index: 9999;">
+    <!--small-->
+    <div class="televendas row show-for-small-only">
+        <div class="small-12 columns ">
+            <div class="ms-bold float-left">Televendas</div>
+            <div class="ms-reg float-right">11 · 5627-4700</div>
+        </div>
+    </div>
+
+    <div class="midstripe row show-for-small-only">
+        <div class="logo small-3 columns">
+            <a href="/"><img alt="" src="~/Images/assets/logo.png" /></a>
+        </div>
+
+        <div class="right-buttons small-9 columns">
+            <div class="menu small-3 columns float-right" ng-model="menumobile" ng-click="menumobile = !menumobile" ng-init="menumobile = false">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="21" height="16" viewBox="14.375 16.813 21 16"><defs><path id="a" d="M0 0h50v50H0z" /></defs><clipPath id="b"><use xlink:href="#a" overflow="visible" /></clipPath><path clip-path="url(#b)" fill="#404040" d="M35.5 18.438c0 .414-.336.75-.75.75h-19.5c-.414 0-.75-.336-.75-.75v-.75c0-.414.336-.75.75-.75h19.5c.414 0 .75.336.75.75v.75zM35.5 25.375c0 .415-.336.75-.75.75h-19.5c-.414 0-.75-.335-.75-.75v-.75c0-.414.336-.75.75-.75h19.5c.414 0 .75.336.75.75v.75zM35.5 32.313c0 .414-.336.75-.75.75h-19.5c-.414 0-.75-.336-.75-.75v-.75c0-.414.336-.75.75-.75h19.5c.414 0 .75.336.75.75v.75z" /></svg>
+            </div>
+
+            <div class="carrinho small-3 columns float-right" ng-click="gotocarrinho()">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="22" viewBox="12.875 13.938 24 22"><defs><path id="a" d="M0 0h50v50H0z" /></defs><clipPath id="b"><use xlink:href="#a" overflow="visible" /></clipPath><path clip-path="url(#b)" fill="#404040" d="M34.527 28.467c.114-.098.205-.233.256-.415.73-2.585 1.456-5.17 2.184-7.757.087-.31.006-.57-.157-.752-.136-.193-.357-.326-.666-.326h-16.64l-1.276-4.58c-.056-.203-.163-.35-.293-.447-.133-.11-.308-.18-.528-.18H13.82c-1.097 0-1.097 1.705 0 1.705h2.94l4.242 15.23c-.936.4-1.593 1.332-1.593 2.414 0 1.45 1.18 2.63 2.63 2.63s2.63-1.18 2.63-2.63c0-.328-.065-.64-.174-.93h5.296c-.11.29-.173.602-.173.93 0 1.45 1.18 2.63 2.63 2.63s2.63-1.18 2.63-2.63c0-1.42-1.132-2.577-2.54-2.626-.036-.005-.075-.007-.116-.007H22.71l-.57-2.05h11.822c.242 0 .43-.082.565-.21m-2.278 3.967c.51 0 .925.415.925.926 0 .51-.415.926-.926.926s-.926-.416-.926-.926.414-.926.925-.926m-9.285.925c0 .51-.415.925-.926.925-.51 0-.927-.416-.927-.926 0-.512.416-.927.926-.927s.925.416.925.926m-1.3-6.386c-.562-2.018-1.123-4.036-1.686-6.053h15.04l-1.703 6.054H21.665z" /></svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="busca row show-for-small-only">
+        <div class="right-buttons small-12 columns">
+            <form class="busca small-12 columns" ng-submit="buscar(term)">
+                <div class="small-10 columns paddingless"><input type="text" placeholder="Digite sua busca" ng-model="term" class="campobusca"/></div>
+                <div class="bt small-2 columns">
+                    <button type="submit"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="23" height="23" viewBox="13.333 13.417 23 23"><defs><path id="a" d="M0 0h50v50H0z" /></defs><clipPath id="b"><use xlink:href="#a" overflow="visible" /></clipPath><path clip-path="url(#b)" fill="#404040" d="M35.787 33.072l-5.448-4.634c-.564-.507-1.167-.74-1.653-.717 1.286-1.506 2.063-3.46 2.063-5.596 0-4.764-3.86-8.625-8.625-8.625-4.763 0-8.625 3.86-8.625 8.624 0 4.764 3.862 8.625 8.625 8.625 2.136 0 4.09-.778 5.597-2.064-.022.487.21 1.09.718 1.653l4.634 5.447c.793.88 2.09.956 2.88.165s.715-2.086-.167-2.88m-13.662-5.197c-3.175 0-5.75-2.575-5.75-5.75 0-3.176 2.575-5.75 5.75-5.75 3.176 0 5.75 2.574 5.75 5.75 0 3.175-2.574 5.75-5.75 5.75" /></svg></button>
+                </div>
+            </form>
+
+            
+        </div>
+    </div>
+    <!--/ small-->
+    <!--medium and large-->
+    <div class="row show-for-medium">
+        <div class="logo small-2 medium-2 columns">
+            <a href="/"><img alt="" src="~/Images/assets/logo.png" /></a>
+        </div>
+
+        <div class="menu-desktop-holder small-2 medium-5 columns show-for-medium">
+            <app-menu></app-menu>
+        </div>
+
+        <div class="right-buttons medium-5 columns">
+            <form class="busca small-2 medium-8 columns show-for-medium" ng-submit="buscar(term)">
+                <div class="small-9 columns"><input type="text" placeholder="Digite sua busca" ng-model="term" class="campobusca"/></div>
+                <div class="bt small-3 columns" ng-click="buscar(term)">
+                    <button type="submit"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="23" height="23" viewBox="13.333 13.417 23 23"><defs><path id="a" d="M0 0h50v50H0z" /></defs><clipPath id="b"><use xlink:href="#a" overflow="visible" /></clipPath><path clip-path="url(#b)" fill="#404040" d="M35.787 33.072l-5.448-4.634c-.564-.507-1.167-.74-1.653-.717 1.286-1.506 2.063-3.46 2.063-5.596 0-4.764-3.86-8.625-8.625-8.625-4.763 0-8.625 3.86-8.625 8.624 0 4.764 3.862 8.625 8.625 8.625 2.136 0 4.09-.778 5.597-2.064-.022.487.21 1.09.718 1.653l4.634 5.447c.793.88 2.09.956 2.88.165s.715-2.086-.167-2.88m-13.662-5.197c-3.175 0-5.75-2.575-5.75-5.75 0-3.176 2.575-5.75 5.75-5.75 3.176 0 5.75 2.574 5.75 5.75 0 3.175-2.574 5.75-5.75 5.75" /></svg></button>
+                </div>
+            </form>
+
+            <div class="carrinho small-2 medium-2 columns show-for-medium" ng-click="gotocarrinho()">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="22" viewBox="12.875 13.938 24 22"><defs><path id="a" d="M0 0h50v50H0z" /></defs><clipPath id="b"><use xlink:href="#a" overflow="visible" /></clipPath><path clip-path="url(#b)" fill="#404040" d="M34.527 28.467c.114-.098.205-.233.256-.415.73-2.585 1.456-5.17 2.184-7.757.087-.31.006-.57-.157-.752-.136-.193-.357-.326-.666-.326h-16.64l-1.276-4.58c-.056-.203-.163-.35-.293-.447-.133-.11-.308-.18-.528-.18H13.82c-1.097 0-1.097 1.705 0 1.705h2.94l4.242 15.23c-.936.4-1.593 1.332-1.593 2.414 0 1.45 1.18 2.63 2.63 2.63s2.63-1.18 2.63-2.63c0-.328-.065-.64-.174-.93h5.296c-.11.29-.173.602-.173.93 0 1.45 1.18 2.63 2.63 2.63s2.63-1.18 2.63-2.63c0-1.42-1.132-2.577-2.54-2.626-.036-.005-.075-.007-.116-.007H22.71l-.57-2.05h11.822c.242 0 .43-.082.565-.21m-2.278 3.967c.51 0 .925.415.925.926 0 .51-.415.926-.926.926s-.926-.416-.926-.926.414-.926.925-.926m-9.285.925c0 .51-.415.925-.926.925-.51 0-.927-.416-.927-.926 0-.512.416-.927.926-.927s.925.416.925.926m-1.3-6.386c-.562-2.018-1.123-4.036-1.686-6.053h15.04l-1.703 6.054H21.665z" /></svg>
+            </div>
+
+            <div class="conta small-2 medium-2 columns show-for-medium">
+                <div class="clickable" ng-model="menulogado" ng-click="menulogado = true">&nbsp;</div>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="19" viewBox="16.813 15.688 16 19"><defs><path id="a" d="M0 0h50v50H0z" /></defs><clipPath id="b"><use xlink:href="#a" overflow="visible" /></clipPath><path clip-path="url(#b)" fill="#404040" d="M28.005 25.01c1.765-1.217 2.514-3.344 1.91-5.505-.63-2.26-2.517-3.72-4.803-3.72s-4.172 1.46-4.802 3.72c-.603 2.162.145 4.288 1.91 5.505-3.335 1.574-5.437 5.168-5.257 9.047l.007.158h16.067l.004-.16c.132-4.02-1.836-7.533-5.035-9.046m-6.445-4.26c0-1.947 1.584-3.53 3.533-3.53 1.945 0 3.53 1.583 3.53 3.53 0 1.947-1.585 3.532-3.53 3.532-1.948 0-3.533-1.584-3.533-3.532m-2.988 11.892c.338-3.324 2.5-6.83 6.532-6.83 2.897 0 5.958 2.114 6.334 6.83H18.572z" /></svg>
+                <app-menu-login></app-menu-login>
+            </div>
+        </div>
+    </div>
+</section>

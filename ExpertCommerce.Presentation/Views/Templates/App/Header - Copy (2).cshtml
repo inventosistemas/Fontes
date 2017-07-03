@@ -1,0 +1,160 @@
+﻿<section class="header menuAlinhado">
+    <nav  class="barra-nav overMenuNav flexcroll tamanhoMenuDesk" id="barra-nav" style="height:100%;" >
+        <p id="fecharMenuTotal" style="" class="menu-fechar grow btnXfecharMenu" >X</p>
+        <menu id="MenuCelular" style="padding-left: 0px;" class="overMenu " >
+            <span onclick="fecharMenuMobile()"  style="color:white;font-size: 30px;margin-left: 175px;" class="hidden-lg hidden-md">X </span>
+            <div id="gw-sidebar">
+              
+                <div class="nano-content">
+                   
+                    <ul class="gw-nav gw-nav-list" style="text-align: left;">
+                      
+                        <li ng-if="credentials.isAuthorized" class="init-un-active" style="border-bottom-width: 0px;border-top-width: 0px; " onclick="fecharMenuMobile(), fecharMenu(), limparFiltro()">
+                            <a class="menu-fechar" style="background-color:#001F2C;margin-top: 10px;" href="/#!/emporio">
+                                <span style="color:white;font-size: 14px;" class="gw-menu-text">Olá {{credentials.userName}} :)</span>
+                            </a>
+                        </li>
+                        <li class="init-un-active" style="border-bottom-width: 0px;border-top-width: 0px;top: 37px; " onclick="fecharMenuMobile(), fecharMenu(), limparFiltro()">
+                            <a class="menu-fechar" style="background-color:#001F2C;margin-top: 10px;" href="/">
+                                <span style="color:white;margin-right: 162px;font-size: 18px;" class="gw-menu-text">HOME</span>
+                            </a>
+                        </li>
+                        <li class="init-arrow-down" style="background-color:#001F2C">
+                           
+                            <a style="background-color:#001F2C;margin-top: 40px;margin-right: 162px;font-size: 18px;" href="javascript:void(0)">
+                                <span style="color:white;" class="gw-menu-text">AÇOUGUE </span> <b class="gw-arrow"></b>
+                            </a>
+                            <ul class="gw-submenu">
+                                <li class="liMenu">
+                                    <a style="color:white;margin-left: -57px;font-size: 14px;padding-left: 78px;" href="/#!/cortes" onclick="selecionaoOcasiao('26')">CORTES PARA O DIA A DIA</a>
+                                </li>
+                                <li class="liMenu">
+                                    <a style="color:white;margin-left: -57px;font-size: 14px;padding-left: 78px;" href="/#!/cortes" onclick="selecionaoOcasiao('24')">CORTES PARA CHURRASCO</a>
+                                </li>
+                                <li class="liMenu">
+                                    <a style="color:white;margin-left: -57px;font-size: 14px;padding-left: 78px;" href="/#!/cortes" onclick="limparFiltro()" >TODOS OS CORTES</a>
+                                </li>
+                                @*<hr style="background-color: #001f2c;margin: 0;border: 1px solid #001f2c;opacity: 0.5;">
+
+                                <li class="liMenu">
+                                    <a style="color:white;margin-left: -57px;font-size: 16px;padding-left: 78px;" class="gw-menu-text">NOSSOS CORTES</a>
+                                </li>
+                                *@
+                            </ul>
+                        </li>
+                        <li class="init-arrow-down" style="background-color:#001F2C">
+
+                            <a style="background-color:#001F2C;margin-right: 162px;font-size: 18px;" href="javascript:void(0)">
+                                <span style="color:white;" class="gw-menu-text">EMPÓRIO </span> <b class="gw-arrow"></b>
+                            </a>
+                            <ul class="gw-submenu">
+                                <li class="liMenu" onclick="fecharMenuMobile(), fecharMenu(), limparFiltro()">
+                                    <a style="color:white;margin-left: -57px;font-size: 14px;padding-left: 78px;" href="/#!/emporio" onclick="selecionaoTempero('corte2585')">TEMPEROS</a>
+                                </li>
+                                <li class="liMenu" onclick="fecharMenuMobile(), fecharMenu(), limparFiltro()">
+                                    <a style="color:white;margin-left: -57px;font-size: 14px;padding-left: 78px;" href="/#!/emporio" onclick="selecionaocarvao('46')">CARVÃO</a>
+                                </li>
+                                <li class="liMenu" onclick="fecharMenuMobile(), fecharMenu(), limparFiltro()">
+                                    <a style="color:white;margin-left: -57px;font-size: 14px;padding-left: 78px;" href="/#!/emporio" onclick="limparFiltro()">NOSSO EMPÓRIO</a>
+                                </li>
+                                @*<hr style="background-color: #001f2c;margin: 0;border: 1px solid #001f2c;opacity: 0.5;">
+
+                <li class="liMenu">
+                    <a style="color:white;margin-left: -57px;font-size: 16px;padding-left: 78px;" class="gw-menu-text">NOSSOS CORTES</a>
+                </li>
+                                *@
+                            </ul>
+                        </li>
+                     
+                        @*<li class="init-un-active" style="border-bottom-width: 0px;border-top-width: 0px;">
+                <a style="background-color:#001F2C;margin-top: 10px;" href=""  >
+                    <span style="color:white;margin-right: 175px;font-size: 12px;font-size: 18px;" class="gw-menu-text">VINHOS</span>
+                </a>
+            </li>*@
+
+                        @*<li class="init-arrow-down" style="background-color:#001F2C">
+                <a style="background-color:#001F2C;margin-top: 5px;margin-right: 125px;font-size: 18px;" href="javascript:void(0)">
+                    <span style="color:white;" class="gw-menu-text">PROMOÇÕES</span> <b class="gw-arrow"></b>
+                </a>
+                <ul class="gw-submenu">
+                    <li style="background-color:#23404E;color:white;">
+                        <a style="color:white;margin-left: -57px;font-size: 12px;" href="javascript:void(0)">----</a>
+                    </li>
+
+                </ul>
+            </li>*@
+
+                        
+
+                        <li class="init-arrow-down" style="background-color:#001F2C" >
+                            <a style="background-color:#001F2C;margin-top: 5px;font-size: 18px;" >
+                                <span style="color:white;" class="gw-menu-text">MUNDO FEED</span> <b class="gw-arrow"></b>
+                            </a>
+                            <ul class="gw-submenu">
+                                @*<li class="init-un-active" style="border-bottom-width: 0px;border-top-width: 0px; " onclick="fecharMenuMobile(), fecharMenu()">
+                                    <a class="menu-fechar" style="background-color:#001F2C;margin-top: 10px;" href="/#!/quem-somos">
+                                        <span style="color:white;font-size: 17px;" class="gw-menu-text">QUEM SOMOS</span>
+                                    </a>
+                                </li>*@
+                                <li class="liMenu" onclick="fecharMenuMobile(), fecharMenu()">
+                                    <a style="color:white;margin-left: -57px;font-size: 14px;padding-left: 78px;"
+                                       href="/#!/quem-somos">QUEM SOMOS</a>
+                                </li>
+                                <li class="liMenu">
+                                    <a style="color:white;margin-left: -57px;font-size: 14px;padding-left: 78px;"
+                                       href="https://www.feed.com.br/institucional/receitas/">RECEITAS</a>
+                                </li>
+                                <li class="liMenu">
+                                    <a style="color:white;margin-left: -57px;font-size: 14px;padding-left: 78px;"
+                                       href="https://www.feed.com.br/institucional/tecnicas-de-cozinha/">TÉCNICAS DE COZINHA</a>
+                                </li>
+                                @*<li class="liMenu">
+                                    <a target="_blank" style="color:white;margin-left: -57px;font-size: 14px;padding-left: 78px;"
+                                       href="https://www.feed.com.br/institucional">FEED NA MÍDIA</a>
+                                </li>*@
+
+                            </ul>
+                        </li>
+
+                        @*<li class="init-arrow-down" style="background-color:#001F2C">
+                <a style="background-color:#001F2C;margin-top: 5px;font-size: 18px;text-align: left;" href="javascript:void(0)"> <span style="color:white;margin-left: -3px;" class="gw-menu-text">ESPAÇO GASTRONÔMICO</span> <b class="gw-arrow"></b> </a>
+                <ul class="gw-submenu">
+                    <li style="background-color:#23404E;color:white;"> <a style="color:white;margin-left: -57px;font-size: 12px;" href="javascript:void(0)">ALMOÇO</a> </li>
+                    <li style="background-color:#23404E;color:white;"> <a style="color:white;margin-left: -57px;font-size: 12px;" href="javascript:void(0)">AULAS DEGUSTATIVAS</a> </li>
+                    <li style="background-color:#23404E;color:white;"> <a style="color:white;margin-left: -57px;font-size: 12px;" href="javascript:void(0)">EVENTOS</a> </li>
+                </ul>
+            </li>*@
+                        <li class="init-un-active" style="border-bottom-width: 0px;border-top-width: 0px;" onclick="fecharMenuMobile(), fecharMenu()">
+                            <a class="menu-fechar" style="background-color:#001F2C;" href="/#!/fale-conosco">
+                                <span style="color:white;font-size: 18px;" class="gw-menu-text">FALE CONOSCO</span>
+                            </a>
+                        </li>
+                       
+                      
+                       
+                        <li ng-if="!credentials.isAuthorized" class="init-un-active hidden-md hidden-lg" style="border-bottom-width: 0px;border-top-width: 0px;" onclick="fecharMenuMobile(), fecharMenu()">
+                            <a class="menu-fechar" style="background-color:#001F2C;margin-top: 10px;" href="/#!/minha-conta/meu-cadastro">
+                                <span style="color:white;margin-right: 162px;font-size: 18px;" class="gw-menu-text">LOGIN</span>
+                            </a>
+                        </li>
+                      
+                        <li ng-if="credentials.isAuthorized" class="init-un-active" style="border-bottom-width: 0px;border-top-width: 0px;cursor: pointer;" onclick="fecharMenuMobile(), fecharMenu()">
+                            <a class="menu-fechar" style="background-color:#001F2C;margin-top: 10px;" ng-click="logout();">
+                                <span style="color:white;margin-right: 162px;font-size: 18px;" class="gw-menu-text">SAIR</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </menu>
+    </nav>
+
+
+
+
+    <carrinho-novo></carrinho-novo>
+    <carrinho-principal></carrinho-principal>
+
+
+</section>
+

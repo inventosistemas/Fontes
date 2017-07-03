@@ -1,0 +1,609 @@
+﻿<!DOCTYPE html>
+<html ng-app="appexpert">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    @*<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">*@
+    <meta name='theme-color' content='#0A293B' />
+    <title>FEED - A melhor carne do Brasil.</title>
+    <link rel="shortcut icon" href="~/Images/favicon.png" type="image/png">
+    @Styles.Render("~/styles/expfonts")
+    @Styles.Render("~/styles/expcore")
+
+
+  
+    
+</head>
+<body class="containerEspecial" id="corpo">
+
+    @*<div id="myModal3" class="modal fade  in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="">
+        <div class="modal-dialog modal-sm" role="document" style="top: 100px;width: 500px;">
+            <div class="modal-content" style="top: 249px;">
+                <div style="border: 1px solid #ececec;padding: 5px;background-color: #ececec;font-weight: bold;">
+                    <p>FEED</p>
+                    <p>Uma nova experiência em carnes!</p>
+
+                </div>
+                <div style="padding: 10px;font-weight: bold;">
+                    <p>Obrigado pela visita!</p>
+                    <p>Volte Sempre</p>
+                </div>
+            </div>
+        </div>
+    </div>*@
+                <div class="retirarMenu" id="Controle"></div>
+                <exp></exp>
+                <a href="#" id="dynamic-to-top" style="display: inline;opacity: -0.9;" class="up">
+                    <span>&nbsp;</span>
+                </a>
+                @Scripts.Render("~/scripts/jq")
+
+                @Scripts.Render("~/scripts/ng")
+                <script>
+                    (function (i, s, o, g, r, a, m) {
+                        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                            (i[r].q = i[r].q || []).push(arguments)
+                        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+                    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+                </script>
+
+
+                <script>
+
+
+                 
+                    $('#dynamic-to-top').on('click', function (e) {
+                        $('html, body').animate({ scrollTop: 0 }, 'slow');
+                       
+                        e.preventDefault();
+                       
+                    });
+
+
+              
+                    $("input[type=text], textarea").mouseover(zoomDisable).mousedown(zoomEnable);
+                    function zoomDisable() {
+                        $('head meta[name=viewport]').remove();
+                        $('head').prepend('<meta name="viewport" content="user-scalable=0" />');
+                    }
+                    function zoomEnable() {
+                        $('head meta[name=viewport]').remove();
+                        $('head').prepend('<meta name="viewport" content="user-scalable=1" />');
+                    }
+
+                    //javascript: document.querySelector('meta[name=viewport]').setAttribute('content', 'width=device-width,initial-scale=1,maximum-scale=10,user-zoom=no');
+
+                    function fecharMenuMobile() {
+
+                        $("#mobilefecharMenu").trigger('click');
+                    }
+
+
+                    function fecharMenu() {
+
+                        $("#fecharMenuTotal").trigger('click');
+                    }
+
+                    //function selecionadosFiltrsso(desc)
+                    //{
+          
+                    //    var id = "";
+                    //    $("#espacoFiltro").html("");
+                    //    $("input:checked").each(function () {
+
+                    //        id = $(this).attr("value");
+                    //        $("#espacoFiltro").html("<span class='red'>" + desc + "</span>");
+   
+                    //    });
+                    //}
+
+                    $(function () {
+                        $('#search').on('keyup', function () {
+                            var pattern = $(this).val();
+                            $('.searchable-container .items').hide();
+                            $('.searchable-container .items').filter(function () {
+                                return $(this).text().match(new RegExp(pattern, 'i'));
+                            }).show();
+                        });
+                    });
+
+                    //$(document).ready(function () {
+                    //    $('.carousel').carousel({
+                    //        interval: 300
+                    //    })
+                    //});
+
+                    setTimeout(function () {
+
+                        $('.carousel').carousel({
+                            interval: 4000
+                        })
+                    }, 2000);
+
+                    function abriBusca1() {
+                        document.getElementById('myInput1').focus();
+                    }
+
+                    function abriBusca2() {
+                        document.getElementById('myInput2').focus();
+                    }
+
+                    //function esconderCampoPesquisa() {
+                    //    $("#idbusca").css('display', 'none')
+
+                    //}
+
+                    //function aparecerCampo() {
+                    //    $("#idbusca").css('display', 'block')
+
+                    //}
+
+
+                    var parametrosDaUrl = window.location.href.split("?")[1]
+
+
+                    function selecionaoOcasiao(nome) {
+                        fecharMenuMobile()
+                        //fecharMenu()
+                        limparFiltro()
+
+                        setTimeout(function () {
+
+                            var selecionado = $("#ocasiao" + nome + " > input")
+                            selecionado.trigger('click');
+                        }, 2000);
+
+
+                    }
+                    function selecionaoOcasiao2(nome) {
+
+                        //fecharMenu()
+                        limparFiltro()
+
+                        setTimeout(function () {
+
+                            var selecionado = $("#ocasiao" + nome + " > input")
+                            selecionado.trigger('click');
+                        }, 2000);
+
+
+                    }
+                    function selecionaocarvao(nome) {
+
+                        //fecharMenu()
+                        limparFiltro()
+
+                        setTimeout(function () {
+
+                            var selecionado = $("#carvao" + nome + " > input")
+                            selecionado.trigger('click');
+                        }, 1500);
+
+
+                    }
+
+                    setTimeout(function () {
+
+                        //$("#barra-nav").css('opacity', 0.9);
+                    }, 400);
+
+
+                    setTimeout(function () {
+
+                        //$("#barra-nav").css('opacity', 0.9);
+                    }, 900);
+
+
+
+                    function limparFiltro() {
+
+                        var cortes = document.querySelectorAll('[name=cortes]:checked');
+                        for (i = 0; i < cortes.length; i++) {
+
+                            cortes[i].checked = false;
+                        }
+
+                        var apresentacaoCortes = document.querySelectorAll('[name=apresentacao]:checked');
+                        for (i = 0; i < cortes.length; i++) {
+
+                            apresentacaoCortes[i].checked = false;
+                        }
+
+                        var ocasiao = document.querySelectorAll('[name=ocasiao]:checked');
+                        for (i = 0; i < ocasiao.length; i++) {
+
+                            ocasiao[i].checked = false;
+                        }
+
+                        var preparo = document.querySelectorAll('[name=preparo]:checked');
+                        for (i = 0; i < preparo.length; i++) {
+
+                            preparo[i].checked = false;
+                        }
+
+                        var preparo = document.querySelectorAll('[name=preparo]:checked');
+                        for (i = 0; i < preparo.length; i++) {
+
+                            preparo[i].checked = false;
+                        }
+
+                    }
+
+                    function selecionaoCorte(nome) {
+
+                        fecharMenuMobile()
+                        fecharMenu()
+                        limparFiltro()
+                        setTimeout(function () {
+
+                            var selecionado = $("." + nome)
+                            selecionado.trigger('click');
+                        }, 1500);
+
+
+                    }
+
+                    function selecionaoTempero(nome) {
+
+
+                        setTimeout(function () {
+                            fecharMenuMobile();
+                            fecharMenu();
+                            limparFiltro();
+                            var selecionado = $("." + nome)
+                            selecionado.trigger('click');
+                        }, 1500);
+
+
+                    }
+
+                    function fecharmodal2() {
+
+                        setTimeout(function () {
+                            $('#myModal3').modal('hide')
+                        },1500);
+
+
+                    }
+
+                    function fecharmodal() {
+
+                        setTimeout(function () {
+                            $('#myModal1').modal('hide')
+                        }, 1000);
+
+
+                    }
+                    function fecharmodalProd() {
+
+                        setTimeout(function () {
+                            $('#myModal').modal('hide')
+                        }, 200);
+                    }
+
+
+
+
+                    function nav() {
+                        $('.gw-nav > li > a').click(function () {
+                            var gw_nav = $('.gw-nav');
+                            gw_nav.find('li').removeClass('active');
+                            $('.gw-nav > li > ul > li').removeClass('active');
+
+                            var checkElement = $(this).parent();
+                            var ulDom = checkElement.find('.gw-submenu')[0];
+
+                            if (ulDom == undefined) {
+                                checkElement.addClass('active');
+                                $('.gw-nav').find('li').find('ul:visible').slideUp();
+                                return;
+                            }
+                            if (ulDom.style.display != 'block') {
+                                gw_nav.find('li').find('ul:visible').slideUp();
+                                gw_nav.find('li.init-arrow-up').removeClass('init-arrow-up').addClass('arrow-down');
+                                gw_nav.find('li.arrow-up').removeClass('arrow-up').addClass('arrow-down');
+                                checkElement.removeClass('init-arrow-down');
+                                checkElement.removeClass('arrow-down');
+                                checkElement.addClass('arrow-up');
+                                checkElement.addClass('active');
+                                checkElement.find('ul').slideDown(100);
+                             
+                            } else {
+                                checkElement.removeClass('init-arrow-up');
+                                checkElement.removeClass('arrow-up');
+                                checkElement.removeClass('active');
+                                checkElement.addClass('arrow-down');
+                                checkElement.find('ul').slideUp(100);
+                               
+
+                            }
+                        });
+                        $('.gw-nav > li > ul > li > a').click(function () {
+                            $(this).parent().parent().parent().removeClass('active');
+                            $('.gw-nav > li > ul > li').removeClass('active');
+                            $(this).parent().addClass('active')
+                        });
+
+
+
+
+
+                    };
+                    var valor = 0;
+                    function atualizarCarrinho() {
+
+                        window.setTimeout(function () {
+
+                            $("#disparar").trigger('click');
+
+                            atualizaCarrinhoS()
+                        }, 500);
+
+                    }
+
+                    function atualizaCarrinhoS() {
+
+                        window.setTimeout(function () {
+
+                            $("#disparar").trigger('click');
+                            atualizCarrinhoS()
+                        }, 200);
+                    }
+
+                    function atualizCarrinhoS() {
+
+                        window.setTimeout(function () {
+
+                            $("#disparar").trigger('click');
+
+                        }, 1000);
+                    }
+
+                    function abrirCarrinho() {
+
+                        window.setTimeout(function () {
+
+                            $("#carrinhoFixo").trigger('click');
+
+
+
+                        }, 300);
+
+                    }
+                    function Refresh() {
+
+                        window.setTimeout(function () {
+
+                            window.location.assign("http://www.feed.com.br");
+
+
+
+                        }, 0);
+
+                    }
+
+                    function fecharMenuCarrinho() {
+
+
+                        $("html").toggleClass('menu-ativo-carrinho');
+                    }
+
+
+                    $("#carrinhoTopo").click(function () {
+
+                        $("#disparar").trigger('click');
+                    });
+
+                    $("#carrinhoFixo").click(function () {
+
+                        $("#disparar").trigger('click');
+                    });
+
+                    function AtualizaSite() {
+
+
+                        if ($("#Controle").hasClass("retirarMenu") == true) {
+                            $("#Controle").removeClass("retirarMenu");
+                            window.setTimeout(function () {
+
+                                tipoTela();
+                                nav();
+
+
+                            }, 1200);
+                        }
+
+
+
+
+                        window.onresize = tipoTela;
+                        window.onresize = AlinharMenuDesk;
+
+
+
+
+                        atualizarCarrinho()
+
+
+                    }
+
+
+
+
+
+
+
+
+
+                    var altura = $('#main').outerWidth(true);
+
+                    var tam = $(window).width();
+
+
+
+
+
+                    function AlinharMenuDesk() {
+
+                        altura = $('#main').outerWidth(true);
+                        tam = $(window).width();
+
+
+
+                        $('.barra-nav').css("margin-left", 0 + 'px');
+                        $('.barra-nav').css("margin-left", ((tam - altura) / 2) + 'px');
+
+                        $('.barra-nav-carrinho').css("margin-left", 0 + 'px');
+                        $('.barra-nav-carrinho').css("margin-right", ((tam - altura) / 2) + 'px');
+
+
+
+                    }
+
+
+
+
+
+
+                    function fechaCarrinho() {
+                        document.documentElement.classList.remove('menu-ativo-carrinho');
+                    }
+
+                    function tipoTela() {
+
+                        if (tam >= 1024) {
+                            window.setTimeout(function () {
+
+                                $("#disparar").trigger('click');
+
+                            }, 400);
+                            $(".menu-anchor").click(function () {
+                                $("html").toggleClass('menu-ativo');
+                            });
+
+                            $(".menu-abrir-carrinho").click(function () {
+                                $("html").toggleClass('menu-ativo-carrinho');
+                            });
+
+
+                            $(".menu-fechar-carrinho").click(function () {
+
+                                // $("html").toggleClass('menu-ativo-carrinho');
+
+                            });
+                            $(".menu-fechar").click(function () {
+                                $("html").toggleClass('menu-ativo');
+
+                            });
+
+
+                            document.documentElement.onclick = function (event) {
+                                if (event.target === document.documentElement) {
+                                    fechaCarrinho()
+                                    document.documentElement.classList.remove('menu-ativo');
+                                }
+
+                            };
+
+                        } else {
+
+                            $("#MenuCelular").addClass('MenuCelular')
+                            $(document).ready(function () {
+                                $('.menu-anchor').on('click touchstart', function (e) {
+
+                                    $('html').toggleClass('menu-active');
+                                    e.preventDefault();
+                                });
+                            });
+
+                            $(".menu-abrir-carrinho").click(function () {
+                                window.location = '#!/carrinho/produtos';
+                            });
+
+
+
+                            $("#verticalMenu").hide();
+                        }
+                    }
+
+                    
+                    $(window).scroll(function () {
+                        
+                        if ($(this).scrollTop() > 150) {
+                            $(".sobetudo2").addClass("sobetudo");
+                            
+                            $("#dynamic-to-top").addClass("EscondeAncora");
+                            $("#barra-nav").addClass("baixarCarEMenu");
+
+                            $('#menuHeaderMobile').addClass("menuFixo");
+
+                            $('#menuHeaderMobile').removeClass("escondeMenuFixo");
+
+                            $('#menuHeaderMobile').addClass("main");
+
+                           
+
+                        } else {
+                          
+                            $("#dynamic-to-top").removeClass("EscondeAncora");
+                            $(".sobetudo2").removeClass("sobetudo");
+                           
+                            $("#barra-nav").removeClass("baixarCarEMenu");
+                            $('#menuHeaderMobile').removeClass("menuFixo");
+                            $('#menuHeaderMobile').addClass("escondeMenuFixo");
+                            $('#menuHeaderMobile').removeClass("main");
+                        }
+                       
+                    });
+
+
+
+
+
+                    $("li.fade").hover(function () {
+                        $(this).fadeOut(100);
+                        $(this).fadeIn(500);
+                    });
+
+                    function abrir(a) {
+                        $('#aparecev' + a).css("display", "");
+                        $('#apareceb' + a).css("display", "");
+                    }
+
+
+
+
+                    function sair(a) {
+                        $('#aparecev' + a).css("display", "none");
+                        $('#apareceb' + a).css("display", "none");
+                    }
+
+                    $("div.produtoHome")
+                        .mouseover(function () {
+                            var $elementoPai = $(this).parent();
+
+                            var id = $elementoPai.find('[id="idBotao"]').attr("id");
+
+
+
+                        })
+                        .mouseout(function () {
+
+                        });
+
+                    $(document).click(function (e) {
+
+                        if (!$(e.target).closest('.MenuCelular').length) {
+
+                            $('html').removeClass("menu-active");
+                        }
+                    });
+
+                  
+
+                </script>
+                @*<script type="text/javascript" src="//selo.siteblindado.com/aw.js"></script>*@
+</body>
+</html>

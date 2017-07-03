@@ -1,0 +1,30 @@
+﻿
+<div class="fd-calendario" style="margin: 26px;">
+    <header class="row">
+        
+        <div class="small-12 columns text-center">
+            <div class="anterior" ng-click="mesAnterior()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 477.175 477.175"><path d="M145.188 238.575l215.5-215.5c5.3-5.3 5.3-13.8 0-19.1s-13.8-5.3-19.1 0l-225.1 225.1c-5.3 5.3-5.3 13.8 0 19.1l225.1 225c2.6 2.6 6.1 4 9.5 4s6.9-1.3 9.5-4c5.3-5.3 5.3-13.8 0-19.1l-215.4-215.5z" /></svg></div>
+            <div class="mes">{{calendarioData.mostrar.mes.nome}} {{calendarioData.mostrar.ano}}</div>
+            <div class="proximo" ng-click="proximoMes()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 477.175 477.175"><path d="M360.73 229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1 0s-5.3 13.8 0 19.1l215.5 215.5-215.5 215.5c-5.3 5.3-5.3 13.8 0 19.1 2.6 2.6 6.1 4 9.5 4 3.4 0 6.9-1.3 9.5-4l225.1-225.1c5.3-5.2 5.3-13.8.1-19z" /></svg></div>
+        </div>
+        
+    </header>
+    <section class="days row">
+        <div class="small-12 columns paddingless">
+            <div ng-repeat="dia in calendarioData.diasNaSemana" class="week">
+                <div class="each-week-day">{{dia | limitTo:3 }}</div>
+                <div ng-repeat="diadomes in calendario.dias | filter: { diadasemana: dia }" class="month">
+                    <div class="each-month-day {{diadomes.diadasemana | limitTo:3}}" id="{{diadomes.id}}"
+                    ng-class="{disabled: (diadomes.id < calendarioData.mostrar.dia) || (calendarioData.mostrar.mes.id < calendarioData.hoje.mes.id && calendarioData.mostrar.ano == calendarioData.hoje.ano) || calendarioData.mostrar.ano < calendarioData.hoje.ano,
+                         enabled: diadomes.id >= calendarioData.mostrar.dia,
+                         hoje: (calendarioData.mostrar.mes.id == calendarioData.hoje.mes.id) && (diadomes.id == calendarioData.mostrar.dia),
+                         selected:(diadomes.id == calendarioData.mostrar.dia) && (calendarioData.mostrar.mes.id == calendarioData.hoje.mes.id && calendarioData.mostrar.ano == calendarioData.hoje.ano)}"
+                         ng-click="(calendarioData.mostrar.mes.id >= calendarioData.hoje.mes.id && calendarioData.mostrar.ano >= calendarioData.hoje.ano) && ((diadomes.id >= calendarioData.mostrar.dia) || (diadomes.id >= calendarioData.mostrar.dia)) || calendarioData.mostrar.ano > calendarioData.hoje.ano ? setDiaCalendario(diadomes) : ''" formatodata="{{diadomes.formatodata}}">
+                        <span class="dia">{{diadomes.id}}</span>
+                        <span class="texto" ng-show="(calendarioData.mostrar.mes.id == calendarioData.hoje.mes.id) && (diadomes.id == calendarioData.mostrar.dia)">hoje</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,98 @@
+﻿@model Boolean
+
+<div class="main-placeholder cortes">
+    <div class="row">
+        <div class="small-12 columns paddingless show-for-medium"><img alt="" src="/Images/assets/emporio.jpg" /></div>
+        <div class="small-12 columns paddingless show-for-small-only"><img alt="" src="/Images/assets/emporio-mobile.jpg" /></div>
+    </div>
+    {{item.Produto.ID}}
+    <div class="grey">
+        @*vitrine*@
+        <div class="row">
+            <div class="small-12 columns vitrine">
+                <h1>Mais vendidos</h1>
+
+                <div class="small-12 columns paddingless-on-desktop">
+                    <section class="produto mais-vendidos small-6 medium-4 large-3 columns float-left" ng-repeat="item in maisvendidos">
+                        <a href="#!/produto/{{item.Produto.ID}}">
+                            <header>
+                                <div class="nome">{{item.Produto.SubCategoria.Descricao | limitTo:20}}</div>
+                            </header>
+
+                            <figure>
+                                <div class="promocao show-for-medium hide">até 10% off</div>
+                                @if (Model)
+                                {
+                                    <img alt="" ng-src="{{item.Produto.ImagemMobile}}" fallback-src="~/Images/assets/unavailable.png" />
+                                }
+                                else
+                                {
+                                    <img alt="" ng-src="{{item.Produto.Imagem}}" fallback-src="~/Images/assets/unavailable.png" />
+                                }
+                            </figure>
+
+                            <footer>
+                                <div class="small-12 columns">
+                                    @*<div class="corte">{{item.Produto.ProdutoTipo.Descricao | capitalize}}</div>*@
+                                    <div class="corte">
+                                        <span>{{item.Produto.ProdutoTipo.Descricao | capitalize}}</span>
+                                        <label ng-class="item.Produto.Marca.Descricao | lowercase">{{item.Produto.Marca.Descricao}}</label>
+                                    </div>
+                                    <div class="preco">A partir de <strong>{{item.Produto.PrecoVigente | currency:"R$ "}}</strong></div>
+                                </div>
+
+                                <div class="promocao show-for-small-only hide">até 10% off</div>
+                            </footer>
+                        </a>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="small-12 columns vitrine">
+            <h1>Todos os Itens</h1>
+
+            @*slider*@
+            <div class="small-12 columns todos-cortes show-for-medium">
+                <ul class="categoriaslider">
+                    <li ng-repeat="item in tiposdecorte" ng-click="setSelectedCorte(item.ID)" ng-class="{selected: item.ID == idSelectedCorte}">{{item.Descricao}}</li>
+                </ul>
+            </div>
+
+            <div class="small-12 columns todos-cortes show-for-small-only">
+                <select class="fd-input fd-lt-spacing" ng-model="combo" ng-options="item.ID as item.Descricao for item in tiposdecorte" ng-change="setSelectedCorte(combo)" @*ng-init="combo.ID = 2"*@></select>
+            </div>
+
+            <div class="small-12 columns paddingless-on-desktop">
+                <section class="produto small-6 medium-4 large-3 columns float-left" ng-repeat="item in produtosporcorte" ng-show="produtosporcorte">
+                    <a ui-sref="produto({id:item.ID})">
+                        <header>
+                            <div class="nome">{{item.SubCategoria.Descricao | limitTo:20}}</div>
+                            <div class="promocao show-for-medium hide">até 10% off</div>
+                        </header>
+
+                        <figure><img alt="" ng-src="{{item.Imagem}}" fallback-src="~/Images/assets/unavailable.png" /></figure>
+
+
+                        <footer>
+                            <div class="small-12 columns">
+                                @*<div class="corte">{{item.ProdutoTipo.Descricao | capitalize}}</div>*@
+                                <div class="corte">
+                                    <span>{{item.ProdutoTipo.Descricao | capitalize}}</span>
+                                    <label ng-class="item.Marca.Descricao | lowercase">{{item.Marca.Descricao}}</label>
+                                </div>
+
+                                <div class="preco">A partir de <strong>{{item.PrecoVigente | currency:"R$ "}}</strong></div>
+                            </div>
+
+                            <div class="promocao show-for-small-only hide">até 10% off</div>
+                        </footer>
+                    </a>
+                </section>
+                <p ng-show="produtosporcorte == null">Não há produtos disponíveis com esse corte</p>
+            </div>
+        </div>
+    </div>
+</div>

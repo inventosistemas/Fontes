@@ -1,0 +1,191 @@
+﻿<nav class="" ng-controller="CarrinhoProdutosController">
+    <div id="menuHeaderMobile" class="escondeMenuFixo" style="height: 50px !important;">
+        <div class="" id="barraMenu">
+            <div style="text-align: center;">
+                <a href="/">
+                    <img src="~/Images/Imagens/logo.jpg" style="" class="segundoLogo" />
+                </a>
+            </div>
+
+            @*<p class="menu-anchor posicaoChamaMenu grow menu-abrir " style="margin-top: -63px;"></p>*@
+            @*<p class="menu-anchor posicaoChamaMenu grow menu-abrir " style="margin-top: -57px;cursor: pointer;"><span class="esconderNomeMenu">MENU</span> </p>*@
+            <p class="menu-anchor posicaoChamaMenu menu-abrir " style="margin-top: -57px;cursor: pointer;"><input src="~/Images/Imagens/menu_novo.png" type="image" style="" class="posMenu"></p>
+            <p id="carrinhoTopo" class="menu-anchor-carrinho posicaoChamaMenu  menu-abrir-carrinho CarrinhoMobile" style="margin-top:-55px;">
+
+                @*<span ng-class="{bola : totalItens > 0  }" class="bolaVazia" style="margin-left: 21px;font-weight: bold;padding-top: 3px;">{{totalItens}}</span>
+
+                    <img ng-class="{carrinhonovo2 : totalItens > 0 , carrinhovazio2 : totalItens < 1   }" src="~/Images/Imagens/Carrinho31.png" type="image" style="height: 34px;cursor: pointer;" class="alteraCor carrinhocheio2" />*@
+
+
+                <span ng-if="totalItens > 0" ng-class="{carrinhoMaiorquenove2 : totalItens > 9 , carrinhoMenorquenove2 : totalItens < 10   }">{{totalItens}}</span>
+                <img ng-if="totalItens > 0" src="~/Images/Imagens/CarrinhoBraBola.png" type="image" style="background: #0A293B !important;" class="carrobaixocheio" />
+                <img ng-if="!totalItens > 0" src="~/Images/Imagens/carrinho_novo_vazio.png" type="image" style="background: #0A293B !important;" class="carrobaixovazio" />
+
+
+            </p>
+           
+          
+          <div style="color:white;height:30px;float:right;margin-top: -53px;margin-right: 88px;" class="hidden-lg hidden-md">
+
+                <a ng-if="credentials.isAuthorized" href="/#!/minha-conta/meu-cadastro"> <input class="" src="~/Images/Imagens/login_novobranco.png" type="image" style="background: #0A293B !important;width: 31px;cursor:pointer;margin-right: -169px;margin-top: 13px;"></a>
+                <a ng-if="!credentials.isAuthorized" href="/#!/login"> <input class="" src="~/Images/Imagens/login_novobranco.png" type="image" style="background: #0A293B !important;width: 31px;cursor:pointer;margin-right: -169px;margin-top: 13px;"></a>
+            </div>
+            <div style="color:white;float:right;margin-top: -52px;margin-right: 44px;" class="hidden-xs hidden-sm">
+
+                <a> <input src="~/Images/Imagens/login_novobranco.png" type="image" style="width: 21px;cursor:pointer;clear: both;margin-bottom: -6px;" class=""></a>
+
+                <span ng-if="credentials.isAuthorized" style="font-weight:bold;font-size: 15px;">Olá {{NomeLogado}}</span>
+                <span ng-if="!credentials.isAuthorized" style="font-weight:bold;font-size: 15px;">Olá Visitante</span>
+                <ul style="margin-top: -3px;margin-left: 27px;">
+                    <li class="drop prim ulmaiorli" style="z-index:9999;    margin-left: -37px;">
+                        <a href="#" class="ullia" style="font-weight:bold;color:#FF6B00;line-height: 19px;">Minha conta</a><span class="triangle2"></span>
+                        <div class="dropdownContain" style="margin-top:-50px!important">
+                            <div class="dropOut" style="margin-left: -49px;margin-top: 10px;">
+                                <div class="triangle"></div>
+                                <ul style="border-top: 4px solid #FF6B00; width:100%">
+                                    <li ng-if="!credentials.isAuthorized" style="color:white;align-content:center;text-align:center;background-color:#00953A !important;    padding-left: 6px;margin-left:6.5px;" class="btn btn-success"><a style="color:white !important;font-weight:bold;" href="/#!/login"> Faça seu login</a> </li>
+                                    <li ng-if="!credentials.isAuthorized" style="padding-top: 22px;margin-right: 0px;margin-left: 11px;
+    padding-left: 0px;padding-bottom: 13px;font-size: 13px;">Novo por aqui?<a href="/#!/cadastro/passo-1" style="color:#003E93;font-weight:bold;"> Registre-se</a></li>
+
+
+                                    <li ng-if="credentials.isAuthorized" style="font-weight:bold;"><a href="/#!/minha-conta/meus-pedidos"> Meus pedidos</a></li>
+                                    <li ng-if="credentials.isAuthorized" style="font-weight:bold;"><a href="/#!/minha-conta/meus-enderecos">Meus endereços</a></li>
+                                    <li ng-if="credentials.isAuthorized" style="font-weight:bold;"><a href="/#!/minha-conta/meu-cadastro">Minha conta</a></li>
+                                    <li ng-if="credentials.isAuthorized" style="font-weight:bold;"><a href="" ng-click="logout();">Sair</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div style="float: right;margin-top: -44px;clear: both;margin-right: 245px;" class="hidden-xs hidden-sm">
+                <div id="">
+                    <div id="">
+                        <form class="" ng-submit="buscar(term)" onsubmit="return submitForm(this)" name="searchform" method="get">
+                            @*<img style="width: 39px;float: right;height: 33px;cursor:pointer;"
+                                onclick="buscar(term)" id="lupaBusca" src="~/Images/Imagens/Lupa31.png" type="image">*@
+                            <input style="width: 24px;height: 24px;cursor:pointer;margin-top: -9px;margin-left: -147px;position: absolute;background-color:#2e5162;z-index: 9999;" type="image" value="Buscar" onclick="buscar(term)" id="gosearch" src="~/Images/Imagens/lupanovomenubranco.png" align="absmiddle" class="alteraCor">
+                            <span style="background-color:#2e5162;width:36px;height:36px;position:absolute;margin-top: -15px;margin-left: -153px;"></span>
+                            <input id="buscar1" placeholder="Pesquisar" ng-model="term"
+                                   style="border: 0px; float: right; width: 288px; margin-right: 17px; padding: 5px 5px 5px 45px; height: 36px; margin-top: -15px;" type="text" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <form class="hidden-lg hidden-md" ng-submit="buscar(term)" name="searchform" method="get" onsubmit="return submitForm(this)">
+            <fieldset>
+
+                @*<input style="position: absolute;top: 68px;left: 88%;width: 12%;" type="image" value="Buscar" onclick="buscar(term)" id="gosearch" src="~/Images/lupamo.png" align="absmiddle">*@
+                <input style="" type="image" value="Buscar" onclick="buscar(term)" id="gosearch" src="~/Images/Imagens/lupanovomenubranco.png" align="absmiddle" class="alteraCor  sobetudo2 lupa2">
+
+                <span style="" class="quadradoBusca"></span>
+
+                <input ng-model="term" style="border: none;width: 245%;height: 42px;padding-left: 10px;border-top: none;border-bottom:1px solid gray;" type="text" value="" onfocus="this.value=''" name="w" id="sli_search_1" autocomplete="on" placeholder="Digite aqui o que você procura!" data-provide="rac">
+            </fieldset>
+        </form>
+    </div>
+    <div class="main" id="main">
+        <div class="" id="mosaicoFeed"></div>
+        <div id="menuHeader">
+            <div class="" id="barraMenu">
+                <div style="text-align: center;">
+                    <a href="/">
+                        <img src="~/Images/Imagens/logo.jpg" class="logoMobile alteraCor" style="height: 99px;width:88px;margin-top: -77px;" />
+                    </a>
+
+
+                </div>
+                <div class="hidden-sm hidden-xs" ng-include="forAnotherCtrl.url">
+
+                </div>
+                @*MENU AQUI*@
+                <p id="mobilefecharMenu" class="menu-anchor posicaoChamaMenu  menu-abrir2 hidden-md hidden-lg"><input src="~/Images/Imagens/menu_novo.png" type="image" style="cursor:pointer;margin-left: -17%;height: 34px;margin-top: -19px;    background: #0A293B !important;" class=""></p>
+
+                <p id="carrinhoTopo" class="menu-anchor-carrinho posicaoChamaMenu  menu-abrir-carrinho CarrinhoMobile" style="">
+
+                    @*<span ng-class="{bola : totalItens > 0  }" class="bolaVazia" style="margin-left: 21px;font-weight: bold;padding-top: 3px;">{{totalItens}}</span>*@
+
+
+                    @*<img ng-class="{carrinhonovo : totalItens > 0 , carrinhovazio : totalItens < 1   }" src="~/Images/Imagens/CarrinhoBraBola.png" type="image" style="height: 34px;cursor: pointer;" class="alteraCor carrinhocheio" />*@
+                    <span ng-if="totalItens > 0" ng-class="{carrinhoMaiorquenove : totalItens > 9 , carrinhoMenorquenove : totalItens < 10   }">{{totalItens}}</span>
+                    <img ng-if="totalItens > 0" src="~/Images/Imagens/CarrinhoBraBola.png" type="image" style="background: #0A293B !important;" class=" carronovoCheio" />
+                    <img ng-if="!totalItens > 0" src="~/Images/Imagens/carrinho_novo_vazio.png" type="image" style="background: #0A293B !important;" class=" carronovo" />
+
+                </p>
+                <div style="color:white;height:30px;float:right;margin-top: -53px;margin-right: 88px;" class="hidden-lg hidden-md">
+
+                    <a ng-if="credentials.isAuthorized" href="/#!/minha-conta/meu-cadastro"> <input src="~/Images/Imagens/login_novobranco.png" type="image" style="background: #0A293B !important;cursor:pointer;margin-left: 310%;height: 32px;margin-top: -8px;" class=""></a>
+                    <a ng-if="!credentials.isAuthorized" href="/#!/login"> <input src="~/Images/Imagens/login_novobranco.png" type="image" style="background: #0A293B !important;cursor:pointer;margin-left: 310%;height: 32px;margin-top: -8px;" class=""></a>
+                </div>
+
+                <div style="color: white;float: right;margin-top: -45px;margin-right: 31px;" class="hidden-xs hidden-sm">
+
+
+
+                    <a> <input src="~/Images/Imagens/login_novobranco.png" type="image" style=" background: #0A293B !important;width: 22px;cursor:pointer;clear: both;margin-bottom: -6px;" class=""></a>
+
+                    <span ng-if="credentials.isAuthorized" style="font-weight:bold;">Olá {{NomeLogado}}</span>
+                    <span ng-if="!credentials.isAuthorized" style="font-weight:bold;">Olá Visitante</span>
+
+                    <ul style="margin-top: -3px;margin-left: 27px;">
+                        <li class="drop prim ulmaiorli" style="z-index:9999;    margin-left: -37px;">
+                            <a href="#" class="ullia" style="font-weight:bold;color:#FF6B00;line-height: 19px;">Minha conta</a><span class="triangle2"></span>
+                            <div class="dropdownContain" style="margin-top:-50px!important">
+                                <div class="dropOut" style="margin-left: -49px;margin-top: 13px;">
+                                    <div class="triangle"></div>
+                                    <ul style="border-top: 4px solid #FF6B00; width:100%">
+                                        <li ng-if="!credentials.isAuthorized" style="color:white;align-content:center;text-align:center;background-color:#00953A !important;margin-left:6.5px;    padding-left: 6px;" class="btn btn-success"><a style="color:white !important;font-weight:bold;" href="/#!/login"> Faça seu login</a> </li>
+                                        <li ng-if="!credentials.isAuthorized" style="padding-top: 22px;margin-right: 0px;margin-left: 11px;
+    padding-left: 0px;padding-bottom: 13px;font-size: 13px;">Novo por aqui?<a href="/#!/cadastro/passo-1" style="color:#003E93;font-weight:bold;"> Registre-se</a></li>
+
+
+                                        <li ng-if="credentials.isAuthorized" style="font-weight:bold;"><a href="/#!/minha-conta/meus-pedidos"> Meus pedidos</a></li>
+                                        <li ng-if="credentials.isAuthorized" style="font-weight:bold;"><a href="/#!/minha-conta/meus-enderecos">Meus endereços</a></li>
+                                        <li ng-if="credentials.isAuthorized" style="font-weight:bold;"><a href="/#!/minha-conta/meu-cadastro">Minha conta</a></li>
+                                        <li ng-if="credentials.isAuthorized" style="font-weight:bold;"><a href="" ng-click="logout();">Sair</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div style="height: 30px;float: right;margin-top: -37px;clear: both;margin-right: 235px;" class="hidden-xs hidden-sm">
+                    <div id="">
+                        <div id="">
+                            <form class="" ng-submit="buscar(term)" onsubmit="return submitForm(this)" name="searchform" method="get">
+                                @*<img style="width: 39px;float: right;height: 33px;cursor:pointer;"
+                                    onclick="buscar(term)" id="lupaBusca" src="~/Images/Imagens/Lupa31.png" type="image">*@
+                                <input style="width: 24px;height: 24px;cursor:pointer;margin-top: -9px;margin-left: -147px;position: absolute;background-color:#2e5162;z-index: 9999;" type="image" value="Buscar" onclick="buscar(term)" id="gosearch" src="~/Images/Imagens/lupanovomenubranco.png" align="absmiddle" class="alteraCor">
+                                <span style="background-color:#2e5162;width:36px;height:36px;position:absolute;margin-top: -15px;margin-left: -153px;"></span>
+                                <input id="buscar1" placeholder="Pesquisar" ng-model="term"
+                                       style="border: 0px; float: right; width: 288px; margin-right: 17px; padding: 5px 5px 5px 45px; height: 36px; margin-top: -15px;" type="text" />
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <form class="hidden-lg hidden-md" ng-submit="buscar(term)" name="searchform" method="get" onsubmit="return submitForm(this)">
+                <fieldset>
+                    <input style="" type="image" value="Buscar" onclick="buscar(term)" id="gosearch" src="~/Images/Imagens/lupanovomenubranco.png" align="absmiddle" class="alteraCor lupa1">
+                    <span class="quadradoBusca"></span>
+                    <input style="border: none;width: 245%;height: 42px;padding-left: 10px;border-top: none;border-bottom:1px solid gray;"
+                           ng-model="term" type="text" value="" onfocus="this.value=''" name="w" id="sli_search_1" autocomplete="on" placeholder="Digite aqui o que você procura!" data-provide="rac">
+                    @*<input style="position: absolute;top: 176px;left: 88%;width: 12%;" type="image" value="Buscar" onclick="buscar(term)" id="gosearch" src="~/Images/lupamo.png" align="absmiddle" class="">*@
+
+
+
+                </fieldset>
+            </form>
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+

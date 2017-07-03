@@ -1,0 +1,25 @@
+﻿<div class="menu-logado" ng-show="menulogado == true">
+    <div class="title">
+        <span class="text login" ng-if="!credentials.isAuthorized">Login</span>
+        <span class="text login" ng-if="credentials.isAuthorized">{{credentials.userName| limitTo:16}}</span>
+        <div class="close" ng-click="menulogado = false">X</div>
+    </div>
+
+    <form class="form-login" ng-if="!credentials.isAuthorized" novalidate name="loginform" ng-submit="submitLogin(loginform.$valid, false)">
+        <input type="text" class="fd-input" placeholder="email" ng-model="$parent.login.UserName" required ng-required="true" ng-trim='false' />
+        <input type="password" class="fd-input" placeholder="senha" ng-model="$parent.login.Password" required ng-required="true"/>
+        <p class="error" ng-if="usernotfound">E-mail ou senha não conferem</p>
+        <div style="margin:10px 0 10px 0px">
+            <a ui-sref="esqueciminhasenha" class="forgot">Esqueci minha senha</a>
+        </div>
+        <button type="submit" class="small-12 medium-4 columns fd-button fd-primary fd-full-width fd-small-font" ng-disabled="loginform.$invalid">Enviar</button>
+        <a ng-click="MeCadastrar();" class="small-12 medium-4 columns fd-button fd-hollow fd-full-width fd-small-font">Fazer cadastro</a>
+    </form>
+
+    <ul ng-if="credentials.isAuthorized">
+        <li><a href="#!/minha-conta/meus-pedidos">Meus Pedidos</a></li>
+        <li><a href="#!/minha-conta/meu-cadastro">Meu Cadastro</a></li>
+        <li><a href="#!/minha-conta/meus-enderecos">Meus Endereços</a></li>
+        <li><a ng-click="logout();">Sair</a></li>
+    </ul>
+</div>

@@ -1,0 +1,22 @@
+﻿<div class="main-placeholder login">
+    <div class="grey">
+        <div class="row">
+            <div class="small-12 medium-11 medium-centered columns">
+                <h1>Faça seu login</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="small-12 medium-4 medium-centered columns">
+            <form class="form-login" ng-if="!credentials.isAuthorized" novalidate name="loginform" ng-submit="submitLogin(loginform.$valid, true)">
+                <input type="text" class="fd-input" placeholder="email" ng-model="$parent.login.UserName" required ng-required="true" ng-trim="false"/>
+                <input type="password" class="fd-input" placeholder="senha" ng-model="$parent.login.Password" required ng-required="true" />
+                <p class="error" ng-if="usernotfound">E-mail ou senha não conferem</p>
+                <a ui-sref="esqueciminhasenha" class="forgot">Esqueci minha senha</a>
+                <button type="submit" class="small-12 medium-4 columns fd-button fd-primary fd-full-width fd-small-font" ng-disabled="loginform.$invalid">Enviar</button>
+                <a ng-click="MeCadastrar();" class="small-12 medium-4 columns fd-button fd-hollow fd-full-width fd-small-font">Fazer cadastro</a>
+            </form>
+        </div>
+    </div>
+</div>

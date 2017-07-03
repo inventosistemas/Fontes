@@ -1,0 +1,132 @@
+﻿<div class=" meus-enderecos ">
+    <div class="small-12 medium-11 columns medium-centered container">
+        @*2columns*@
+        <div class="small-12 medium-6 columns paddingless-on-mobile divTodosEnderecos" style="">
+            @*caixa de endereco*@
+            <div class="address-box small-12 columns" style="border: 5px solid #efefef;padding-left: 65px;max-width:450px;text-align:center;padding-top:20px; padding-bottom:20px;">
+                <div class="small-12 columns" ng-repeat="item in enderecos | orderBy:'-ID'" style="padding-top: 30px !important;">
+                    <div class="row" style="text-align: left;">
+                        <div class="small-6 columns" style="width:70%;float:left;">
+                            <div class="title">
+                                <div class="name" style="font-size:20px;font-weight:bold;padding-top: 16px !important;">
+                                    {{item.Identificacao}} <small>{{item.Tipo == 0 || item.Principal == true ? '(principal)' : ''}}</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="small-6 columns" style="width:20%;float:left;">
+                            <div class="buttons small-12 columns">
+                                @*<button type="submit" class="small-8 columns fd-button fd-grey">Editar</button>*@
+                                <button type="submit" style="padding-bottom: 5px;padding-top: 0px;" class="small-3 columns float-right fd-button fd-secondary  glyphicon-trash"  ng-click="ExcluiEndereco(item)" ng-hide="item.Tipo == 0 || item.Principal == true">
+                                    <svg style="fill: white;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 326.211 326.211">
+                                        <path d="M199.317 10.846V0h-72.433v10.846H41.282v43.87H284.93v-43.87M70.247 326.21h185.716l13.34-257.866h-212.4L70.248 326.21zm113.977-197.595h22.997V260.02h-22.995V128.616zm-65.237 0h22.997V260.02h-22.997V128.616z" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    @*descricao endereco*@
+                    <div class="row border-top" style="margin-top: 15px;border-top: 1px solid #dedede;text-align:center;width:95%;">
+                        <div class="small-12 columns">
+                            <div class="description" style="margin-top:10px;">
+                               {{item.Logradouro}}, {{item.Numero}}, {{item.Complemento}} - {{item.CEP}}, {{item.Bairro}}<br />
+                                {{item.Cidade.Nome}} - {{item.Cidade.Estado.Nome}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @*adicionar novo*@
+        <div class="small-12 medium-6 columns paddingless-side-on-mobile" ng-hide="addaddress">
+            <div class="add-new-address small-12 columns">
+                <button style="margin-top: 60px;" type="submit" class="small-8 columns fd-button fd-primary" ng-click="addaddress = true">Adicionar endereço</button>
+            </div>
+        </div>
+
+        @*form novo*@
+        <div class="small-12 medium-6 columns paddingless-side-on-mobile divNovosEnderecos" ng-show="addaddress" style="text-align: left;">
+            <div class="small-12 columns" style="float: left;width: 100%;">
+                <form class="form-new-address" novalidate name="enderecoform" ng-submit="submitEndereco(enderecoform, endereco)">
+                    <div class="">
+                        <div class="small-12 columns" >
+                            <label class="fd-label" style="width: 100%;">
+                                <span>Nome do local</span>
+                                <input style="width: 100%;" type="text" class="fd-input fd-medium fd-lt-spacing" ng-model="endereco.Identificacao" required ng-required="true"/>
+                            </label>
+                        </div>
+
+                        <div class="small-12 columns">
+                            <label class="fd-label" style="width: 100%;">
+                                <span>CEP</span>
+                                <input style="width: 100%;" id="cepfield" type="tel" class="fd-input fd-medium fd-lt-spacing"  ng-model="endereco.CEP" required ng-required="true" ng-blur="endereco.CEP.length == 9 ? getCep(endereco) : ''"/>
+                            </label>
+                        </div>
+
+                        <div class="small-12 columns">
+                            <label class="fd-label" style="width: 100%;">
+                                <span>Endereço</span>
+                                <input style="width: 100%;" type="text" class="fd-input fd-medium fd-lt-spacing" ng-model="endereco.Logradouro" required ng-required="true"/>
+                            </label>
+                        </div>
+
+                        <div class="small-12 medium-6 columns" style="width: 48%;float: left;margin-right:4%;">
+                            <label class="fd-label" style="width: 100%;">
+                                <span>Número</span>
+                                <input style="width: 100%;" type="text" class="fd-input fd-medium fd-lt-spacing" ng-model="endereco.Numero" required ng-required="true"/>
+                            </label>
+                        </div>
+
+                        <div class="small-12 medium-6 columns" style="width: 48%;float: left;">
+                            <label class="fd-label" style="width: 100%;">
+                                <span>Complemento</span>
+                                <input style="width: 100%;" type="text" class="fd-input fd-medium fd-lt-spacing" ng-model="endereco.Complemento" />
+                            </label>
+                        </div>
+
+                        <div class="small-12 columns">
+                            <label class="fd-label" style="width: 100%;">
+                                <span>Bairro</span>
+                                <input style="width: 100%;" type="text" class="fd-input fd-medium fd-lt-spacing" ng-model="endereco.Bairro" required ng-required="true"/>
+                            </label>
+                        </div>
+
+                        <div class="small-12 medium-6 columns" style="width: 48%;float: left;margin-right:4%;">
+                            <label class="fd-label" style="width: 100%;">
+                                <span>Cidade</span>
+                                <input style="width: 100%;" type="text" class="fd-input fd-medium fd-lt-spacing" ng-model="endereco.Cidade.Nome" readonly="readonly" required ng-required="true"/>
+                            </label>
+                        </div>
+
+                        <div class="small-12 medium-6 columns" style="width: 48%;float: left;">
+                            <label class="fd-label" style="width: 100%;">
+                                <span>Estado</span>
+                                <input style="width: 100%;" type="text" class="fd-input fd-medium fd-lt-spacing" ng-model="endereco.Cidade.Estado.Nome" readonly="readonly" required ng-required="true"/>
+                            </label>
+                        </div>
+
+                        <div class="small-12 medium-6 columns">
+                            <input type="checkbox" ng-model="endereco.Principal" checked="checked"><label>Endereço Principal</label>
+                        </div>
+
+                       
+
+                        <div class="small-12 medium-6 columns" style="width: 48%;float: left;margin-right:4%;">
+                            <button style="height: 54px;" type="submit" class="small-12 medium-4 columns fd-button fd-hollow fd-full-width fd-small-font" ng-click="addaddress = false">Cancelar</button>
+                        </div>
+
+                        <div class="small-12 medium-6 columns" style="width: 48%;float: left;">
+                            <button type="submit" class="small-12 medium-4 columns fd-button fd-primary fd-full-width fd-small-font" ng-disabled="enderecoform.$invalid">Salvar</button>
+                        </div>
+                        <div class="small-12 medium-6 columns" style="text-align: right;">
+                            <p>Todos os campos são obrigatórios</p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</div>

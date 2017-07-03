@@ -1,0 +1,299 @@
+﻿
+    <div class="step" ng-hide="step != 2">
+
+
+
+        <div class="container carrinho-pagamento containerPagamento" style="">
+            <div class="small-12 medium-10 columns medium-centered">
+                <div class="">
+                    <div class="small-12 columns ">
+                        <form novalidate name="cadastroform" ng-submit="submitCadastro(cadastroform.$valid)">
+                            <div class="small-12 medium-6 columns ContainerNome">
+                                <label class="fd-label" style="width: 100%;">
+                                    <span>Nome (como no cartão)</span>
+                                    <input style="width: 100%;" type="text" class="fd-input fd-medium fd-lt-spacing" placeholder="Nome completo" ng-model="pedidodata.DadosCartao.Titular" required ng-required="true" />
+                                </label>
+                            </div>
+
+                            <div class="small-12 medium-6 columns numero-cartao ContainerNumero" >
+                                <div class="pagamento-bandeira bandCart" style="">
+                                    <img alt="" src="~/Images/cardflags/bandeira-visa.svg" ng-show="showflag == 'Visa'" />
+                                    <img alt="" src="~/Images/cardflags/bandeira-master.svg" ng-show="showflag == 'Mastercard'" />
+                                    <img alt="" src="~/Images/cardflags/bandeira-amex.svg" ng-show="showflag == 'AMEX'" />
+                                    <img alt="" src="~/Images/cardflags/bandeira-diners.svg" ng-show="showflag == 'Diners'" />
+                                    <img alt="" src="~/Images/cardflags/bandeira-elo.svg" ng-show="showflag == 'Elo'" />
+                                </div>
+                                <label class="fd-label" style="width: 100%;">
+                                    <span>Número do cartão</span>
+                                    <input style="width: 100%;" id="numerocartao" type="tel" class="fd-input fd-medium fd-lt-spacing" placeholder="Número do cartão"
+                                           ng-model="pedidodata.DadosCartao.Numero" required ng-required="true" ng-blur="pedidodata.DadosCartao.Numero.length>=13 ? identifyCard(pedidodata.DadosCartao.Numero): '';" />
+                                </label>
+                            </div>
+
+                            <div class="small-6 medium-2 columns ContainerMes" style="">
+                                <label class="fd-label" style="width: 100%;">
+                                    <span>Mês val.</span>
+                                    <input style="width: 100%;" id="mes" type="tel" class="fd-input fd-medium fd-lt-spacing" ng-model="pedidodata.DadosCartao.Mes" required ng-required="true" placeholder="MM" />
+                                </label>
+                            </div>
+
+                            <div class="small-6 medium-3 columns ContainerAno" style="">
+                                <label class="fd-label" style="width: 100%;">
+                                    <span>Ano val.</span>
+                                    <input style="width: 100%;" id="ano" type="tel" class="fd-input fd-medium fd-lt-spacing" ng-model="pedidodata.DadosCartao.Ano" required ng-required="true" placeholder="AAAA" />
+                                </label>
+                            </div>
+
+                            <div class="small-12 medium-4 columns ContainerCod" style="">
+                                <label class="fd-label" style="width: 100%;">
+                                    <span>Código de segurança</span>
+                                    <input style="width: 100%;" id="cvv" type="tel" class="fd-input fd-medium fd-lt-spacing" placeholder="CVV" ng-model="pedidodata.DadosCartao.CodigoSeguranca" required ng-required="true" />
+                                </label>
+                            </div>
+
+                            <div class="small-12 medium-4 columns position-right">
+                                <label class="fd-label">
+                                    <span>&nbsp;</span>
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div style="clear:both;"></div>
+                <div class="grey" style="padding: 20px;text-align: right;margin-bottom:20px;">
+                    <div>
+                        <table style="text-align: left;">
+                            <tbody class="borderless">
+                                <tr>
+                                    <td>Subtotal</td>
+                                    <td>{{$root.carrinho.SubTotal | currency:"R$ "}}</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Frete</td>
+                                    <td>{{$root.carrinho.Frete | currency:"R$ "}}</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Desconto</td>
+                                    <td>{{$root.carrinho.ValorDesconto | currency:"R$ "}}</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="">Total</td>
+                                    <td style="font-size: 19px!important; color: #1daee4;font-weight:bold;" class="total">{{$root.carrinho.SubTotal + $root.carrinho.Frete - $root.carrinho.ValorDesconto | currency:"R$ "}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        @*<table class="small-12 table-sumario float-right">
+                                <tbody class="borderless">
+                                    <tr>
+                                        <td class="text-right">Total</td>
+                                        <td class="text-left total">{{carrinho.SubTotal + carrinho.Frete - carrinho.Desconto | currency:"R$ "}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>*@
+                    </div>
+                </div>
+
+                <div class="small-12 medium-12 columns paddingless actions" style="text-align: right;">
+                    <div class="small-12 medium-12 columns paddingless">
+                        <button style="" type="button" class="fd-button fd-secondary fd-large float-right btnContinuar" ng-click="cadastroform.$valid && pedidodata.PagamentoMetodoFormaID != null ? telaconfirmar() : ''" ng-disabled="cadastroform.$invalid || pedidodata.PagamentoMetodoFormaID == null">continuar</button>
+                        @*<button style="" type="button" class="fd-button fd-secondary fd-large float-right btnContinuar" ng-click="cadastroform.$valid && pedidodata.PagamentoMetodoFormaID != null ? toggleModalResumo() : ''" ng-disabled="cadastroform.$invalid || pedidodata.PagamentoMetodoFormaID == null">continuar</button>*@
+                        <button style="" type="button" class="fd-button fd-primary fd-large float-right btnVoltar" ui-sref="carrinho.produtos">< voltar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="step" ng-hide="step != 3">
+
+        <div class="">
+            <div class="title grey lighter ">
+                <div class="small-12 columns">
+                    <h1>Resumo do pedido</h1>
+                    @*<div class="close" ng-click="toggleModalResumo();">x</div>*@
+                </div>
+
+                <div class="small-12 columns paddingless show-for-small-only">
+                    <button style="background-color:#00953A !important" type="button" class="fd-button fd-secondary fd-large fd-full-width float-right bt-confirmar hidden-lg hidden-md" ng-click="gravaPedido();">FINALIZAR PAGAMENTO</button>
+                </div>
+            </div>
+
+            <div class="content row table-resumo-produtos-holder flexFinaliza" style="margin-left: 0px;">
+
+                <div style="max-height:297px;display: flex;overflow-y: scroll;" class="tamanhoCampoFin">
+                    <table class="fd-table product-table" style="justify-content:center;width:100%;font-size:14px!important;overflow-y: scroll;">
+                        <thead>
+                            <tr class="">
+                                <th class="" style="color:#A8A7A8;">produto</th>
+                                <th class="" style="color:#A8A7A8;">Valor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr ng-repeat="item in carrinho.Itens" class="small-12 columns paddingless list">
+                                <td class=""><span class="quantidade">{{item.Quantidade}}x </span>{{item.SubCategoria}} {{item.Tipo}} {{item.Marca}}</td>
+                                <td class="valor borderless" style="font-size:14px !important;">{{item.ValorUnit | currency:"R$ "}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div style="height:297px;color:#A8A7A8" class="tamanhoCampoFin">
+
+                    <div class="small-12 medium-5 columns paddingless right">
+                        <div class="small-12 columns grey box-content-sumario" style="font-size:12px;padding: 11px 0px 15px 0px;">
+                            <h3 style="font-size:15px !important; font-weight:bold;color:#272725">Forma de pagamento</h3>
+                            <p>Cartão de crédito <br /> {{pedidodata.DadosCartao.Numero}}</p>
+                        </div>
+
+                        <div class="small-12 medium-12 columns box-content-sumario" style="font-size:12px;margin: -18px 0px 0px 0px;padding: 11px 0px 10px 0px;">
+                            <h3 style="font-size:15px !important; font-weight:bold;color:#272725">{{tfselecionado.ProgramacaoEntregaID == 3 ? 'retirar na loja' : 'Entrega'}}</h3>
+
+                            <p ng-show="tfselecionado.ProgramacaoEntregaID != 3 ">
+                                {{enderecoEntrega.Logradouro}}, {{enderecoEntrega.Numero}}, {{enderecoEntrega.Complemento}} - {{enderecoEntrega.CEP}}, {{enderecoEntrega.Bairro}}<br />
+                                {{enderecoEntrega.Cidade.Nome}} - {{enderecoEntrega.Cidade.Estado.Nome}}
+                            </p>
+
+                            <div ng-show="tfselecionado.ProgramacaoEntregaID == 3 ">
+                                Rua Dr. Mário Ferraz, 547 - Itaim - São Paulo/SP - 01453-011
+                            </div>
+                        </div>
+
+                        <div class="grey"  style="width:100%;margin: -9px 0px 0px 0px;padding: 15px 0px 15px 0px;">
+                            <table style="width:100%;text-align:center;align-content:center;margin: auto;    margin-top: -14px;">
+                                <tbody>
+
+                                    <tr class="list">
+                                        <td class="">
+                                            <table class="small-12 table-sumario" style="text-align:center;align-content:center;margin: auto;">
+                                                <tbody class="borderless" style="font-size:13px;">
+                                                    <tr>
+                                                        <td  style="padding: 0 10px 0 0; text-align:left">Subtotal</td>
+                                                        <td style="text-align:left" >{{carrinho.SubTotal | currency:"R$ "}}</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td  style="padding: 0 10px 0 0; text-align:left">Frete</td>
+                                                        <td style="text-align:left">{{carrinho.Frete | currency:"R$ "}}</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td  style="padding: 0 10px 0 0; text-align:left">Desconto</td>
+                                                        <td style="text-align:left">{{carrinho.ValorDesconto | currency:"R$ "}}</td>
+                                                    </tr>
+                                                    <br />
+                                                    <tr style="font-size:15px !important; font-weight:bold;">
+                                                        <td  style="padding: 0 10px 0 0; text-align:left">Total</td>
+                                                        <td style="color:#1daee4;text-align:left">{{carrinho.SubTotal + carrinho.Frete - carrinho.ValorDesconto | currency:"R$ "}}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                </div>
+
+                @*<table class="small-12 fd-table table-resumo-produtos borderMobile">
+                    <tr>
+                        <td class="paddingless-on-mobile">
+                            <div class="small-12 medium-12 columns paddingless sumario bordaMobileGeral">
+                                
+                                <div class="small-12 medium-7 columns left paddingless-on-mobile produtos-scroll-holder">
+                                    <table class="small-12 columns fd-table product-table">
+                                        <thead>
+                                            <tr class="small-12 columns paddingless">
+                                                <th class="small-8 columns">produto</th>
+                                                <th class="small-4 columns">Valor</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                         
+                                            <tr ng-repeat="item in carrinho.Itens" class="small-12 columns paddingless list">
+                                                <td class="small-8 columns"><span class="quantidade">{{item.Quantidade}}x </span>{{item.SubCategoria}} {{item.Tipo}} {{item.Marca}}</td>
+                                                <td class="small-4 columns valor borderless">{{item.ValorUnit | currency:"R$ "}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                           
+                                <div class="small-12 medium-5 columns paddingless right">
+                                    <div class="small-12 columns grey box-content-sumario">
+                                        <h3>Forma de pagamento</h3>
+                                        <p>Cartão de crédito <br /> {{pedidodata.DadosCartao.Numero}}</p>
+                                    </div>
+
+                                    <div class="small-12 medium-12 columns box-content-sumario">
+                                        <h3>{{tfselecionado.ProgramacaoEntregaID == 3 ? 'retirar na loja' : 'local de entrega'}}</h3>
+
+                                        <p ng-show="tfselecionado.ProgramacaoEntregaID != 3 ">
+                                            {{enderecoEntrega.Logradouro}}, {{enderecoEntrega.Numero}}, {{enderecoEntrega.Complemento}} - {{enderecoEntrega.CEP}}, {{enderecoEntrega.Bairro}}<br />
+                                            {{enderecoEntrega.Cidade.Nome}} - {{enderecoEntrega.Cidade.Estado.Nome}}
+                                        </p>
+
+                                        <div ng-show="tfselecionado.ProgramacaoEntregaID == 3 ">
+                                            Rua Dr. Mário Ferraz, 547 - Itaim - São Paulo/SP - 01453-011
+                                        </div>
+                                    </div>
+
+                                    <div class="small-12 columns">
+                                        <table class="small-12 columns fd-table product-table">
+                                            <tbody>
+                                          
+                                                <tr class="small-12 columns paddingless list total">
+                                                    <td class="small-12 columns paddingless-on-mobile">
+                                                        <table class="small-12 table-sumario">
+                                                            <tbody class="borderless">
+                                                                <tr>
+                                                                    <td class="text-right medium-8 small-6 columns">Subtotal</td>
+                                                                    <td class="text-left medium-4 small-6 columns">{{carrinho.SubTotal | currency:"R$ "}}</td>
+                                                                </tr>
+
+                                                                <tr>
+                                                                    <td class="text-right medium-8 small-6 columns">Frete</td>
+                                                                    <td class="text-left medium-4 small-6 columns">{{carrinho.Frete | currency:"R$ "}}</td>
+                                                                </tr>
+
+                                                                <tr>
+                                                                    <td class="text-right medium-8 small-6 columns">Desconto</td>
+                                                                    <td class="text-left medium-4 small-6 columns">{{carrinho.ValorDesconto | currency:"R$ "}}</td>
+                                                                </tr>
+
+                                                                <tr>
+                                                                    <td class="text-right medium-8 small-6 columns total">Total</td>
+                                                                    <td class="text-left medium-4 small-6 columns valor">{{carrinho.SubTotal + carrinho.Frete - carrinho.ValorDesconto | currency:"R$ "}}</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>*@
+
+              
+
+            </div>
+            <div class="small-12 columns paddingless">
+                <button style="background-color:#00953A !important;margin-top: 10px;margin-left: -5px;width: 100% !important;" type="button" class="fd-button fd-secondary fd-large fd-full-width float-right bt-confirmar btnContinuarPagamento" ng-click="gravaPedido();">FINALIZAR PAGAMENTO</button>
+            </div>
+        </div>
+    </div>
+  
+
+
+

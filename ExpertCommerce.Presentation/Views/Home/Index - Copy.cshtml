@@ -1,0 +1,163 @@
+﻿@model Boolean
+
+<div class="main-placeholder home">
+    @*slider*@
+    <div class="row">
+        <div class="small-12 columns destaques">
+            <ul class="homeslider owl-carousel owl-theme banners">
+                <li ng-repeat="item in banners">
+                    @*hotsite*@
+                    <a ng-if="item.HotSite" href="{{item.HotSite}}" target="_blank">
+                        @if (Model){ <img alt="" ng-src="{{item.ImagemMobile}}" fallback-src="~/Images/assets/unavailable-banner.png" /> }
+                        else { <img alt="" ng-src="{{item.Imagem}}" fallback-src="~/Images/assets/unavailable-banner.png" /> }
+                    </a>
+
+                    @*produto*@
+                    <a ng-if="!item.HotSite" ui-sref="produto({id:item.Sku.Produto.ID})">
+                        @if (Model)
+                        { <img alt="" ng-src="{{item.ImagemMobile}}" fallback-src="~/Images/assets/unavailable-banner.png" /> }
+                        else
+                        { <img alt="" ng-src="{{item.Imagem}}" fallback-src="~/Images/assets/unavailable-banner.png" /> }
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    @*vitrine*@
+    <div class="row">
+        <div class="small-12 columns vitrine">
+            <h1>Cortes em destaque</h1>
+
+            <div class="small-12 columns">
+                <section class="produto small-6 medium-4 large-3 columns float-left" ng-repeat="item in vitrine">
+                    <a ui-sref="produto({id:item.Produto.ID})">
+                        <header>
+                            <div class="nome">{{item.Produto.SubCategoria.Descricao | limitTo:20}}</div>
+                        </header>
+
+                        <figure>
+                            <div class="promocao show-for-medium">até 10% off</div>
+                            @if (Model)
+                            {
+                                <img alt="" ng-src="{{ item.Produto.ImagemMobile }}" fallback-src="~/Images/assets/unavailable.png" />
+                            }
+                            else
+                            {
+                                <img alt="" ng-src="{{ item.Produto.Imagem  }}" fallback-src="~/Images/assets/unavailable.png" />
+                            }
+                        </figure>
+                    </a>
+
+                    <footer>
+                        <a ui-sref="produto({id:item.Produto.ID})">
+                            <div class="small-12 columns">
+                                <div class="corte">
+                                    <span>{{item.Produto.ProdutoTipo.Descricao | capitalize}}</span>
+                                    <label ng-class="item.Produto.Marca.Descricao | lowercase">{{item.Produto.Marca.Descricao}}</label>
+                                </div>
+
+                                <div class="preco">A partir de <strong>{{item.Produto.PrecoVigente | currency:"R$ "}}</strong></div>
+                            </div>
+                        </a>
+
+                        @*<div class="small-2 columns">
+                                <div class="comprar show-for-medium">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="22" viewBox="12.875 13.938 24 22"><defs><path id="a" d="M0 0h50v50H0z" /></defs><clipPath id="b"><use xlink:href="#a" overflow="visible" /></clipPath><path clip-path="url(#b)" fill="#404040" d="M34.527 28.467c.114-.098.205-.233.256-.415.73-2.585 1.456-5.17 2.184-7.757.087-.31.006-.57-.157-.752-.136-.193-.357-.326-.666-.326h-16.64l-1.276-4.58c-.056-.203-.163-.35-.293-.447-.133-.11-.308-.18-.528-.18H13.82c-1.097 0-1.097 1.705 0 1.705h2.94l4.242 15.23c-.936.4-1.593 1.332-1.593 2.414 0 1.45 1.18 2.63 2.63 2.63s2.63-1.18 2.63-2.63c0-.328-.065-.64-.174-.93h5.296c-.11.29-.173.602-.173.93 0 1.45 1.18 2.63 2.63 2.63s2.63-1.18 2.63-2.63c0-1.42-1.132-2.577-2.54-2.626-.036-.005-.075-.007-.116-.007H22.71l-.57-2.05h11.822c.242 0 .43-.082.565-.21m-2.278 3.967c.51 0 .925.415.925.926 0 .51-.415.926-.926.926s-.926-.416-.926-.926.414-.926.925-.926m-9.285.925c0 .51-.415.925-.926.925-.51 0-.927-.416-.927-.926 0-.512.416-.927.926-.927s.925.416.925.926m-1.3-6.386c-.562-2.018-1.123-4.036-1.686-6.053h15.04l-1.703 6.054H21.665z" /></svg>
+                                </div>
+                            </div>*@
+
+                        <div class="promocao show-for-small-only hide">até 10% off</div>
+                    </footer>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    @*receitas*@
+    <div class="grey">
+        <div class="row">
+            <div class="small-12 columns">
+                <h1 class="grey">Receitas</h1>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="receitas small-12 columns">
+            <div class="small-12 medium-6 columns paddingless">
+                <a href="http://www.feed.com.br/institucional/receitas/bife-1-de-chorizo-e-acebolado/" target="_blank">
+                    <div class="receita receita1 small-12 columns paddingless">
+                        <div class="small-6 medium-6 columns img paddingless">&nbsp;</div>
+                        <div class="small-6 medium-6 columns paddingless">
+                            <h1>
+                                Bife Chorizo acebolado
+                            </h1>
+
+                            <div class="tag">
+                                <strong>Bc</strong>
+                                Bife Chorizo
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+
+            <div class="small-12 medium-6 columns paddingless">
+                <a href="http://www.feed.com.br/institucional/receitas/espetinhos-de-alecrim/" target="_blank">
+                    <div class="receita receita2 small-12 columns paddingless">
+                        <div class="small-6 medium-6 columns img paddingless show-for-medium">&nbsp;</div>
+                        <div class="small-6 medium-6 columns paddingless">
+                            <h1>
+                                Espetinhos de alecrim
+                            </h1>
+
+                            <div class="tag">
+                                <strong>BB</strong>
+                                Bom Bom
+                            </div>
+                        </div>
+                        <div class="small-6 medium-6 columns img paddingless show-for-small-only">&nbsp;</div>
+                    </div>
+                </a>
+
+
+                <a href="http://www.feed.com.br/institucional/receitas/bolo-de-batata-com-ragu-de-fraldinha/" target="_blank">
+                    <div class="receita receita3 small-12 columns paddingless">
+                        <div class="small-6 medium-6 columns img paddingless show-for-small-only">&nbsp;</div>
+                        <div class="small-6 medium-6 columns paddingless">
+                            <h1>
+                                Bolo de batata com ragu de fraldinha
+                            </h1>
+
+                            <div class="tag">
+                                <strong>Fd</strong>
+                                Fraldinha
+                            </div>
+                        </div>
+                        <div class="small-6 medium-6 columns img paddingless show-for-medium">&nbsp;</div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    @*newsletter*@
+    <div class="row">
+        <div class="small-10 small-centered columns">
+            <div class="small-12 columns newsletter">
+                <div class="texts small-12 medium-6 columns">
+                    <h1>Newsletter</h1>
+                    <p>Receba novidades da FEED em seu email</p>
+                </div>
+                <div class="small-12 medium-6 columns">
+                    <form class="small-12 columns" novalidate name="newsform" ng-submit="submitNewsletter(newsform.$valid)">
+                        <div class="small-12 medium-8 columns input-holder"><input type="email" class="fd-input fd-medium fd-lt-spacing" placeholder="digite seu email" ng-model="newsletter.Email" required ng-required="true" /></div>
+                        <button type="submit" class="small-12 medium-4 columns fd-button fd-submit" ng-disabled="newsform.$invalid">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

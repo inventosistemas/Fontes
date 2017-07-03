@@ -1,0 +1,33 @@
+﻿<ul class="menu">
+    <li class="hello show-for-small-only" ng-if="credentials.isAuthorized">Olá {{credentials.userName}} :)</li>
+    <li class="show-for-small-only">
+        <a ui-sref="home" ng-click="menumobile = false">Home</a>
+    </li>
+
+    <li class="show-for-small-only" ng-show="credentials.isAuthorized">
+        <a ui-sref="minhaconta.pedidos" ng-click="menumobile = false">Minha conta</a>
+    </li>
+
+    <li>
+        <a ui-sref="cortes" ng-click="menumobile = false">Cortes</a>
+    </li>
+    <li>
+        <a ui-sref="emporio" ng-click="menumobile = false">Emporio</a>
+    </li>
+
+    <li>
+        <a href="http://www.feed.com.br/institucional/receitas/" target="_blank" ng-click="menumobile = false">Receitas</a>
+    </li>
+
+    <li>
+        <a href="http://www.feed.com.br/institucional" target="_blank" ng-click="menumobile = false">Mundo feed</a>
+    </li>
+
+    <li class="show-for-small-only" ng-if="credentials.isAuthorized">
+        <a ng-click="logout();">Sair</a>
+    </li>
+
+    <li class="show-for-small-only" ng-if="!credentials.isAuthorized">
+        <a ui-sref="login" ng-click="menumobile = false">Login</a>
+    </li>
+</ul>

@@ -1,0 +1,93 @@
+﻿@model Boolean
+
+
+
+
+<div class="main-placeholder cortes">
+
+    <div style="background-color: #9A999E;height: 60px;">
+        <div style="float: right;font-size: 18px;font-weight: 900;color: #162C3A;padding-right: 4%;height: 30px;">
+            <div class="small-12 medium-6 columns filter">
+                <select class="fd-select BuscaConsulta" placeholder="CPF" ng-model="busca.TipoOrdenacao" ng-change="get(busca, true)" style="">
+                    <option value="-1">Ordenar por</option>
+                    <option value="0">A - Z</option>
+                    <option value="3">Z - A</option>
+                    <option value="1">Maior preço</option>
+                    <option value="2">Menor preço</option>
+
+                </select>
+            </div>
+            @*<div style="margin-top: 2px;margin-right: 10px;" class="row" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">FILTRAR +   </div>*@
+        </div>
+    </div>
+    <div class="small-12 medium-6 columns results-number" ng-show="results" style="margin-top:10px;">
+        {{totalregs}} resultados encontrados
+    </div>
+    <div class="">
+        <div class="small-12 columns">
+            <div class="small-12 medium-11 medium-centered columns paddingless">
+                Resultados da busca: <strong>{{busca.Chave}}</strong>
+            </div>
+
+            <div class="container alinhaListaProd" id="deskprod" style="">
+                <div ng-repeat="item in results.ProdutoBuscaItens" style="" class="itensProd">
+                    <div class="produtoHome2" onmouseover="abrir(this.id)" onmouseout="sair(this.id)" id="{{item.ID}}">
+                        <div class="imagemVitrineHome " style="text-align: center;">
+                            <div style="text-align: center;">
+                                @if (Model)
+                                {
+                                    <a href="/#!/produto/{{item.ID}}">
+                                        <img alt="" ng-src="{{item.ImagemMobile}}" fallback-src="~/Images/assets/unavailable-banner.png" class="img-responsive imgProdProduto FtoVitrine" style="height: 169px" />
+                                        <div class="conteudoProdCortes">
+
+                                            <p style="font-size: 12px; font-weight: 900;color:black !important;font-family: 'montserrat-semibold';height:38px">{{item.Descricao}}</p>
+                                            <p ng-if="item.CategoriaDescricao != 'EMPORIO' " style="font-size: 12px;font-weight: 900;color:black !important;">{{item.Tipo  | capitalize}} {{item.Peso }} KG</p>
+                                            <p style="font-size: 12px;font-weight: 900;color:black !important;font-family: 'montserratultra_light';">POR <span style="color:#FF6B00;font-family: 'montserrat-semibold';"> {{item.PrecoVigente | currency:"R$ "}}</span></p>
+                                        </div>
+                                    </a>
+                                }
+                                else
+                                {
+                                    <a href="/#!/produto/{{item.ID}}">
+                                        <img alt="" ng-src="{{item.Imagem}}" fallback-src="~/Images/assets/unavailable.png" class="img-responsive imgProdProduto FtoVitrine" style="" />
+
+                                        <div class="conteudoProdCortes">
+
+
+                                            <p class="nomeitemNome" style="color:black !important;">{{item.Descricao}}</p>
+                                            <p ng-if="item.CategoriaDescricao != 'EMPORIO' " class="nomeitemDesc" style="color:black !important;">{{item.Tipo| capitalize}} {{item.Peso }} KG</p>
+                                            <p class="nomeitemPor" style="color:black !important;margin-bottom:30px;">POR <span style="color:#FF6B00" class="nomeitemPreco"> {{item.PrecoVigente | currency:"R$ "}}</span></p>
+                                        </div>
+                                    </a>
+                                }
+                            </div>
+
+                            @if (Model)
+                            {
+                                <a ui-sref="produto({id:item.ID})">
+                                    <img class="shrink" src="~/Images/Imagens/AdicionaCarrinho.jpg" style="width:130px;     margin-left: 0px !important;   margin: auto;" />
+                                </a>
+                            }
+                            else
+                            {
+                                <div id="apareceb{{item.ID}}" style="display: none;">
+                                    <div class="prodDispoHom conteudoProdCortes">
+                                        <div class="visible-lg visible-md">
+
+                                            <a onclick="atualizarCarrinho(), abrirCarrinho()" ng-click="adicionarCarrinhoProd(item.ID)">
+                                                <span class="btnadic" style=""> <img src="~/Images/Imagens/carrinho_novo_vazio.png" style="width: 30px;margin-top: -11px;" /> ADICIONAR</span> 
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="trigger-busca">&nbsp;</div>
+</div>

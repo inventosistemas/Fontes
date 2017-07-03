@@ -1,0 +1,42 @@
+﻿<div class="row passo2">
+
+    <form class="form-new-address" novalidate name="enderecoform" ng-submit="submitEndereco(endereco)">
+        <div class="form-group grupoEndereco" style="">
+
+
+
+            <div style="max-width: 950px;margin:auto;">
+                <input class="form-control cadEnd" type="text" ng-model="endereco.Identificacao" required ng-required="true" placeholder="Nome do local">
+                <input class="form-control cadCep" id="cepfield" type="text" ng-model="endereco.CEP" required ng-required="true" ng-blur="endereco.CEP != null ? getCep(endereco) : ''" placeholder="CEP">
+
+            </div>
+
+            <div style="clear:both;"></div>
+            <div style="max-width: 950px;margin:auto;margin-top:20px;">
+                <input type="text" class="form-control cadRua" ng-model="endereco.Logradouro" required ng-required="true" placeholder="Endereço">
+
+
+            </div>
+
+            <div style="max-width: 950px;margin:auto;margin-top:20px;">
+                <input class="form-control cadNumero" type="text" ng-model="endereco.Numero" required ng-required="true" placeholder="Número">
+                <input class="form-control cadComplemento" type="text" ng-model="endereco.Complemento" placeholder="Complemento">
+                <input class="form-control cadBairro" type="text" ng-model="endereco.Bairro" required ng-required="true" placeholder="Bairro">
+
+            </div>
+
+            <div style="clear:both;"></div>
+            <div style="max-width: 950px;margin:auto;margin-top:20px;">
+                <input class="form-control cadCidade" type="text" ng-model="endereco.Cidade.Nome" placeholder="Cidade">
+                <input class="form-control cadEstado" type="text" ng-model="endereco.Cidade.Estado.Nome" placeholder="Estado">
+
+            </div>
+            <div style="clear:both;"></div>
+            <div class="">
+                <button style="margin-top: 20px;font-size: 16px;width: 205px;" type="submit" class="btn active BotaoVerItens " >SALVAR</button>,
+                <a style="margin-top: 20px;font-size: 16px;width: 205px;" href="/#!/cadpesquisa/passoe-5" class="btn active BotaoVerItens ">FINALIZAR</a>
+                @*<button type="submit" class="btn active BotaoVerItens " ng-disabled="enderecoform.$invalid">Salvar</button>*@
+            </div>
+        </div>
+    </form>
+</div>

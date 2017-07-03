@@ -1,0 +1,14 @@
+﻿[
+  {
+    "outputFile": "Styles/core.css",
+    "inputFile": "Styles/core.less"
+  },
+  {
+    "outputFile": "Styles/colors.css",
+    "inputFile": "Styles/colors.less"
+  },
+  {
+    "outputFile": "Styles/utils.css",
+    "inputFile": "Styles/utils.less"
+  }
+]

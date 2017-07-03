@@ -1,0 +1,145 @@
+﻿@model Boolean
+
+<div class="main-placeholder cortes">
+    <div class="">
+        <div class="hidden-xs hidden-sm hidden-md"><img alt="" src="/Images/assets/Banner-Carnes.jpg" /></div>
+        <div class="hidden-lg"><img style="max-width: 100%;" src="/Images/assets/Banner-Carnes-Mobile.jpg" /></div>
+    </div>
+    <div style="background-color: #9A999E;height: 30px;">
+        <div style="float: left;font-size: 18px;font-weight: 900;color: #162C3A;margin-left: 4%;border-right: 2px white solid;height: 30px;width:80px;">
+            <div style="margin-top: 4px;margin-right: 9px;font-size: 14px;margin-left: 0.1%;font-weight: bold;" class="row" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">FILTRAR +   </div>
+        </div>
+        <div style="background-color:white;float:left;height:100%;margin-left:10px;" id="espacoFiltro"></div>
+    </div>
+    <div class="collapse containerFiltro" id="collapseExample" style="">
+        <br />
+        <div style="float:left;" class="alinhaOcaApres">
+            <div style="" class="alinhaEsquerdaMobile">
+                <div style="text-align: left;">
+                    <div style="">
+                        <span style="color:#464555;font-size:17px;font-weight:bold;">{{tipoocasiaonome}}</span>
+                        <div style="padding-left: 15px;margin-top:5px;">
+                            <div ng-repeat="item in tipoocasiao.Valores" class="alinharOcasiaoMobile" style="font-size: 11px;text-align: left;">
+                                <div style="">
+                                    <label onclick="" id="ocasiao{{item.ValorID}}" style="" ng-click="setSelectedCorte(item.ID)"><input value="{{item.ValorDescricao}}" name="ocasiao" id="{{item.ValorID}}" type="checkbox" class="check " ng-class="{selected: item.ID == idSelectedCorte}" /> {{item.ValorDescricao.toUpperCase()}}</label>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div style="" class="alinhaEsquerdaMobile">
+                <div style="text-align: left;">
+                    <div>
+                        <span style="color:#464555;font-size:17px;font-weight:bold;">{{tipopreparonome}}</span>
+                        <div style="padding-left: 15px;margin-top:5px;">
+                            <div ng-repeat="item in tipopreparo.Valores" class="alinharOcasiaoMobile" style="font-size: 11px;text-align: left;">
+                                <div style="">
+                                    <label style="" ng-click="setSelectedCorte(item.ID)"><input value="{{item.ValorDescricao}}" name="preparo" id="{{item.ValorID}}" type="checkbox" class="check" ng-class="{selected: item.ID == idSelectedCorte}" /> {{item.ValorDescricao.toUpperCase()}}</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="float:left;">
+            <div class="alinhaApresent">
+                <div style="text-align: left;">
+                    <div style="">
+                        <span style='color:#464555;font-size:17px;font-weight:bold;'>{{tipoapresentacaonome}}</span>
+                        <div style="padding-left: 15px;margin-top:5px;">
+                            <div ng-repeat="item in tipoapresentacao.Valores" style="font-size: 11px;text-align: left;" class="alinhaApresMob">
+                                <div style="">
+                                    <label id="apresentacao{{item.ValorID}}" style="" ng-click="setSelectedCorte(item.ID)"><input value="{{item.ValorDescricao}}" name="apresentacao" id="{{item.ValorID}}" type="checkbox" class="check " ng-class="{selected: item.ID == idSelectedCorte}" /> {{item.ValorDescricao.toUpperCase()}}</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="alinhamentoOpcCorte" style="">
+            <div style="text-align:left;">
+                <div class="AlinhaMobile">
+                    <span style="color:#464555;font-size:17px;font-weight:bold;">Corte</span>
+                    <div style="padding-left: 15px;margin-top:5px;">
+                        <div ng-repeat="item in tiposdecorte" style="" class="filtroCortes">
+                            <div style="">
+                                <label style="" ng-click="setSelectedCorte(item.ID)"><input value="{{item.Descricao}}" name="cortes" id="{{item.Descricao}}" type="checkbox" class="check corte{{item.ProdutoCategoriaID}}{{item.ID}}" ng-class="{selected: item.ID == idSelectedCorte}" /> {{item.Descricao }}</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="clear:both;"></div>
+    </div>
+    <div class="">
+        <div class="small-12 columns">
+            <div class="small-12 medium-11 medium-centered columns paddingless">
+                <h1>Cortes Selecionados</h1>
+            </div>
+            <div class="organizar">
+                <div class="container alinhaListaProd" id="deskprod" style="">
+                    <div ng-repeat="item in produtosporcorte" style="border:1px solid white;    "class="itensProd">
+                        <div class="produtoHome2" onmouseover="abrir(this.id)" onmouseout="sair(this.id)" id="{{item.ID}}">
+                            <div class="imagemVitrineHome " style="text-align: center;">
+                                <div style="text-align: center;">
+                                    @if (Model)
+                                    {
+                                        <a href="/#!/produto/{{item.ID}}">
+                                            <img alt="" ng-src="{{item.ImagemMobile}}"
+                                                  fallback-src="~/Images/assets/unavailable-banner.png" 
+                                                 class="img-responsive imgProdProduto FtoVitrine" style="height: 169px;    display: inherit;" />
+                                            <div class="conteudoProdCortes">
+                                                <p style="font-size: 12px; font-weight: 900;color:black !important;font-family: 'montserrat-semibold';">{{item.SubCategoriaDescricao| limitTo:20}}</p>
+                                                <p style="font-size: 12px;font-weight: 900;color:black !important";>{{item.Tipo  | capitalize}} {{item.Peso }} KG</p>
+                                                <p style="font-size: 12px;font-weight: 900;color:black !important;">POR <span style="color:#FF6B00;font-family: 'montserrat-semibold';"> {{item.PrecoVigente | currency:"R$ "}}</span></p>
+                                            </div>
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a href="/#!/produto/{{item.ID}}">
+                                            <img alt="" ng-src="{{item.Imagem}}" 
+                                                 fallback-src="~/Images/assets/unavailable.png" 
+                                                 class="img-responsive imgProdProduto FtoVitrine" style="" />
+                                            <div class="conteudoProdCortes">
+                                                <p class="nomeitemNome" style="color:black !important;">{{item.SubCategoriaDescricao | limitTo:20}}</p>
+                                                <p class="nomeitemDesc" style="color:black !important;">{{item.Tipo| capitalize}} {{item.Peso }} KG</p>
+                                                <p class="nomeitemPor" style="color:black !important;margin-bottom:30px;">POR<span class="nomeitemPreco" style="color:#FF6B00"> {{item.PrecoVigente | currency:"R$ "}}</span></p>
+                                            </div>
+                                        </a>
+                                    }
+                                </div>
+
+                                @if (Model)
+                                {
+                                    <a ui-sref="produto({id:item.ID})">
+                                        <img class="shrink" src="~/Images/Imagens/AdicionaCarrinho.jpg" 
+                                             style="width:130px;     margin-left: 0px !important;   margin: auto;" />
+                                    </a>
+                                }
+                                else
+                                {
+                                    <div id="apareceb{{item.ID}}" style="display: none;">
+                                        <div class="prodDispoHom conteudoProdCortes">
+                                            <div class="visible-lg visible-md">
+                                                <a onclick="atualizarCarrinho(), abrirCarrinho()" ng-click="adicionarCarrinhoProd(item.ID)">
+                                                    <span class="btnadic" style=""> <img src="~/Images/Imagens/carrinho_novo_vazio.png" style="width: 30px;margin-top: -11px;" /> ADICIONAR</span> 
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

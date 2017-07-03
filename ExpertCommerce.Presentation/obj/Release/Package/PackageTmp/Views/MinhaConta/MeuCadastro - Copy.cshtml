@@ -1,0 +1,91 @@
+﻿<div class="row meu-cadastro">
+    <div class="small-12 medium-10 columns medium-centered">
+        <form novalidate name="cadastroform" ng-submit="submitCadastro(cadastroform.$valid)">
+            <div class="small-12 medium-12 columns">
+                <label class="fd-label">
+                    <span>Nome completo</span>
+                    <input ng-class="{ 'erroDeCadastro' : !credentials.userName}" type="text" class="fd-input fd-medium fd-lt-spacing" placeholder="Nome completo" ng-model="credentials.userName" maxlength="150" required ng-required="true" />
+                    <span ng-hide="credentials.userName" class="CorInvalid">° Nome não preenchido</span>
+
+                </label>
+            </div>
+
+            <div class="small-12 medium-6 columns">
+                <label class="fd-label">
+                    <span>Email</span>
+                    <input ng-class="{ 'erroDeCadastro' : !usuario.Email}" type="text" class="fd-input fd-medium fd-lt-spacing" placeholder="Email" ng-model="usuario.Email" required ng-required="true" />
+                    <span ng-hide="usuario.Email" class="CorInvalid">° Email não preenchido</span>
+                </label>
+                <label class="fd-label">
+                    <span>CPF</span>
+                    <input ng-class="{ 'erroDeCadastro' : !usuario.CNPJ}" id="cpf" ng-disabled="true" type="text" class="fd-input fd-medium fd-lt-spacing" placeholder="CPF" ng-model="usuario.CNPJ" />
+                    <span ng-hide="usuario.CNPJ" class="CorInvalid">° CPF não preenchido</span>
+                </label>
+            </div>
+
+            <div class="small-12 medium-6 columns">
+                <div class="row">
+                    <div class="small-4 columns">
+                        <label class="fd-label">
+                            <span>DDD</span>
+                            <input ng-class="{ 'erroDeCadastro' : !usuario.DDDTelefone}" id="dddtelefone" type="number" class="fd-input fd-medium fd-lt-spacing" placeholder="DDD" ng-model="usuario.DDDTelefone" required ng-required="true" />
+                            <span ng-hide="usuario.DDDTelefone" class="CorInvalid">° DDD não preenchido</span>
+                        </label>
+                    </div>
+
+
+                    <div class="small-8 columns">
+                        <label class="fd-label">
+                            <span>Telefone</span>
+                            <input ng-class="{ 'erroDeCadastro' : !usuario.Telefone}" id="telefone" type="text" class="fd-input fd-medium fd-lt-spacing" placeholder="Telefone" ng-model="usuario.Telefone" required ng-required="true" />
+                            <span ng-hide="usuario.Telefone" class="CorInvalid">° Telefone não preenchido</span>
+                        </label>
+                    </div>
+                    @*<div class="small-4 columns sexo">
+                            <label class="fd-label">
+                                <span>Sexo</span>
+                                <select ng-options="sex.tipo for sex in Sexo" class="fd-input fd-lt-spacing" placeholder="Sexo" ng-model="usuario.Sexo" required ng-required="true" tabindex="6">
+                            </select>
+                            </label>
+                        </div>*@
+                </div>
+
+
+                <div class="row">
+                    <div class="small-12 columns">
+                        <label class="fd-label">
+                            <span>Data de nascimento</span>
+                            <input ng-class="{ 'erroDeCadastro' : !usuario.DataNascimento}" id="nascimento" type="text" class="fd-input fd-medium fd-lt-spacing" placeholder="Data de nascimento" ng-model="usuario.DataNascimento" required ng-required="true" />
+                            <span ng-hide="usuario.DataNascimento" style="color:red">° Data de nascimento não preenchida</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="small-12 columns">
+                <p>Todos os campos acima são obrigatórios</p>
+            </div>
+
+            <div class="small-12 columns grey">
+                <h1>Altere sua senha</h1>
+                <div class="small-12 medium-6 columns">
+                    <input minlength="6" maxlength="16" type="password" class="fd-input fd-medium fd-lt-spacing" placeholder="Nova senha" ng-model="usuario.Senha" />
+                </div>
+                <div class="small-12 medium-6 columns">
+                    <input minlength="6" maxlength="16" ng-class="{ 'erroDeCadastro' : usuario.ConfirmarSenha != usuario.Senha}" type="password" class="fd-input fd-medium fd-lt-spacing" placeholder="Confirmar senha" ng-model="usuario.ConfirmarSenha" compare-to="usuario.Senha" />
+                </div>
+
+
+                <p ng-hide="usuario.Senha == usuario.ConfirmarSenha" class="CorInvalid" style="margin-left: 20px;">° Senhas não conferem.</p>
+                <p style="margin-left: 20px;">°A Senha tem que ter mais de 6 digítos e menor que 16</p>
+
+
+
+            </div>
+
+            <div class="small-12 medium-3 columns position-right  paddingless">
+                <button type="submit" class="small-12 medium-4 columns fd-button fd-primary fd-full-width" ng-disabled="cadastroform.$invalid">Salvar</button>
+            </div>
+        </form>
+    </div>
+</div>

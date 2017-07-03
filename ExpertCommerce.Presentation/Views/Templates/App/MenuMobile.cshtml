@@ -1,0 +1,13 @@
+﻿<div class="menu-mobile" ng-show="menumobile == true">
+    <div class="menu-mobile-holder">
+        <div class="title row">
+            <div class="small-12 columns">
+                <div class="small-10 columns paddingless">Menu</div>
+                <div class="small-2 columns" ng-click="menumobile = false">x</div>
+            </div>
+            
+        </div>
+        <app-menu></app-menu>
+    </div>
+    <div class="back-overlay" ng-click="menumobile = false">&nbsp;</div>
+</div>

@@ -1,0 +1,78 @@
+﻿@model Boolean
+
+<div class="main-placeholder busca">
+    @*header*@
+    <div class="results-line">
+        <div class="row">
+            <div class="small-12 medium-12 columns medium-centered">
+                <div class="small-12 columns typed-search">
+                    Resultados da busca: <strong>{{busca.Chave}}</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="results-line">
+        <div class="row">
+            <div class="small-12 medium-12 columns medium-centered">
+                <div class="small-12 medium-6 columns results-number" ng-show="results">
+                    {{totalregs}} resultados encontrados
+                </div>
+
+                <div class="small-12 medium-6 columns filter">
+                    <select class="fd-select" placeholder="CPF" ng-model="busca.TipoOrdenacao" ng-change="get(busca, true)">
+                        <option value="-1">Ordernar por</option>
+                        <option value="0">A - Z</option>
+                        <option value="3">Z - A</option>
+                        <option value="1">Maior preço</option>
+                        <option value="2">Menor preço</option>
+
+                    </select>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    @*resultados*@
+    <div class="row">
+        <div class="small-12 medium-11 medium-centered columns float-left vitrine">
+            <div class="small-12 columns">
+                <section class="produto small-6 medium-4 large-3 columns float-left" ng-repeat="item in results.ProdutoBuscaItens">
+                    <a ui-sref="produto({id:item.ID})">
+                        <header>
+                            <div class="nome">@*{{item.ID | limitTo:20}}*@ {{item.SubCategoriaDescricao | limitTo:20}}</div>
+                            
+                        </header>
+
+                        <figure>
+                            <div class="promocao show-for-medium" ng-show="item.Tipo == 0">até 10% off</div>
+                            
+                            @if (Model)
+                            {
+                                <img alt="" ng-src="{{ item.ImagemMobile }}" fallback-src="~/Images/assets/unavailable.png" />
+                            }
+                            else
+                            {
+                                <img alt="" ng-src="{{ item.Imagem }}" fallback-src="~/Images/assets/unavailable.png" />
+                            }
+                        </figure>
+
+
+                        <footer>
+                            <div class="small-12 columns paddingless">
+                                <div class="corte">
+                                    <span>{{item.Tipo | capitalize}}</span>
+                                    <label ng-class="item.Marca">{{item.Marca}}</label>
+                                </div>
+                                <div class="preco">A partir de <strong>{{item.PrecoVigente | currency:"R$ "}}</strong></div>
+                            </div>
+                            @*<div class="promocao show-for-small-only">até 10% off</div>*@
+                        </footer>
+                    </a>
+                </section>
+            </div>
+        </div>
+    </div>
+    <div id="trigger-busca">&nbsp;</div>
+</div>

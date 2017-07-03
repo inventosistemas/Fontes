@@ -1,0 +1,637 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2EBFDF87-5C66-4958-B1D2-415226AE5F91}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Expert.Presentation</RootNamespace>
+    <AssemblyName>Expert.Presentation</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\BuscaController.cs" />
+    <Compile Include="Controllers\CadastroController.cs" />
+    <Compile Include="Controllers\CadPesquisaController.cs" />
+    <Compile Include="Controllers\CarrinhoController.cs" />
+    <Compile Include="Controllers\EmporioController.cs" />
+    <Compile Include="Controllers\HotsiteController.cs" />
+    <Compile Include="Controllers\Promocao.cs" />
+    <Compile Include="Controllers\CortesController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InstituicaoController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MinhaContaController.cs" />
+    <Compile Include="Controllers\ProdutoController.cs" />
+    <Compile Include="Controllers\TemplateController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\generator_config.txt" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\montserrat-black-demo.html" />
+    <Content Include="fonts\montserrat-bold-demo.html" />
+    <Content Include="fonts\montserrat-extrabold-demo.html" />
+    <Content Include="fonts\montserrat-hairline-demo.html" />
+    <Content Include="fonts\montserrat-light-demo.html" />
+    <Content Include="fonts\montserrat-regular-demo.html" />
+    <Content Include="fonts\montserrat-semibold-demo.html" />
+    <Content Include="fonts\montserrat-ultralight-demo.html" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\assets\aviseme.png" />
+    <Content Include="Images\assets\Banner-Carnes-Mobile.jpg" />
+    <Content Include="Images\assets\Banner-Carnes.jpg" />
+    <Content Include="Images\assets\Banner-Emporio-mobile.jpg" />
+    <Content Include="Images\assets\Banner-Emporio.jpg" />
+    <Content Include="Images\assets\bgstripes.png" />
+    <Content Include="Images\assets\check.png" />
+    <Content Include="Images\assets\cortes-mobile.jpg" />
+    <Content Include="Images\assets\cortes.jpg" />
+    <Content Include="Images\assets\downdetails.png" />
+    <Content Include="Images\assets\FEED_desktop_pacote1-parte2.png" />
+    <Content Include="Images\assets\grafismo.png" />
+    <Content Include="Images\assets\lilarrow.jpg" />
+    <Content Include="Images\assets\lilarrow.png" />
+    <Content Include="Images\assets\loader.gif" />
+    <Content Include="Images\assets\logo.png" />
+    <Content Include="Images\assets\logoyapp.png" />
+    <Content Include="Images\assets\lupamobi.png" />
+    <Content Include="Images\assets\product.jpg" />
+    <Content Include="Images\assets\produtos\alcatra.png" />
+    <Content Include="Images\assets\produtos\bife-de-tira.png" />
+    <Content Include="Images\assets\produtos\costela.png" />
+    <Content Include="Images\assets\produtos\raquete.png" />
+    <Content Include="Images\assets\quem-somos-mobile.jpg" />
+    <Content Include="Images\assets\quem-somos.jpg" />
+    <Content Include="Images\assets\receitas\receita001.png" />
+    <Content Include="Images\assets\receitas\receita002.png" />
+    <Content Include="Images\assets\receitas\receita003.png" />
+    <Content Include="Images\assets\sad.png" />
+    <Content Include="Images\assets\slider-imgs\001.png" />
+    <Content Include="Images\assets\social\f.svg" />
+    <Content Include="Images\assets\social\face.svg" />
+    <Content Include="Images\assets\social\google.svg" />
+    <Content Include="Images\assets\social\insta.svg" />
+    <Content Include="Images\assets\social\twitter.svg" />
+    <Content Include="Images\assets\svg\trashcan.svg" />
+    <Content Include="Images\assets\unavailable-banner.png" />
+    <Content Include="Images\assets\unavailable.png" />
+    <Content Include="Images\assets\updetails.png" />
+    <Content Include="Images\cardflags\bandeira-amex.svg" />
+    <Content Include="Images\cardflags\bandeira-diners.svg" />
+    <Content Include="Images\cardflags\bandeira-elo.svg" />
+    <Content Include="Images\cardflags\bandeira-master.svg" />
+    <Content Include="Images\cardflags\bandeira-visa.svg" />
+    <Content Include="Images\Imagens\carrinho_novo_vazio.png" />
+    <Content Include="Images\favicon.png" />
+    <Content Include="Images\Imagens\AdicionaCarrinho.jpg" />
+    <Content Include="Images\Imagens\Banner-Carnes-Mobile.jpg" />
+    <Content Include="Images\Imagens\Banner-Carnes.jpg" />
+    <Content Include="Images\Imagens\Banner-Emporio-mobile.jpg" />
+    <Content Include="Images\Imagens\Banner-Emporio.jpg" />
+    <Content Include="Images\Imagens\bannerMobile.jpg" />
+    <Content Include="Images\Imagens\BannerSiteInstitucional_540x281_01.jpg" />
+    <Content Include="Images\Imagens\BannerSiteInstitucional_540x281_02.jpg" />
+    <Content Include="Images\Imagens\BannerSiteNovo_1310x600_01.jpg" />
+    <Content Include="Images\Imagens\BannerSiteNovo_1310x600_02.jpg" />
+    <Content Include="Images\Imagens\BannerSiteNovo_1310x600_03.jpg" />
+    <Content Include="Images\Imagens\BannerSiteNovo_1310x600_04.jpg" />
+    <Content Include="Images\Imagens\BannerSiteNovo_1310x600_05.jpg" />
+    <Content Include="Images\Imagens\BannerSiteNovo_600x545_01.jpg" />
+    <Content Include="Images\Imagens\BannerSiteNovo_600x545_02.jpg" />
+    <Content Include="Images\Imagens\BannerSiteNovo_600x545_03.jpg" />
+    <Content Include="Images\Imagens\BannerSiteNovo_600x545_04.jpg" />
+    <Content Include="Images\Imagens\BannerSiteNovo_600x545_05.jpg" />
+    <Content Include="Images\Imagens\btnFechar.jpg" />
+    <Content Include="Images\Imagens\carne.jpg" />
+    <Content Include="Images\Imagens\carneCarrinho.jpg" />
+    <Content Include="Images\Imagens\carrinho.jpg" />
+    <Content Include="Images\Imagens\Carrinho31.png" />
+    <Content Include="Images\Imagens\CarrinhoBraBola.png" />
+    <Content Include="Images\Imagens\carrinhoDoCarrinho.jpg" />
+    <Content Include="Images\Imagens\carrinho_.png" />
+    <Content Include="Images\Imagens\carrinho_novo.png" />
+    <Content Include="Images\Imagens\carrinho_novo_hover.png" />
+    <Content Include="Images\Imagens\conteudoInst.jpg" />
+    <Content Include="Images\Imagens\cropped-logo-inventoBold.png" />
+    <Content Include="Images\Imagens\Desejo.jpg" />
+    <Content Include="Images\Imagens\human.png" />
+    <Content Include="Images\Imagens\ImgBanner.jpg" />
+    <Content Include="Images\Imagens\ImgBannerMobile.jpg" />
+    <Content Include="Images\Imagens\login.jpg" />
+    <Content Include="Images\Imagens\Login31.png" />
+    <Content Include="Images\Imagens\login_.png" />
+    <Content Include="Images\Imagens\login_novo.png" />
+    <Content Include="Images\Imagens\login_novobranco.png" />
+    <Content Include="Images\Imagens\login_novo_hover.png" />
+    <Content Include="Images\Imagens\logo-invento-powerd.png" />
+    <Content Include="Images\Imagens\logo.jpg" />
+    <Content Include="Images\Imagens\lupa.jpg" />
+    <Content Include="Images\Imagens\lupa31.png" />
+    <Content Include="Images\Imagens\lupanovomenuazul.png" />
+    <Content Include="Images\Imagens\lupanovomenubranco.png" />
+    <Content Include="Images\Imagens\lupa_.png" />
+    <Content Include="Images\Imagens\lupa_novo.png" />
+    <Content Include="Images\Imagens\lupa_novo_hover.png" />
+    <Content Include="Images\Imagens\mais.jpg" />
+    <Content Include="Images\Imagens\menu_novo.png" />
+    <Content Include="Images\Imagens\menu_novo_38x39.png" />
+    <Content Include="Images\Imagens\NovaLupa.png" />
+    <Content Include="Images\Imagens\Produto.jpg" />
+    <Content Include="Images\Imagens\produtoExemplo.jpg" />
+    <Content Include="Images\Imagens\Selo-Final-162x162.png" />
+    <Content Include="Images\Imagens\SeloFINAL-15x15.png" />
+    <Content Include="Images\Imagens\SeloOtimizado.png" />
+    <Content Include="Images\Imagens\TopoDesenho - Copia.jpg" />
+    <Content Include="Images\Imagens\TopoDesenho.jpg" />
+    <Content Include="Images\Imagens\toposite_desktop.png" />
+    <Content Include="Images\Imagens\toposite_mobile.png" />
+    <Content Include="Images\Imagens\Visualizar.jpg" />
+    <Content Include="Images\Imagens\MenuHamburguerMobile.png" />
+    <Content Include="Images\lupamo.png" />
+    <Content Include="Images\Imagens\up.png" />
+    <Content Include="Scripts\angular\angular-animate.js" />
+    <Content Include="Scripts\angular\angular-cookies.js" />
+    <Content Include="Scripts\angular\angular-route.js" />
+    <Content Include="Scripts\angular\angular-ui-router.js" />
+    <Content Include="Scripts\angular\angular.js" />
+    <Content Include="Scripts\angular\ngDialog.js" />
+    <Content Include="Scripts\appexpert.js" />
+    <Content Include="Scripts\compatibility\modernizr-2.6.2.js" />
+    <Content Include="Scripts\compatibility\respond.js" />
+    <Content Include="Scripts\controllers\buscacontroller - Copy.js" />
+    <Content Include="Scripts\controllers\cadpesquisacontroller.js" />
+    <Content Include="Scripts\controllers\calendariocontroller.js" />
+    <Content Include="Scripts\controllers\carrinhocontroller.js" />
+    <Content Include="Scripts\controllers\cadastrocontroller.js" />
+    <Content Include="Scripts\controllers\buscacontroller.js" />
+    <Content Include="Scripts\controllers\emporiocontroller.js" />
+    <Content Include="Scripts\controllers\promocaocontroller - Copy.js" />
+    <Content Include="Scripts\controllers\hotsitecontroller.js" />
+    <Content Include="Scripts\controllers\esqueciminhasenhacontroller.js" />
+    <Content Include="Scripts\controllers\produtocontroller.js" />
+    <Content Include="Scripts\controllers\institucionalcontroller.js" />
+    <Content Include="Scripts\controllers\cortescontroller.js" />
+    <Content Include="Scripts\controllers\minhacontacontroller.js" />
+    <Content Include="Scripts\controllers\homecontroller.js" />
+    <Content Include="Scripts\controllers\logincontroller.js" />
+    <Content Include="Scripts\controllers\modalcontroller.js" />
+    <Content Include="Scripts\foundation\foundation.js" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
+    <Content Include="fonts\montserrat-black-webfont.woff" />
+    <Content Include="fonts\montserrat-black-webfont.woff2" />
+    <Content Include="fonts\montserrat-bold-webfont.woff" />
+    <Content Include="fonts\montserrat-bold-webfont.woff2" />
+    <Content Include="fonts\montserrat-extrabold-webfont.woff" />
+    <Content Include="fonts\montserrat-extrabold-webfont.woff2" />
+    <Content Include="fonts\montserrat-hairline-webfont.woff" />
+    <Content Include="fonts\montserrat-hairline-webfont.woff2" />
+    <Content Include="fonts\montserrat-light-webfont.woff" />
+    <Content Include="fonts\montserrat-light-webfont.woff2" />
+    <Content Include="fonts\montserrat-regular-webfont.woff" />
+    <Content Include="fonts\montserrat-regular-webfont.woff2" />
+    <Content Include="fonts\montserrat-semibold-webfont.woff" />
+    <Content Include="fonts\montserrat-semibold-webfont.woff2" />
+    <Content Include="fonts\montserrat-ultralight-webfont.woff" />
+    <Content Include="fonts\montserrat-ultralight-webfont.woff2" />
+    <None Include="Properties\PublishProfiles\Feed Presentation.pubxml" />
+    <None Include="Properties\PublishProfiles\Hebert.pubxml" />
+    <None Include="Scripts\jquery\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery\jquery-2.1.4.js" />
+    <Content Include="Scripts\jquery\jquery-2.1.4.min.js" />
+    <Content Include="Scripts\jquery\jquery-3.1.1.min.js" />
+    <Content Include="Scripts\jquery\jquery.js" />
+    <Content Include="Scripts\jquery\jquery.mask.js" />
+    <None Include="Scripts\jquery\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery\jquery.validate.js" />
+    <Content Include="Scripts\jquery\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\foundation\foundation-datepicker.js" />
+    <Content Include="Scripts\foundation\foundation-datepicker.pt-br.js" />
+    <Content Include="Scripts\novoSite\jquery.vide.js" />
+    <Content Include="Scripts\novoSite\JsPrincipal.js" />
+    <Content Include="Scripts\novoSite\bootstrap.min.js" />
+    <Content Include="Scripts\novoSite\bs_leftnavi.js" />
+    <Content Include="Scripts\novoSite\itemslide.min.js" />
+    <Content Include="Scripts\novoSite\jquery.modal.js" />
+    <Content Include="Scripts\novoSite\materialize.min.js" />
+    <Content Include="Scripts\novoSite\owl.carousel.js" />
+    <Content Include="Scripts\novoSite\remodal.js" />
+    <Content Include="Scripts\novoSite\sliding.js" />
+    <Content Include="Scripts\plugins\owl.carousel.js" />
+    <Content Include="Scripts\plugins\scrollmagic.js" />
+    <Content Include="Scripts\appconfig.js" />
+    <Content Include="Scripts\services\CadPesquisaFacade.js" />
+    <Content Include="Scripts\services\CadastroFacade.js" />
+    <Content Include="Scripts\services\CarrinhoFacade.js" />
+    <Content Include="Scripts\services\CortesFacade - Copy.js" />
+    <Content Include="Scripts\services\EmporioFacade.js" />
+    <Content Include="Scripts\services\PromocaoFacade - Copy.js" />
+    <Content Include="Scripts\services\HotsiteFacade.js" />
+    <Content Include="Scripts\services\ProdutoFacade.js" />
+    <Content Include="Scripts\services\CortesFacade.js" />
+    <Content Include="Scripts\services\MinhaContaFacade.js" />
+    <Content Include="Scripts\services\GeneralFacade.js" />
+    <Content Include="Scripts\services\AuthFacade.js" />
+    <Content Include="Scripts\services\HttpInterceptor.js" />
+    <Content Include="Styles\angular\ngdialog\myth\ngDialog-theme-default.css" />
+    <Content Include="Styles\angular\ngdialog\myth\ngDialog-theme-plain.css" />
+    <Content Include="Styles\angular\ngdialog\myth\ngDialog.css" />
+    <Content Include="Styles\angular\ngdialog\ngDialog-custom-width.css" />
+    <Content Include="Styles\angular\ngdialog\ngDialog-theme-default.css" />
+    <Content Include="Styles\angular\ngdialog\ngDialog-theme-default.min.css" />
+    <Content Include="Styles\angular\ngdialog\ngDialog-theme-plain.css" />
+    <Content Include="Styles\angular\ngdialog\ngDialog-theme-plain.min.css" />
+    <Content Include="Styles\angular\ngdialog\ngDialog.css" />
+    <Content Include="Styles\angular\ngdialog\ngDialog.min.css" />
+    <Content Include="Styles\colors.css">
+      <DependentUpon>colors.less</DependentUpon>
+    </Content>
+    <Content Include="Styles\colors.min.css">
+      <DependentUpon>colors.css</DependentUpon>
+    </Content>
+    <Content Include="Styles\core - Copy.css">
+      <DependentUpon>core - Copy.less</DependentUpon>
+    </Content>
+    <Content Include="Styles\core - Copy.min.css">
+      <DependentUpon>core - Copy.css</DependentUpon>
+    </Content>
+    <Content Include="Styles\core.css">
+      <DependentUpon>core.less</DependentUpon>
+    </Content>
+    <Content Include="Styles\core.min.css">
+      <DependentUpon>core.css</DependentUpon>
+    </Content>
+    <Content Include="Styles\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Styles\fonts\fonts.css" />
+    <Content Include="Styles\foundation\foundation.css" />
+    <Content Include="Styles\novoSite\bootstrap.min.css" />
+    <Content Include="Styles\novoSite\bs_leftnavi.css" />
+    <Content Include="Styles\novoSite\docs.theme.min.css" />
+    <Content Include="Styles\novoSite\materialize.min.css" />
+    <Content Include="Styles\novoSite\owl.carousel.css" />
+    <Content Include="Styles\novoSite\owl.theme.default.min.css" />
+    <Content Include="Styles\novoSite\remodal-default-theme.css" />
+    <Content Include="Styles\novoSite\remodal.css" />
+    <Content Include="Styles\novoSite\stiloSite - Copy.css" />
+    <Content Include="Styles\novoSite\stiloSite.css" />
+    <Content Include="Styles\plugins\ajax-loader.gif" />
+    <Content Include="Styles\foundation\foundation-datepicker.css" />
+    <Content Include="Styles\plugins\owl.carousel.css" />
+    <Content Include="Styles\plugins\owl.theme.default.css" />
+    <Content Include="Styles\plugins\owl.theme.green.css" />
+    <Content Include="Styles\plugins\owl.video.play.png" />
+    <Content Include="Styles\utils.css">
+      <DependentUpon>utils.less</DependentUpon>
+    </Content>
+    <Content Include="Styles\utils.min.css">
+      <DependentUpon>utils.css</DependentUpon>
+    </Content>
+    <Content Include="video\ocean.jpg" />
+    <Content Include="video\ocean.mp4" />
+    <Content Include="video\Petiscos.mp4" />
+    <Content Include="video\PetiscosOriginal.mp4" />
+    <Content Include="video\Petiscos_converted.mp4" />
+    <Content Include="Views\CadPesquisa\Index.cshtml" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Templates\App\App.cshtml" />
+    <Content Include="Views\Templates\App\Footerfuturo.cshtml" />
+    <Content Include="Views\Templates\App\Header.cshtml" />
+    <Content Include="Views\Templates\App\Menu.cshtml" />
+    <Content Include="Views\Templates\Exp.cshtml" />
+    <Content Include="Views\Templates\Loader.cshtml" />
+    <Content Include="Views\Templates\Modals\Alltypes.cshtml" />
+    <Content Include="Styles\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Styles\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Styles\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Styles\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Styles\pages\home.less" />
+    <Content Include="Views\Cadastro\Index.cshtml" />
+    <Content Include="Views\Home\Indexvideo.cshtml" />
+    <Content Include="Styles\colors.less" />
+    <Content Include="Styles\core.less" />
+    <Content Include="Styles\utils.less" />
+    <Content Include="Styles\fonts\Montserrat-Black.eot" />
+    <Content Include="Styles\fonts\Montserrat-Black.ttf" />
+    <Content Include="Styles\fonts\Montserrat-Black.woff" />
+    <Content Include="Styles\fonts\Montserrat-Bold.eot" />
+    <Content Include="Styles\fonts\Montserrat-Bold.ttf" />
+    <Content Include="Styles\fonts\Montserrat-Bold.woff" />
+    <Content Include="Styles\fonts\Montserrat-ExtraBold.eot" />
+    <Content Include="Styles\fonts\Montserrat-ExtraBold.ttf" />
+    <Content Include="Styles\fonts\Montserrat-ExtraBold.woff" />
+    <Content Include="Styles\fonts\Montserrat-Hairline.eot" />
+    <Content Include="Styles\fonts\Montserrat-Hairline.ttf" />
+    <Content Include="Styles\fonts\Montserrat-Hairline.woff" />
+    <Content Include="Styles\fonts\Montserrat-Light.eot" />
+    <Content Include="Styles\fonts\Montserrat-Light.ttf" />
+    <Content Include="Styles\fonts\Montserrat-Light.woff" />
+    <Content Include="Styles\fonts\Montserrat-Regular.eot" />
+    <Content Include="Styles\fonts\Montserrat-Regular.ttf" />
+    <Content Include="Styles\fonts\Montserrat-Regular.woff" />
+    <Content Include="Styles\fonts\Montserrat-SemiBold.eot" />
+    <Content Include="Styles\fonts\Montserrat-SemiBold.ttf" />
+    <Content Include="Styles\fonts\Montserrat-SemiBold.woff" />
+    <Content Include="Styles\fonts\Montserrat-UltraLight.eot" />
+    <Content Include="Styles\fonts\Montserrat-UltraLight.ttf" />
+    <Content Include="Styles\fonts\Montserrat-UltraLight.woff" />
+    <Content Include="Views\Templates\App\MenuMobile.cshtml" />
+    <Content Include="Views\Templates\App\MenuLogin.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\MinhaConta\Index.cshtml" />
+    <Content Include="Views\MinhaConta\MeusPedidos.cshtml" />
+    <Content Include="Views\MinhaConta\MeuCadastro.cshtml" />
+    <Content Include="Views\MinhaConta\MeusEnderecos.cshtml" />
+    <Content Include="Views\Busca\Index.cshtml" />
+    <Content Include="Views\Instituicao\QuemSomos.cshtml" />
+    <Content Include="Views\Instituicao\FaleConosco.cshtml" />
+    <Content Include="Views\Cadastro\Passo1.cshtml" />
+    <Content Include="Views\Cadastro\Passo2.cshtml" />
+    <Content Include="Views\Cortes\Index.cshtml" />
+    <Content Include="Views\Produto\Index.cshtml" />
+    <Content Include="Views\Carrinho\Index.cshtml" />
+    <Content Include="Views\Carrinho\Produtos.cshtml" />
+    <Content Include="Views\Carrinho\Pagamento.cshtml" />
+    <Content Include="Views\Carrinho\Conclusao.cshtml" />
+    <Content Include="Views\Instituicao\PoliticaDeFrete.cshtml" />
+    <Content Include="Views\Templates\Plugins\Calendario.cshtml" />
+    <Content Include="Views\Login\EsqueciMinhaSenha.cshtml" />
+    <Content Include="Views\Login\AlterarMinhaSenha.cshtml" />
+    <Content Include="Views\Carrinho\ReprocessaPagamento.cshtml" />
+    <Content Include="Views\Templates\OrientationLock.cshtml" />
+    <Content Include="Views\Promocao\Index.cshtml" />
+    <Content Include="Views\Carrinho\hebert.cshtml" />
+    <Content Include="Views\Instituicao\NossaEntrega.cshtml" />
+    <Content Include="Views\Emporio\Index.cshtml" />
+    <Content Include="Views\Templates\cortes.cshtml" />
+    <Content Include="Views\Templates\App\FooterNovo.cshtml" />
+    <Content Include="Views\Templates\App\Header - Copy.cshtml" />
+    <Content Include="Views\Cadastro\Passo1 - Copy.cshtml" />
+    <Content Include="Styles\core - Copy.less" />
+    <Content Include="Views\Cadastro\Passo2 - Copy.cshtml" />
+    <Content Include="Views\Templates\App\menucarrinho.cshtml" />
+    <Content Include="Views\Instituicao\FaleConosco - Copy.cshtml" />
+    <Content Include="Views\Cortes\Index - Copy.cshtml" />
+    <Content Include="Views\Templates\carrinhonovo.cshtml" />
+    <Content Include="Views\Carrinho\Produtos - Copy.cshtml" />
+    <Content Include="Views\MinhaConta\MeuCadastro - Copy.cshtml" />
+    <Content Include="Views\Carrinho\ReprocessaPagamento - Copy.cshtml" />
+    <Content Include="Views\Produto\Index - Copy.cshtml" />
+    <Content Include="Views\Templates\carrinhoprincipal.cshtml" />
+    <Content Include="Views\Emporio\Index - Copy.cshtml" />
+    <Content Include="Views\Busca\Index - Copy.cshtml" />
+    <Content Include="Views\Hotsite\Index.cshtml" />
+    <Content Include="Views\CadPesquisa\Passoe1.cshtml" />
+    <Content Include="Views\CadPesquisa\Passoe2.cshtml" />
+    <Content Include="Views\CadPesquisa\Passoe3.cshtml" />
+    <Content Include="Views\CadPesquisa\Passoe4.cshtml" />
+    <Content Include="Views\CadPesquisa\Passoe5.cshtml" />
+    <Content Include="Views\CadPesquisa\Passoe6.cshtml" />
+    <Content Include="Views\CadPesquisa\Passoe7.cshtml" />
+    <Content Include="Views\Templates\carrinhoprincipal - Copy.cshtml" />
+    <Content Include="Views\Templates\App\Menu - Copy.cshtml" />
+    <Content Include="Views\Home\Index - Copy %283%29.cshtml" />
+    <Content Include="Views\Carrinho\Index - Copy.cshtml" />
+    <Content Include="Views\Produto\Index - Copy %282%29.cshtml" />
+    <Content Include="Views\Carrinho\Pagamento - Copy.cshtml" />
+    <Content Include="Views\Templates\App\Menu - Copy %282%29.cshtml" />
+    <Content Include="Views\Templates\App\Header - Copy %282%29.cshtml" />
+    <Content Include="Views\MinhaConta\MeusPedidos - Copy.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="video\ocean.ogv" />
+    <Content Include="video\ocean.webm" />
+    <Content Include="video\Petiscos.ogv" />
+    <Content Include="video\Petiscos_.webm" />
+    <Content Include="Views\Templates\App\Footer.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\NossaEntrega\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>34218</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://local.feed.com.br</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

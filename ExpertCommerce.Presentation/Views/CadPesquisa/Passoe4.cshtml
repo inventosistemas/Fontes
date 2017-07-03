@@ -1,0 +1,16 @@
+﻿<div class="row passo4">
+    <form novalidate name="cadastroform" ng-submit="submitEndereco(cadastroform.$valid)" class="" style="border: 1px solid white;float: left;margin: auto;width:100%;">
+        <div class="form-group grupoEndereco">
+
+            <h2>Buscar</h2>
+            <input type="text" class="form-control cadNome txtBusca4" placeholder="CPF ou Email" value="{{usuario.Nome}}" ng-model="usuario.Nome" required ng-required="true" maxlength="150" tabindex="1">
+
+            <div class="">
+                <button style="margin-top: 20px;font-size: 16px;width: 205px;"  type="submit" class="btn active BotaoVerItens btnBuscar4" ng-disabled="cadastroform.$invalid">BUSCAR</button>
+            </div>
+            <a style="margin-top: 20px;font-size: 16px;width: 205px;" href="/#!/cadpesquisa/passoe-6" class="btn active BotaoVerItens btnAlterarOrigem4">ALTERAR ORIGEM</a>
+        </div>
+
+    </form>
+   
+</div>

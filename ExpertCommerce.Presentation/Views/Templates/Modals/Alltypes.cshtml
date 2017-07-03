@@ -1,0 +1,23 @@
+﻿<div class="exp-dialog">
+    <div class="ngdialog-title">
+        <h1>{{expmodal.title}}</h1>
+    </div>
+
+    <div class="ngdialog-image" ng-if="expmodal.classandtype == 'ngdialog-theme-plain error'">
+        <img alt="" src="~/Images/assets/sad.png" width="80" />
+    </div>
+
+    <div class="ngdialog-message">
+        <p ng-if="expmodal.html" ng-bind-html="expmodal.message"></p>
+        <p ng-if="!expmodal.html">{{expmodal.message}}</p>
+    </div>
+
+    <div class="ngdialog-buttons" ng-if="expmodal.confirm">
+        <button type="button" class="secondary fd-button fd-hollow fd-small-font" ng-click="closeThisDialog()">{{expmodal.confirm.buttonCancel}}</button>
+        <button type="button" class="primary fd-button fd-primary fd-small-font" ng-click="confirm(expmodal.confirm.data)">{{expmodal.confirm.buttonOk}}</button>
+    </div>
+
+    <div class="ngdialog-buttons" ng-if="expmodal.backto">
+        <button type="button" class="primary fd-button fd-primary fd-small-font" ui-sref="{{expmodal.backto}}" ng-click="closeThisDialog()">{{expmodal.backtobutton}}</button>
+    </div>
+</div>

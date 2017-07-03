@@ -1,0 +1,442 @@
+﻿@model Boolean
+
+@*<div class="hidden-sm hidden-xs" style="margin-top: -56px;margin-left: -1px;" ng-include="forAnotherCtrl.url">
+    </div>*@
+<div class="">
+
+    <div class="main-placeholder home main">
+
+
+        @*<div id="slides_control">
+                <div>
+                    <carousel interval="myInterval">
+                        <slide ng-repeat="slide in slides" active="slide.active">
+                            <img ng-src="{{slide.image}}">
+                            <div class="carousel-caption">
+                                <h4>Slide {{$index+1}}</h4>
+                            </div>
+                        </slide>
+                    </carousel>
+                </div>
+            </div>*@
+
+        <div class="">
+
+            <div id="carousel-example-generic" class="carousel slide abaixarCarousel" data-ride="carousel">
+                <!-- Indicators -->
+                <div>
+                    <ol ng-repeat="slider in banners" class="carousel-indicators" style="opacity: 0.2;">
+                        @*<li data-target="#carousel-example-generic" data-slide-to="{{$index}}" ng-class="$index == 0 ? 'active' : ''"></li>*@
+                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                    </ol>
+                </div>
+
+                <!-- Wrapper for slides -->
+
+              
+                <div class="carousel-inner bannerHome alturaCarrosel ajustaBotoesBanners" role="listbox" style="">
+
+                    <div ng-repeat="slide in banners" ng-class="$index+1 == 1 ? 'active' : ''" class="item  bannerHome alturaCarrosel" style="">
+                       
+                            <img style="width: 100%;" ng-src="https://feed.com.br/{{slide.ImagemMobile}}" class="img-responsive hidden-lg redmBanner" alt="..." fallback-src="~/Images/assets/unavailable.png">
+                       
+                       
+                            <img style="width: 100%;" ng-src="https://feed.com.br/{{slide.Imagem}}" class="img-responsive hidden-xs hidden-md" alt="..." fallback-src="~/Images/assets/unavailable.png">
+                       
+                        
+
+                        
+                    </div>
+
+
+
+                </div>
+                <!-- Controls -->
+                <p style="" class="left carousel-control mudacarousel" href="#carousel-example-generic" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </p>
+                <p style="" class="right carousel-control mudacarousel" href="#carousel-example-generic" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </p>
+
+            </div>
+        </div>
+        @*<div class="">
+
+                <div id="carousel-example-generic" class="carousel slide abaixarCarousel" data-ride="carousel" >
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+                    </ol>
+                    <!-- Wrapper for slides -->
+
+             
+                    <div class="carousel-inner bannerHome alturaCarrosel" role="listbox" style="height:100%;">
+                        <div class="item active bannerHome alturaCarrosel" style="">
+                            <img src="~/Images/Imagens/BannerSiteNovo_1310x600_01.jpg" class="visible-lg hidden-xs hidden-sm hidden-md" alt="...">
+                            <img src="~/Images/Imagens/BannerSiteNovo_600x545_01.jpg" class="visible-xs visible-sm visible-md hidden-lg" alt="...">
+
+                        </div>
+                        <div class="item bannerHome alturaCarrosel" style="">
+                            <img src="~/Images/Imagens/BannerSiteNovo_1310x600_02.jpg" class="visible-lg hidden-xs hidden-sm hidden-md" alt="...">
+                            <img src="~/Images/Imagens/BannerSiteNovo_600x545_02.jpg" class="visible-xs visible-sm visible-md hidden-lg" alt="...">
+                        </div>
+                        <div class="item bannerHome alturaCarrosel" style="">
+                            <img src="~/Images/Imagens/BannerSiteNovo_1310x600_03.jpg" class="visible-lg hidden-xs hidden-sm hidden-md" alt="...">
+                            <img src="~/Images/Imagens/BannerSiteNovo_600x545_03.jpg" class="visible-xs visible-sm visible-md hidden-lg" alt="...">
+                        </div>
+                        <div class="item bannerHome alturaCarrosel" style="">
+                            <img src="~/Images/Imagens/BannerSiteNovo_1310x600_04.jpg" class="visible-lg hidden-xs hidden-sm hidden-md" alt="...">
+                            <img src="~/Images/Imagens/BannerSiteNovo_600x545_04.jpg" class="visible-xs visible-sm visible-md hidden-lg" alt="...">
+                        </div>
+                        <div class="item bannerHome alturaCarrosel" style="">
+                            <img src="~/Images/Imagens/BannerSiteNovo_1310x600_05.jpg" class="visible-lg hidden-xs hidden-sm hidden-md" alt="...">
+                            <img src="~/Images/Imagens/BannerSiteNovo_600x545_05.jpg" class="visible-xs visible-sm visible-md hidden-lg" alt="...">
+                        </div>
+
+                    </div>
+                    <!-- Controls -->
+                    <p style="" class="left carousel-control mudacarousel" href="#carousel-example-generic" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </p>
+                    <p style="" class="right carousel-control mudacarousel" href="#carousel-example-generic" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </p>
+
+                </div>
+            </div>*@
+
+
+        @if (!Model)
+        {
+            <img src="~/Images/Imagens/Selo-Final-162x162.png" class="SeloHome" style="height:162px;padding-right: 66px;float:right;margin-top: -69px;position: relative;" />
+        }
+      
+
+      
+
+
+
+
+
+
+
+
+    </div>
+
+    <div style="clear:both;">   </div>
+
+    <div class="container" style="height:130px;">
+        <p class="PromocoesImperdiveisHome destaqueHome fontt" style="font-weight: 900;background-color: #012939;color: white;margin-left: 1%;width: 98%;">CORTES EM DESTAQUE</p>
+    </div>
+   
+    @if (!Model)
+    {
+        <div class="container" id="desk2" style="margin-top: -57px;">
+            <div ng-repeat="item in cortes" class="itensProd" style="border: 1px solid white;">
+                <div class="produtoHome2" onmouseover="abrir(this.id)" onmouseout="sair(this.id)" id="{{item.Produto.ID}}">
+                    <div class="imagemVitrineHome " style="text-align: center;">
+                        <div style="text-align: center;">
+                            <a href="/#!/produto/{{item.Produto.ID}}">
+                                <img src="{{item.Produto.Imagem}}" fallback-src="~/Images/assets/unavailable.png" class="img-responsive imgProdProduto fotoResponsiva FtoVitrine">
+                            </a>
+                            <div class="visualizaRap" id="aparecev{{item.Produto.ID}}" style="display: none; " ng-click="submitModal(item.Produto.ID)">
+                                <br> <span style="color:white;cursor:pointer;" data-toggle="modal" data-target="#myModal">VISUALIZAÇÃO RÁPIDA</span>
+                            </div>
+                        </div>
+                        <a href="/#!/produto/{{item.Produto.ID}}">
+                            <div class="conteudoProdCortes">
+                                <p class="nomeitemNome" style="color:black !important;">{{item.Produto.Descricao | limitTo:20}}</p>
+                                <p class="nomeitemDesc" style="color:black !important;">{{item.Produto.ProdutoTipo.Descricao | capitalize}} {{item.Produto.Skus[0].Peso}} KG</p>
+                                <p class="nomeitemPor" style="color:black !important;margin-bottom: 30px;">POR  <span style="color:#FF6B00" class="nomeitemPreco"> {{item.Produto.PrecoVigente | currency:"R$ "}}</span></p>
+                            </div>
+                        </a>
+
+                        <div id="apareceb{{item.Produto.ID}}" style="display: none;">
+                            <div class="prodDispoHom conteudoProd">
+
+                                <div class="">
+                                    <a onclick="atualizarCarrinho(), abrirCarrinho()" ng-click="adicionarCarrinho(item.Produto)">
+
+                                        <span class="btnadic" style=""> <img src="~/Images/Imagens/carrinho_novo_vazio.png" style="width: 30px;margin-top: -11px;" /> ADICIONAR</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="apareceb{{item.Produto.ID}}" class="escondeAdiciona">
+                            <div class="prodDispoHom conteudoProd">
+
+                                <div class="">
+                                    <a onclick="atualizarCarrinho(), abrirCarrinho()" ng-click="adicionarCarrinho(item.Produto)">
+                                        <span class="btnadic" style=""> <img src="~/Images/Imagens/carrinho_novo_vazio.png" style="width: 30px;margin-top: -11px;" /> ADICIONAR</span>
+
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="alinhacarouselhome">
+            <div class="loop  main centrar" style="max-width:400px;">
+                <div ng-repeat="item in cortes">
+                    <div style="width:260px;margin: auto;">
+                        <a href="#!/produto/{{item.Produto.ID}}">
+                            <img src="{{item.Produto.Imagem}}" fallback-src="~/Images/assets/unavailable.png" class="img-responsive FtoVitrine" style="margin: auto;">
+                        </a>
+
+                        <div class="" style="margin: auto;">
+
+                            <p class="nomeitemNome" >{{item.Produto.Descricao | limitTo:20}}</p>
+                            <p class="nomeitemDesc" >{{item.Produto.ProdutoTipo.Descricao | capitalize}} {{item.Produto.Skus[0].Peso}} KG</p>
+                            <p class="nomeitemPreco" style="color:#FF6B00">{{item.Produto.PrecoVigente | currency:"R$ "}}</p>
+
+                            <a onclick="atualizarCarrinho(), fecharmodal(this)" ng-click="adicionarCarrinho(item.Produto)" data-toggle="modal" data-target=".bs-example-modal-sm">
+                                <img class="" src="~/Images/Imagens/AdicionaCarrinho.jpg" style="width:120px;    margin: auto;" />
+
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+  
+
+    
+  
+    <div style="clear:both;">   </div>
+    <div class="container main" style="height:130px;text-align: center;padding-top: 15px;">
+        <a href="/#!/cortes">
+            <p class="btn active BotaoVerItens btnHomeDiv sobe" style="background-color:#00953A;font-weight:bold;margin-left: 0px;">CONHEÇA NOSSOS CORTES</p>
+        </a>
+
+    </div>
+    @*<hr style="" class="hrHome" />*@
+    <div class="container alinhatextoIphone" style="height:80px;">
+        <p class="PromocoesImperdiveisHome destaqueHome faixaEmporio fontt" style="font-weight: 900;background-color: #012939;color: white;margin-left: 1%;width: 98%;">EMPÓRIO EM DESTAQUE</p>
+    </div>
+   
+    @if (!Model)
+    {
+        <div class="container" id="desk2" style="margin-top: -57px;">
+            <div ng-repeat="iteme in emporios" class="itensProd" style="border: 1px solid white;">
+                <div class="produtoHome2" onmouseover="abrir(this.id)" onmouseout="sair(this.id)" id="{{iteme.Produto.ID}}">
+                    <div class="imagemVitrineHome " style="text-align: center;">
+                        <div style="text-align: center;">
+                            <a href="/#!/produto/{{iteme.Produto.ID}}">
+                                <img src="{{iteme.Produto.Imagem}}" fallback-src="~/Images/assets/unavailable.png" class="img-responsive imgProdProduto fotoResponsiva FtoVitrine" style="margin:auto;">
+                            </a>
+                            <div class="visualizaRap" id="aparecev{{iteme.Produto.ID}}" style="display: none; " ng-click="submitModal(iteme.Produto.ID)">
+                                <br> <span style="color:white;cursor:pointer;" data-toggle="modal" data-target="#myModal">VISUALIZAÇÃO RÁPIDA</span>
+                            </div>
+                        </div>
+                        <a href="/#!/produto/{{iteme.Produto.ID}}">
+                            <div class="conteudoProdCortes">
+                                @*<p class="nomeitemNome" style="color:black !important;">{{iteme.Produto.Descricao | limitTo:20}}</p>*@
+                                <p class="nomeitemNome" style="color:black !important;">{{iteme.Produto.Descricao}}</p>
+                                <p class="nomeitemPor" style="color:black !important;margin-bottom: 30px;">POR <span style="color:#FF6B00" class="nomeitemPreco"> {{iteme.Produto.PrecoVigente | currency:"R$ "}}</span></p>
+                            </div>
+                        </a>
+
+                        <div id="apareceb{{iteme.Produto.ID}}" style="display: none;">
+                            <div class="prodDispoHom conteudoProd">
+
+                                <div class="">
+                                    <a onclick="atualizarCarrinho(), abrirCarrinho()" ng-click="adicionarCarrinho(iteme.Produto)">
+
+                                        <span class="btnadic" style=""> <img src="~/Images/Imagens/carrinho_novo_vazio.png" style="width: 30px;margin-top: -11px;" /> ADICIONAR</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="apareceb{{iteme.Produto.ID}}" class="escondeAdiciona">
+                            <div class="prodDispoHom conteudoProd">
+
+                                <div class="">
+                                    <a onclick="atualizarCarrinho(), abrirCarrinho()" ng-click="adicionarCarrinho(iteme.Produto)">
+
+                                        <span class="btnadic" style=""> <img src="~/Images/Imagens/carrinho_novo_vazio.png" style="width: 30px;margin-top: -11px;" /> ADICIONAR</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="alinhacarouselhome">
+            <div class="loop  main centrar" style="max-width:400px;">
+                <div ng-repeat="item in emporios">
+                    <div style="width:260px;margin: auto;">
+                        <a href="#!/produto/{{item.Produto.ID}}">
+                            <img src="{{item.Produto.Imagem}}" fallback-src="~/Images/assets/unavailable.png" class="img-responsive FtoVitrine" style="margin: auto;">
+                        </a>
+                        <div class="" style="margin: auto;">
+
+                            <p class="nomeitemNome" style="height: 60px;">{{item.Produto.Descricao }}</p>
+
+                            <p class="nomeitemPreco" style="color:#FF6B00">{{item.Produto.PrecoVigente | currency:"R$ "}}</p>
+                           
+                            <a onclick="atualizarCarrinho(), fecharmodal(this)" ng-click="adicionarCarrinho(item.Produto)" data-toggle="modal" data-target=".bs-example-modal-sm">
+                                <img class="" src="~/Images/Imagens/AdicionaCarrinho.jpg" style="width:120px;    margin: auto;" />
+
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+   
+    <div style="clear:both;">   </div>
+   
+    <div class="container main" style="text-align: center;margin-bottom: 80px;">
+        <a href="/#!/emporio">
+            <p class="btn active BotaoVerItens btnHomeDiv sobe sobe2 " style="background-color:#00953A;font-weight:bold;margin-left: 0px;">CONHEÇA NOSSO EMPÓRIO</p>
+        </a>
+
+    </div>
+    <hr style="" class="hrHome" />
+
+  
+    @if (Model)
+    {
+        <div id="myModal1" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="modal-face">
+            <div class="modal-dialog modal-sm" role="document" style="top: 100px;">
+                <div class="modal-content" style="top: 249px;height: 60px;padding: 19px 10px 10px 10px;">
+                    Item Adicionado com sucesso!
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document" style="width: 760px;">
+                <div class="modal-content" style="max-width: 760px;padding: 0px;margin: 0px;height: 377px;top: 160px;">
+                    <div>
+                        <p data-remodal-action="close" style="color: black;font-size: 32px;margin-bottom: 0px;float: right;margin-right: 30px;margin-top: 10px;font-weight: 900;" class="grow"><button type="button" class="btn btn-default" data-dismiss="modal">X</button></p>
+
+                    </div>
+                    <div style="height:84%;width:316px;float:left;margin-top: 30px;margin-left: 30px;">
+                        <img ng-src="{{expmodal.Imagem}}" fallback-src="~/Images/assets/unavailable.png" class="img-responsive" style="display: block;margin-left: 0px;margin-right: 0px;width: 314px;height:314px">
+                    </div>
+                    <div style="height:84%;width:316px;float:left;margin-top: 30px;margin-left: 30px;text-align: left;color: #415F6B;">
+                        <p style="font-size: 17px;font-weight: 900;">{{expmodal.title}}</p>
+                        <p style="font-weight: 200;font-size: 13px;color: black;">
+                            {{expmodal.descRes}}
+                        </p>
+
+                        <p style="font-weight: 900;font-size: 14px;margin-bottom: 3px;">Corte: {{expmodal.corte}}</p>
+                        <p style="font-weight: 900;font-size: 14px;margin-bottom: 3px;">{{expmodal.peso}} Kg</p>
+                        <p style="font-weight: 900;font-size: 14px;margin-bottom: 10px;color: #FF4338;">{{expmodal.preco | currency:"R$ "}}</p>
+                        <span>QTD  </span>
+                        <button style="color: white;background-color: #001F2C;border: 0;width:40px;height:40px;" class="left" ng-click="quantidade > 1 ? quantidade = quantidade - 1 : ''" ng-disabled="quantidade == 1">-</button>
+                        <input disabled value="{{quantidade}}" type="text" style="border: 0px solid black;border-top-width: 3px;padding-bottom: 2px;border-bottom-width: 2px;height: 40px;width: 40px;text-align: center;margin-left: -5px;margin-right: -4px;font-weight: bold;font-size: 15px;" />
+                        <button style="color: white;background-color: #001F2C;border: 0;width:40px;height:40px;" class="" ng-click="quantidade = quantidade + 1">+</button>
+
+                        <a onclick="atualizarCarrinho(), abrirCarrinho(), fecharmodalProd()" ng-click="adicionarCarrinhoProd(expmodal.Id,quantidade)">
+                            <br />
+                            <br />
+                            <br />
+                            <span class="btnadic" style=""> <img src="~/Images/Imagens/carrinho_novo_vazio.png" style="width: 30px;margin-top: -11px;" /> ADICIONAR</span>
+                            
+                        </a>
+
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </div>
+    }
+
+    <!-- Button trigger modal -->
+   
+
+    <!-- Modal -->
+   
+    <!--Here is the carousel-->
+
+    <div class="remodal" data-remodal-id="modal" role="dialog" aria-labelledby="modal1Title" aria-describedby="modal1Desc" style="height:10px;">
+
+
+    </div>
+
+
+
+    <div class="contInst main" style="max-width:1280px;margin: auto;">
+        <div class="boxInst">
+            <a target="_blank" href="https://www.feed.com.br/institucional/categoria-mundo-feed/feed-e-eleita-melhor-carne-de-sao-paulo-pelas-revistas-veja-sp-e-epoca-sp/">
+                <img src="~/Images/Imagens/BannerSiteInstitucional_540x281_01.jpg" class="imagemInst" style="">
+            </a>
+        </div>
+        <a target="_blank" href="https://goo.gl/ODj0ep">
+            <div class="boxInst " style="margin-bottom: -67px;">
+                <img src="~/Images/Imagens/BannerSiteInstitucional_540x281_02.jpg" class="imagemInst" style="">
+                @*<iframe src="https://www.google.com/maps/embed?pb=!1m0!3m2!1spt-BR!2sbr!4v1489774617072!6m8!1m7!1sC92OYFoL6sUAAAQ1t0Bjjw!2m2!1d-23.58503585558306!2d-46.68501699577604!3f62!4f0!5f0.7820865974627469" width="540" height="281" frameborder="0" style="border:0" allowfullscreen></iframe>*@
+            </div>
+        </a>
+    </div>
+    <div style="clear:both;"></div>
+    <hr style="border-top: 3px solid #10293D;width: 90%;opacity: 0.1;" class="hidden-lg hidden-md main" />
+    <div class="newsletterHome main newss SemiBold" style="margin-bottom: 0px;background-color: #F0EFEF;height: 149px;padding-top: 10px;">
+        <span style="font-weight:900;font-size:23px">NEWSLETTER</span>
+        <p class="textoNovidades" style="">RECEBA NOVIDADES DA FEED EM SEU E-MAIL</p>
+        <div>
+            <form class="" novalidate name="newsform" ng-submit="submitNewsletter(newsform.$valid)">
+
+                <input type="email" placeholder="Digite seu e-mail" class="EntradaNews" ng-model="newsletter.Email" required ng-required="true">
+
+                <button type="submit" class="btn active BotaoEnviarNews " ng-disabled="newsform.$invalid">Enviar</button>
+            </form>
+
+
+        </div>
+
+    </div>
+
+    @if (Model)
+    {
+        <div class="newsletterHome main  main"
+             style="border:1px solid #f5f3f3;margin-top: 16px !important;width:90%;text-align: center;margin: auto;opacity: 0.8;padding: 15px 0px 35px 0px;">
+
+            <p class="" style="">Faça login e veja ofertas incríveis </p>
+            <p class="" style="margin-top: -9px;"> escolhidas só para você</p>
+            <div>
+                <a href="/#!/emporio">
+                    <p class="btn active BotaoEntrarCadHom ">Entrar</p>
+                </a>
+                <a href="/#!/emporio">
+                    <p class="btn active BotaoEntrarCadHom ">Cadastre-se</p>
+                </a>
+
+
+            </div>
+
+        </div>
+    }
+   
+
+
+</div>

@@ -1,0 +1,260 @@
+﻿<div class="main-placeholder carrinho container" style="">
+    @*modals*@
+    <div class="fd-modal modal-endereco container" style="">
+        <div class="title grey lighter ">
+            <div class="small-12 columns">
+                <h1>Trocar</h1>
+                <div class="close" ng-click="toggleModalEndereco();">x</div>
+            </div>
+        </div>
+
+        <div class="content ">
+            <div class="small-12 columns paddingless">
+                <div class="small-12 medium-6 columns ContainerModalCarrinho" style="">
+                    <p class="text-left text-uppercase" style="text-align: center;">Selecione um endereço salvo</p>
+                    <div class="address-box scroll small-12 columns paddingless">
+                        <div style="background-color: grey;color: white;padding: 10px;border: 2px solid white;margin-bottom: 10px;" class="small-12 columns endereco {{item.ID}}" ng-repeat="item in enderecos | orderBy:'-ID'" ng-class="item.Tipo == 0 ? 'selected' : ''" ng-click="setEnderecoEntrega(item)">
+                            <div class="">
+                                <div class="small-12 columns">
+                                    <div class="title">
+                                        <div class="name" style="font-weight:bold;">
+                                            {{item.Identificacao}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            @*descricao endereco*@
+                            <div class="">
+                                <div class="small-12 columns">
+                                    <div class="description">
+                                        {{item.Logradouro}}, {{item.Numero}}, {{item.Complemento}} - {{item.CEP}}, {{item.Bairro}}<br />
+                                        {{item.Cidade.Nome}} - {{item.Cidade.Estado.Nome}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="small-12 medium-6 columns add-new ContainerCadModalCarrinho" style="">
+                    <p class="text-left text-uppercase adicioneModalCarrinho">Ou adicione um novo</p>
+                    <div class="small-12 columns" style="margin:0 auto;">
+                        <form class="form-new-address" novalidate name="enderecoform" ng-submit="submitEndereco(enderecoform.$valid, endereco)">
+                            <div class="">
+                                <div class="small-12 medium-6 columns" >
+                                    <label class="fd-label" style="width: 100%;">
+                                        <span>Nome do local</span>
+                                        <input style="width: 100%;" type="text" class="fd-input fd-lt-spacing" ng-model="endereco.Identificacao" required ng-required="true" />
+                                    </label>
+                                </div>
+
+                                <div class="small-12 medium-6 columns">
+                                    <label class="fd-label" style="width: 33%;float:left;margin-right: 2%;">
+                                        <span>CEP</span>
+                                        <input style="width: 100%;" id="cepfield" type="tel" class="fd-input fd-lt-spacing cep" ng-model="endereco.CEP" required ng-required="true" ng-blur="endereco.CEP.length == 9 ? getCep(endereco) : ''" />
+                                    </label>
+                                </div>
+
+                                <div class="small-12 columns" >
+                                    <label class="fd-label" style="width: 65%;float:left;">
+                                        <span>Endereço</span>
+                                        <input style="width: 100%;" type="text" class="fd-input fd-lt-spacing" ng-model="endereco.Logradouro" required ng-required="true" />
+                                    </label>
+                                </div>
+
+                                <div class="small-12 medium-6 columns">
+                                    <label class="fd-label" style="width: 33%;float:left;margin-right: 2%;">
+                                        <span>Número</span>
+                                        <input style="width: 100%;"  type="text" class="fd-input fd-lt-spacing" ng-model="endereco.Numero" required ng-required="true" />
+                                    </label>
+                                </div>
+
+                                <div class="small-12 medium-6 columns">
+                                    <label class="fd-label" style="width: 65%;float:left;">
+                                        <span>Complemento</span>
+                                        <input style="width: 100%;" type="text" class="fd-input fd-lt-spacing" required ng-required="true" />
+                                    </label>
+                                </div>
+
+                                <div class="small-12 columns">
+                                    <label class="fd-label BairroModalCad" style="">
+                                        <span>Bairro</span>
+                                        <input style="width: 100%;"  type="text" class="fd-input fd-lt-spacing" ng-model="endereco.Bairro" required ng-required="true" />
+                                    </label>
+                                </div>
+
+                                <div class="small-12 medium-6 columns">
+                                    <label class="fd-label CidadeModalCad" style="">
+                                        <span>Cidade</span>
+                                        <input style="width: 100%;"  type="text" class="fd-input fd-lt-spacing" ng-model="endereco.Cidade.Nome" readonly="readonly" required ng-required="true"  />
+                                    </label>
+                                </div>
+
+                                <div class="small-12 medium-6 columns">
+                                    <label class="fd-label EstadoModalCad" style="">
+                                        <span>Estado</span>
+                                        <input style="width: 100%;"  type="text" class="fd-input fd-lt-spacing" ng-model="endereco.Cidade.Estado.Nome" readonly="readonly" required ng-required="true"  />
+                                    </label>
+                                </div>
+
+                               
+                                <div class="small-12 medium-6 columns" >
+                                    <button style="margin-top:20px;" type="submit" class="small-12 medium-4 columns fd-button fd-primary fd-full-width fd-small-font" ng-disabled="enderecoform.$invalid">Salvar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="fd-modal modal-resumo">
+        <div class="title grey lighter ">
+            <div class="small-12 columns">
+                <h1>Resumo</h1>
+                <div class="close" ng-click="toggleModalResumo();">x</div>
+            </div>
+
+            <div class="small-12 columns paddingless show-for-small-only">
+                <button type="button" class="fd-button fd-secondary fd-large fd-full-width float-right bt-confirmar" ng-click="gravaPedido(false);">continuar</button>
+            </div>
+        </div>
+
+        <div class="content row table-resumo-produtos-holder" style="margin-left: 0px;">
+            <table class="small-12 fd-table table-resumo-produtos">
+                <tr>
+                    <td class="paddingless-on-mobile">
+                        <div class="small-12 medium-12 columns paddingless sumario">
+                            @*sumário*@
+                            <div class="small-12 medium-7 columns left paddingless-on-mobile produtos-scroll-holder">
+                                <table class="small-12 columns fd-table product-table">
+                                    <thead>
+                                        <tr class="small-12 columns paddingless">
+                                            <th class="small-8 columns">produto</th>
+                                            <th class="small-4 columns">Valor</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @*produtos*@
+                                        <tr ng-repeat="item in carrinho.Itens" class="small-12 columns paddingless list">
+                                            <td class="small-8 columns"><span class="quantidade">{{item.Quantidade}}x </span>{{item.SubCategoria}} {{item.Tipo}} {{item.Marca}}</td>
+                                            <td class="small-4 columns valor borderless">{{item.ValorUnit | currency:"R$ "}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            @*forma de pagamento*@
+                            <div class="small-12 medium-5 columns paddingless right">
+                                <div class="small-12 columns grey box-content-sumario">
+                                    <h3>Forma de pagamento</h3>
+                                    <p>Cartão de crédito <br /> {{pedidodata.DadosCartao.Numero}}</p>
+                                </div>
+
+                                <div class="small-12 medium-12 columns box-content-sumario">
+                                    <h3>{{tfselecionado.ProgramacaoEntregaID == 3 ? 'retirar na loja' : 'local de entrega'}}</h3>
+
+                                    <p ng-show="tfselecionado.ProgramacaoEntregaID != 3 ">
+                                        {{enderecoEntrega.Logradouro}}, {{enderecoEntrega.Numero}}, {{enderecoEntrega.Complemento}} - {{enderecoEntrega.CEP}}, {{enderecoEntrega.Bairro}}<br />
+                                        {{enderecoEntrega.Cidade.Nome}} - {{enderecoEntrega.Cidade.Estado.Nome}}
+                                    </p>
+
+                                    <div ng-show="tfselecionado.ProgramacaoEntregaID == 3 ">
+                                        Rua Dr. Mário Ferraz, 547 - Itaim - São Paulo/SP - 01453-011
+                                    </div>
+                                </div>
+
+                                <div class="small-12 columns">
+                                    <table class="small-12 columns fd-table product-table">
+                                        <tbody>
+                                            @*produtos*@
+                                            <tr class="small-12 columns paddingless list total">
+                                                <td class="small-12 columns paddingless-on-mobile">
+                                                    <table class="small-12 table-sumario">
+                                                        <tbody class="borderless">
+                                                            <tr>
+                                                                <td class="text-right medium-8 small-6 columns">Subtotal</td>
+                                                                <td class="text-left medium-4 small-6 columns">{{carrinho.SubTotal | currency:"R$ "}}</td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td class="text-right medium-8 small-6 columns">Frete</td>
+                                                                <td class="text-left medium-4 small-6 columns">{{carrinho.Frete | currency:"R$ "}}</td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td class="text-right medium-8 small-6 columns">Desconto</td>
+                                                                <td class="text-left medium-4 small-6 columns">{{carrinho.ValorDesconto | currency:"R$ "}}</td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td class="text-right medium-8 small-6 columns total">Total</td>
+                                                                <td class="text-left medium-4 small-6 columns valor">{{carrinho.SubTotal + carrinho.Frete - carrinho.ValorDesconto | currency:"R$ "}}</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+            <div class="small-12 columns paddingless">
+                <button type="button" class="fd-button fd-secondary fd-large fd-full-width float-right bt-confirmar" ng-click="gravaPedido();">continuar</button>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="fd-modal-overlay">&nbsp;</div>
+
+    @*carrinho*@
+    <div class="grey" style="margin-bottom: 20px;">
+        <div class="">
+            <div class="small-12 medium-11 medium-centered columns">
+                <h1 style="font-weight: bold;font-size: 217%;">Carrinho de compras</h1>
+                <br />
+            </div>
+        </div>
+    </div>
+
+    @*<div class="row steps">
+        <div class="small-12 columns">
+            <div class="small-4 medium-4 columns text-right step" ng-class="step == 1 ? 'active' : ''">
+                <span class="number">1</span>
+                <span>Carrinho</span>
+            </div>
+
+            <div class="small-4 medium-4 columns text-center step" ng-class="step == 2 ? 'active' : ''">
+                <span class="number">2</span>
+                <span>Pagamento</span>
+            </div>
+
+            <div class="small-4 medium-4 columns text-left step" ng-class="step == 3 ? 'active' : ''">
+                <span class="number">3</span>
+                <span>Conclusão</span>
+            </div>
+        </div>
+    </div>*@
+
+    <div class="content">
+        <div class="">
+            <div class="small-12 medium-12 columns">
+                <div class="small-12 medium-10 medium-centered columns">
+                    <div ui-view="child1"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

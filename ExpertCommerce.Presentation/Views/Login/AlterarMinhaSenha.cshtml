@@ -1,0 +1,38 @@
+﻿<div class="main-placeholder esqueci-minha-senha">
+    <div class="grey">
+        <div class="row">
+            <div class="small-12 medium-11 medium-centered columns">
+                <h1>Altere sua senha</h1>
+            </div>  
+        </div>
+    </div>
+
+    <div class="row"  ng-show="showing == 'form-expirado'">
+        <div class="small-12 medium-4 medium-centered columns">
+            <form class="form-login" ng-if="!credentials.isAuthorized" novalidate name="esqueciform" ng-submit="submitEsqueci(esqueciform.$valid, esqueciform)">
+                <h1>Token expirado.</h1>
+                <p>
+                    Esse token de validação para alteração da sua senha já expirou, se você ainda não alterou sua senha, tente novamente.
+                    <br /><br />
+                    Obrigado.
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <div class="row" ng-show="showing == 'form-alterar'">
+        <div class="small-12 medium-4 medium-centered columns">
+            <form class="form-login" ng-if="!credentials.isAuthorized" novalidate name="alterarform" ng-submit="submitAlterar(alterarform.$valid, Alterar)">
+                <h1>Altere sua senha, é simples!</h1>
+                <p>
+                    Coloque sua nova senha e confirmação abaixo para alterar sua senha:
+                </p>
+
+                <input type="password" class="fd-input mgbt" placeholder="senha" ng-model="$parent.senha" required ng-required="true" />
+                <input type="password" class="fd-input mgbt" placeholder="confirmar senha" ng-model="$parent.confirmar" required ng-required="true" compare-to="senha"/>
+
+                <button type="submit" class="small-12 medium-4 columns fd-button fd-primary fd-full-width fd-small-font" ng-disabled="alterarform.$invalid">Alterar</button>
+            </form>
+        </div>
+    </div>
+</div>

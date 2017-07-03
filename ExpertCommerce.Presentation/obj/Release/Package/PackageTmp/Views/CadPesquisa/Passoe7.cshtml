@@ -1,0 +1,33 @@
+﻿<div class="row passo7">
+    <div class="grey">
+        <div class="row facalogin">
+            <div class="small-12 medium-11 medium-centered columns">
+                <h1 style="font-weight: bold;">Faça seu login</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row ">
+        <div class="small-12 medium-4 medium-centered columns">
+            <form class="form-login container" ng-if="!credentials.isAuthorized" novalidate name="loginform" ng-submit="submitLogin(loginform.$valid, true)">
+
+
+                <input type="text" class="fd-input InputLogin txtLogin" placeholder="email" ng-model="$parent.login.UserName" required ng-required="true" ng-trim="false" />
+
+                <br />
+                <input type="password" class="fd-input InputSenha txtSenha" placeholder="senha" ng-model="$parent.login.Password" required ng-required="true" />
+
+
+                <p class="error" ng-if="usernotfound">E-mail ou senha não conferem</p><br />
+
+
+                <br />
+
+                <button style="margin-bottom: 50px;" type="submit" class="fd-button fd-primary fd-full-width fd-small-font btnLogin btnEnviar" ng-disabled="loginform.$invalid">Enviar</button><br />
+
+
+                
+            </form>
+        </div>
+    </div>
+</div>

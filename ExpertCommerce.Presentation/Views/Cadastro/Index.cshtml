@@ -1,0 +1,30 @@
+﻿<div class="main-placeholder cadastro" style="">
+    <div class="grey">
+        <div class="row" style="background-color: #f4f4f4;margin-bottom: 20px;">
+            <div class="small-12 medium-11 medium-centered columns">
+                <h1 style="font-weight:bold;">Cadastro</h1>
+            </div>
+        </div>
+    </div>
+
+  
+  
+        <div class="row" style="margin: auto; margin-bottom:20px;">
+            <div style="" ng-hide="step != 1">
+                <span class="number" style="" ng-class="step == 1 ? 'ativado' : ''">1</span>
+                <span style="font-size: 18px;">Dados Pessoais</span>
+            </div>
+
+            <div style="" class="" ng-hide="step != 2">
+                <span class="number" ng-class="step == 2 ? 'ativado' : ''">2</span>
+                <span style="font-size: 18px;">Endereço</span>
+            </div>
+        </div>
+   
+   
+  
+
+    <div class="content">
+        <div ui-view="child1"></div>
+    </div>
+</div>

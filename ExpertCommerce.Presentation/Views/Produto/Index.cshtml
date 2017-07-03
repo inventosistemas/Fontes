@@ -1,0 +1,274 @@
+﻿@model Boolean
+
+<div class="main-placeholder produto container">
+    <div class="fd-modal modal-aviseme">
+        <div class="title grey lighter ">
+            <div class="small-12 columns">
+                <h1>Avise-me</h1>
+                <div class="close" ng-click="toggleModalAviseme();">x</div>
+            </div>
+        </div>
+
+        <div class="content ">
+            <form class="form-aviseme" novalidate name="avisemeform" ng-submit="submitAviseme(avisemeform.$valid, aviseme.email)">
+                <div class="small-12 columns">
+                    Digite seu e-mail abaixo. Avisaremos assim que o produto estiver disponível :)
+                    <div class="">
+                        <div class="small-12 columns">
+                            <label class="fd-label">
+                                <span>&nbsp;</span>
+                                <input type="email" class="fd-input fd-lt-spacing fd-full-width" placeholder="Email" ng-model="aviseme.email" required ng-required="true" />
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="small-12 columns paddingless">
+                    <button type="submit" class="fd-button fd-secondary fd-large fd-full-width float-right bt-confirmar" ng-disabled="avisemeform.$invalid">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="fd-modal-overlay">&nbsp;</div>
+
+    @*<div class="grey show-for-medium">
+            <div class="row">
+                <div class="small-12 medium-11 medium-centered columns">
+                    <h1 ng-show="produtos">{{subcategoria}} | {{tipoproduto}}</h1>
+                </div>
+            </div>
+        </div>*@
+
+    <div class="">
+        <div class="small-12 medium-11 medium-centered columns paddingless-on-desktop">
+            @*breadcrumb*@
+            <div class="breadcrumb" style="color: #012939;font-weight: bold;text-align: left;background-color: white;">
+
+
+                <span ng-show="agrup">
+                    <a ui-sref='cortes' ng-click='menumobile = false'>CORTES</a>  / <a ui-sref='cortes' ng-click='menumobile = false'>{{subcategoria}}</a>  / <strong class='show-for-small-only'> {{tipoproduto}} </strong>
+                </span>
+                <span ng-hide="agrup">
+                    <a ui-sref='emporio' ng-click='menumobile = false'>EMPORIO</a>  / <a ui-sref='emporio' ng-click='menumobile = false'>{{subcategoria}}</a>  / <strong class='show-for-small-only'> {{tipoproduto}} </strong>
+                </span>
+                @*<select class="fd-input fd-lt-spacing show-for-medium" ng-model="combo" ng-options="item.ProdutoID as item.ProdutoTipo.Descricao for item in breadcrumb" ng-change="setTipo()"></select>*@
+            </div>
+        </div>
+    </div>
+
+    <div class="">
+        <div class="small-12 medium-11 medium-centered columns">
+            @*slider*@
+            <div class="OrganizaImgsProd">
+                <div class="img-produto">
+                    @if (Model)
+                    {
+                        <img id="img-produto" ng-src="{{selecionado.ImagemMobile}}" fallback-src="~/Images/assets/unavailable.png" class="ImgTelaProduto FtoNoProd" />
+                    }
+                    else
+                    {
+                        <img id="img-produto" ng-src="{{selecionado.Imagem}}" fallback-src="~/Images/assets/unavailable.png" class="ImgTelaProduto FtoNoProd" style="" />
+                    }
+
+                </div>
+            </div>
+
+            @*marcas*@
+            <div class="OrganizaDescrProd produtos" style="">
+
+
+                <div class="small-12 columns paddingless produto-box" ng-class="produtos.Produto.ID == selecionado.ID && !produtos.Produto.Esgotado ? 'selected' : ''" ng-click="!produtos.Produto.Esgotado ? setProduto(produtos.Produto) : toggleModalAviseme(produtos.Produto.ID)">
+                    <div class="small-12 columns paddingless">
+                        <span class="marca" style="font-weight: bold;font-size: 30px;color: #00202C;">{{produtos.Produto.Descricao}}</span>
+                    </div>
+
+                    <div class="small-9 columns paddingless" style="margin-top:8px;">
+                        <span class="descricao" style="font-weight: bold;font-size: 16px;color: #00202C;">{{tipoproduto}}</span>
+                    </div>
+                    <div class="small-9 columns paddingless">
+                        <p style="font-weight: bold;font-size: 15px;color: #00202C;margin-top:15px;">
+                            <div ng-bind-html="descRes"></div>
+
+                        </p>
+
+                    </div>
+                    <hr ng-if="produtos.Produto.Categoria.Descricao != 'EMPORIO' " style="color: #001F2C;height: 1px;background-color: #001F2C;" />
+
+                    <div ng-if="produtos.Produto.Categoria.Descricao != 'EMPORIO' " style="font-size:18px;color: #00202C;font-weight:bold;">
+                        <span>{{produtos.Produto.SubCategoria.Descricao}} </span><span>{{tipoproduto}}</span>
+                    </div>
+                    <div ng-if="!produtos.Produto.Esgotado && produtos.Produto.Categoria.Descricao != 'EMPORIO' " style="font-size:18px;color: #00202C;font-weight:bold;margin-top:10px;">
+
+
+                        <span class="preco" style="font-size:15px;">{{ ( produtos.Produto.PrecoVigente / produtos.Produto.Skus[0].Peso) | currency:"R$ "}} / Kg</span>
+                    </div>
+
+                    <hr ng-if="produtos.Produto.Categoria.Descricao != 'EMPORIO' " style="color: #001F2C;height: 1px;background-color: #001F2C;" />
+
+
+                    <div ng-if="!produtos.Produto.Esgotado && produtos.Produto.Categoria.Descricao != 'EMPORIO' "  style="font-size:15px;color: #00202C;font-weight:bold;">
+                        <span class="" style="margin-right:15px;">PORÇÃO</span>
+                        <span class="peso" style="margin-right:15px;">{{produtos.Produto.Skus[0].Peso}}kg</span>
+                        <span class="preco" style="color:#FF7B3F;">{{ produtos.Produto.PrecoVigente | currency:"R$ "}}</span>
+                    </div>
+                    <div class="aviseme" ng-if="produtos.Produto.Esgotado">
+                        <img alt="" src="~/Images/assets/aviseme.png" />
+                        Avise me quando chegar
+                    </div>
+                    <div class="promocao hide">20% off</div>
+
+
+
+                    <hr style="color: #001F2C;height: 1px;background-color: #001F2C;" />
+                </div>
+
+                <div class="small-12 columns paddingless actions" style="margin-right:20px;">
+                    <div class="">
+                        <div class="small-12 columns" style="margin-top:30px;">
+                            <div class="">
+                                <label style="font-weight: bold;font-size: 15px;margin-right: 30px;">QUANTIDADE</label>
+                                <button style="color: white;background-color: #001F2C;border: 0;width:30px;height:35px;" class="left" ng-click="quantidade > 1 ? quantidade = quantidade - 1 : ''" ng-disabled="quantidade == 1">-</button>
+                                @*<input value="{{quantidade}}" type="text" style="border: 0px solid black;border-top-width: 2px;padding-bottom: 2px;border-bottom-width: 2px;height: 35px;width: 30px;text-align: center;margin-left: -4px;margin-right: -4px;font-weight: bold;font-size: 15px;" />*@
+                                <input value="{{quantidade}}" type="text" style="border: 0px solid black;height: 35px;width: 30px;text-align: center;margin-left: -4px;margin-right: -4px;font-weight: bold;font-size: 15px;background-color: #e8e8e8;" />
+                                <button style="color: white;background-color: #001F2C;border: 0;width:30px;height:35px;" class="" ng-click="quantidade = quantidade + 1">+</button>
+                            </div>
+
+                            <div class="preco valor" style="font-weight:bold;margin-top:15px;">
+                                <span style="margin-right:10px;font-size:18px;">VALOR</span>
+                                <strong style="color:#FF6B00;font-size:30px;">  {{selecionado.PrecoVigente * quantidade | currency:"R$ "}} </strong>
+                                <span ng-if="produtos.Produto.Categoria.Descricao != 'EMPORIO' " style="font-size:16px;margin-left:10px;">({{  pesoTotal * quantidade | currency : "" : 1}} Kg)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="add-cart-row">
+                        <div class="small-12 columns">
+                            <div class="small-12 medium-8 medium-centered columns">
+                                <button class="fd-button btn-telaProdAdic" style="" ng-click="addToCart(selecionado, quantidade)" ng-disabled="selecionado.Esgotado || selecionado.ID == undefined">
+                                    <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                                    Adicionar ao carrinho
+                                </button>
+                            </div>
+
+                            @*<div class="small-12 medium-6 columns">
+                                    <button class="fd-button fd-secondary fd-small-font fd-full-width" ui-sref="carrinho.produtos">Comprar</button>
+                                </div>*@
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+    </div>
+
+    <div class="desc-tipo-produto" style="margin-top: 50px;" ng-if="produtos.Produto.Categoria.Descricao != 'EMPORIO' ">
+        <div class="small-12 medium-11 medium-centered columns">
+
+
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingTwo">
+                        <h4 class="panel-title">
+                            <p class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="font-weight: bold;">
+                                MAIS DETALHES
+                            </p>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                        <div class="panel-body" style="text-align: left;">
+                            <div ng-bind-html="desc"></div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+    <div>
+
+
+
+
+
+        <div class="">
+
+
+
+            <div class="small-12 columns">
+                <div class="small-12 medium-11 medium-centered columns paddingless">
+                    <h1>Produtos relacionados</h1>
+                </div>
+             
+                <div class="container" id="desk2" style="">
+                    <div ng-repeat="item in relacionados" class="itensProd alignProd" style="border: 1px solid white;">
+                        <div class="produtoHome2" onmouseover="abrir(this.id)" onmouseout="sair(this.id)" id="{{item.ID}}">
+                            <div class="imagemVitrineHome " style="text-align: center;">
+                                <div style="text-align: center;">
+                                    @if (Model)
+                                    {
+                                        <a href="/#!/produto/{{item.ID}}">
+                                            <img alt="" ng-src="{{item.ImagemMobile}}" fallback-src="~/Images/assets/unavailable-banner.png" class="img-responsive imgProdProduto" style="height: 169px" />
+
+                                            <div class="conteudoProd">
+
+                                                <p style="font-size: 12px; font-weight: 900;color:black !important;font-family: 'montserrat-semibold';">{{item.Descricao }}</p>
+                                                <p ng-if="item.Categoria.Descricao != 'EMPORIO' " style="font-size: 12px;font-weight: 900;color:black !important;font-family: 'montserratultra_light';">{{item.ProdutoTipo.Descricao | capitalize}} {{item.ProdutoTipo.Peso }} KG</p>
+                                                <p style="font-size: 12px;font-weight: 900;color:black !important;font-family: 'montserratultra_light';">POR<span class="nomeitemPreco" style="color:#FF6B00;font-family: 'montserrat-semibold';"> {{item.PrecoVigente | currency:"R$ "}}</span></p>
+                                            </div>
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a href="/#!/produto/{{item.ID}}">
+                                            <img alt="" ng-src="{{item.Imagem}}" fallback-src="~/Images/assets/unavailable.png" class="img-responsive imgProdProduto" style="margin:auto;" />
+                                         
+                                            <div class="conteudoProd">
+
+
+                                                <p class="nomeitemNome" style="color:black !important;">{{item.Descricao}}</p>
+                                                <p class="nomeitemDesc" ng-if="item.Categoria.Descricao != 'EMPORIO' " style="color:black !important;">{{item.ProdutoTipo.Descricao | capitalize}} {{item.ProdutoTipo.Peso }} KG</p>
+                                                <p class="nomeitemPor" style="color:black !important;">POR <span style="color:#FF6B00;" class="nomeitemPreco"> {{item.PrecoVigente | currency:"R$ "}}</span></p>
+                                            </div>
+                                        </a>
+                                    }
+
+                                </div>
+
+                                @if (Model)
+                                {
+                                    <a ui-sref="produto({id:item.ID})">
+                                        <img class="shrink" src="~/Images/Imagens/AdicionaCarrinho.jpg" style="width:130px;     margin-left: -15px !important;   margin: auto;" />
+                                    </a>
+                                }
+                                else
+                                {
+                                    <div id="apareceb{{item.ID}}" style="display: none;">
+                                        <div class="prodDispoHom conteudoProd">
+                                            <div class="visible-lg visible-md" style="margin-top: 12px;">
+                                                @*<img class="shrink" src="~/Images/Imagens/Desejo.jpg" style="width:102px;height:57px;" />*@
+                                                @*<a ui-sref="produto({id:item.Produto.ID})">
+                                                        <img class="shrink" src="~/Images/Imagens/AdicionaCarrinho.jpg" />
+                                                    </a>*@
+                                                <a onclick="atualizarCarrinho(), abrirCarrinho()" ng-click="adicionarCarrinhoProd(item.ID)">
+                                                    @*<img class="shrink" src="~/Images/Imagens/AdicionaCarrinho.jpg" />*@
+                                                    <span class="btnadic" style=""> <img src="~/Images/Imagens/carrinho_novo_vazio.png" style="width: 30px;margin-top: -11px;" /> ADICIONAR</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

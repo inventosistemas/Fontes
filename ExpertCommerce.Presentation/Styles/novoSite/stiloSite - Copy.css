@@ -1,0 +1,2030 @@
+﻿@font-face {
+    font-family: 'montserratultra_light';
+    src: url(../fonts/montserrat-ultralight-webfont.woff2) format('woff2'), url(../fonts/montserrat-ultralight-webfont.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+body {
+    font-family: 'montserratultra_light';
+    text-align: center;
+    align-items: center;
+    margin: auto;
+}
+
+
+.teste {
+    width: 1310px !important;
+}
+
+.gw-nav-list > li .gw-submenu > li > a {
+    border-top: 0px dotted #e4e4e4;
+}
+
+.gw-nav-list > li {
+    border-bottom: 0px solid #e5e5e5;
+    border-top: 0px solid #fcfcfc;
+}
+
+    .gw-nav-list > li .gw-submenu {
+        border-top: 0px solid #e5e5e5;
+    }
+
+.img {
+    max-width: 100%;
+}
+
+
+/* MENU * /
+
+* { 
+    margin: 0;
+    padding: 0;
+}
+
+/* Isto é necessário para não haver rolagens horizontais quando movermos os elementos */
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+.menu-anchor {
+    width: 54px;
+    height: 46px;
+    background-image: url(../Images/Imagens/mais.jpg);
+    margin-top: -16px;
+}
+
+    .menu-anchor:before {
+        content: "";
+        display: block;
+        margin: 7px auto;
+        width: 70%;
+        height: 0.25em;
+    }
+
+
+/*
+    Aqui você esconde o menu para fora da tela 
+    O valor é exatamente a largura da sidebar
+*/
+
+
+/*
+    Essa é a posição original do HEADER e do MAIN
+*/
+
+header,
+.main {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-transition: all .25s linear;
+    -moz-transition: all .25s linear;
+    -ms-transition: all .25s linear;
+    transition: all .25s linear;
+}
+
+
+/*
+   Com a classe menu-active na tag HTML
+*/
+
+.menu-active menu {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+}
+
+.menu-active header,
+.menu-active .main {
+    -webkit-transform: translateX(220px);
+    -moz-transform: translateX(220px);
+    -ms-transform: translateX(220px);
+    transform: translateX(220px);
+}
+
+
+/*  FIM MENU */
+
+
+
+#barraMenu {
+    max-width: 1264px;
+    height: 75px;
+    background-repeat: repeat-x;
+    background-color: #0A293B;
+}
+
+.MenuCelular {
+    margin-top: 0px;
+    padding-left: 0px;
+    margin-bottom: 0px;
+}
+
+.produtoHome {
+    width: 25%;
+    height: 480px;
+    float: left;
+}
+
+
+.borda {
+    border: 1px solid black;
+}
+
+.imagemVitrineHome {
+    height: 281px;
+}
+
+.menuFixo {
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    width: 100%;
+}
+
+@media (max-width:1800px) {
+}
+
+@media (min-width:1400px) {
+}
+
+@media (max-width:1400px) {
+}
+
+@media (max-width:1000px) {
+    menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 220px;
+        height: 100%;
+        padding-top: 10px;
+        background: #001F2C;
+        box-shadow: inset -5px -10px 10px 0 rgba(0, 0, 0, .3);
+    }
+
+    menu {
+        -webkit-transform: translateX(-220px);
+        -moz-transform: translateX(-220px);
+        -ms-transform: translateX(-220px);
+        transform: translateX(-220px);
+        -webkit-transition: all .25s linear;
+        -moz-transition: all .25s linear;
+        -ms-transition: all .25s linear;
+        transition: all .25s linear;
+    }
+
+    .SeloHome {
+        display: none;
+    }
+
+    .PromocoesImperdiveisHome {
+        align-items: center;
+        text-align: center;
+        font-size: 26px;
+        margin-bottom: 0px;
+        margin-top: 50px;
+        margin-left: 8px;
+    }
+
+    #desk {
+        display: none;
+    }
+
+    #deskprod {
+        padding-right: 0px;
+        padding-left: 3.6% !important;
+    }
+
+    .bannerHome {
+        height: 370px;
+    }
+
+    .posicaoChamaMenu {
+        margin-left: 7px;
+        margin-top: -52px;
+    }
+
+    .BotaoVerItens {
+        align-items: center;
+        text-align: center;
+        width: 226px !important;
+        font-size: 14px !important;
+        margin-bottom: 0px;
+        margin-top: 50px;
+        margin-left: 8px;
+        background-color: #001F2C;
+        color: white !important;
+        font-size: 20px;
+        width: 400px;
+    }
+
+        .BotaoVerItens:hover {
+        }
+
+    .logoMobile {
+        margin-top: -51px;
+        height: 74px;
+    }
+
+    .infoRodape {
+        width: 100%;
+        float: left;
+        margin-bottom: 50px;
+    }
+
+    .imagemInst {
+        width: 90%;
+        margin-bottom: 100px;
+    }
+
+    .EntradaNews {
+        width: 90%;
+        height: 50px;
+        margin-right: 46px;
+        text-align: center;
+        margin: auto;
+        margin-bottom: 20px;
+        margin-top: 45px;
+    }
+
+    .textoNovidades {
+        font-size: 13px;
+        height: 0px !important;
+        margin-bottom: 0px !important;
+    }
+
+    .textoLogo {
+        font-size: 11px;
+    }
+
+    .imagemBanner {
+        height: 250px !important;
+        width: 100%;
+    }
+
+    .alturaCarrosel {
+        height: 100%;
+    }
+
+    .CarrinhoMobile {
+        margin-right: 22px !important;
+    }
+
+    .socialAlinhamento {
+        padding-left: 66px;
+    }
+}
+
+@media (min-width:1000px) {
+    .alturaCarrosel {
+        height: 100%;
+    }
+
+    .PromocoesImperdiveisHome {
+        align-items: center;
+        text-align: center;
+        font-size: 26px;
+        margin-bottom: 0px;
+        margin-top: 50px;
+        margin-left: 122px;
+    }
+
+    #scrolling {
+        display: none;
+    }
+
+    .bannerHome {
+        height: 599px;
+    }
+
+    .posicaoChamaMenu {
+        margin-left: 120px;
+        margin-top: -55px;
+    }
+
+    .BotaoVerItens {
+        align-items: center;
+        text-align: center;
+        font-size: 20px;
+        width: 400px;
+        margin-bottom: 0px;
+        margin-top: 50px;
+        margin-left: 8px;
+        background-color: #001F2C;
+        color: white !important;
+    }
+
+        .BotaoVerItens:hover {
+            font-size: 21px;
+        }
+
+    .logoMobile {
+        margin-top: -43px;
+        height: 96px;
+    }
+
+    .infoRodape {
+        width: 25%;
+        float: left;
+    }
+
+    .boxInst {
+        width: 50%;
+        float: left;
+        margin-bottom: 100px;
+    }
+
+    .EntradaNews {
+        width: 428px;
+        height: 51px;
+        margin-right: 46px;
+        padding-left: 20px;
+    }
+
+    .textoNovidades {
+        font-size: 17px;
+    }
+}
+
+.containerEspecial {
+    max-width: 1264px !important;
+}
+
+
+/* slider itens*/
+
+
+/* Add to docs */
+
+#scrolling {
+    /*frame*/
+    /*position: fixed;*/
+    top: 58%;
+    /*FF473D*/
+    height: 475px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.ul {
+    /*Add if you want to disable the option of selecting the text while sliding*/
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    /*top:10%;*/
+    margin-top: 4vh;
+    max-height: 600px;
+    list-style-type: none;
+    -webkit-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+.li {
+    font-size: 8vmin;
+    /*cool*/
+    float: left;
+    width: 25vw;
+    min-width: 250px;
+    height: 100%;
+    color: #000;
+    font-weight: 300;
+    text-align: center;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -o-border-radius: 30px;
+    -moz-border-radius: 30px;
+    cursor: pointer;
+    background: #FFF;
+    -webkit-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    -moz-transform: scale(0.95);
+    transform: scale(0.95);
+}
+
+.itemslide-active {
+    /*applied to current active item*/
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    -moz-transform: scale(1);
+    transform: scale(1);
+}
+
+@media (max-width:960px) {
+}
+
+@media (max-width:767px) {
+    .menuFixo {
+        position: fixed;
+        top: 0;
+        z-index: 99;
+        width: 100%;
+    }
+}
+
+@media (max-width:480px) {
+}
+
+@media (max-width:320px) {
+}
+
+.main {
+    max-height: 6000px;
+}
+
+.grow:hover {
+    -webkit-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    transform: scale(1.3);
+}
+
+#menu {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    width: 8em;
+    margin-top: -2.5em;
+}
+
+.escondeMenuFixo {
+    margin-top: -75px;
+    height: 50px !important;
+}
+
+.shrink:hover {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+#desk {
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 1275px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+
+
+
+
+.conteudoProd {
+    padding-bottom: 15px;
+    width: 92.1%;
+}
+
+.conteudoProdCortes {
+    padding-bottom: 15px;
+    width: 79%;
+}
+
+.visualizaRap {
+    height: 58px;
+    width: 287px;
+    background-color: #203A45;
+    position: relative;
+    margin-top: -58px;
+}
+
+.visualizaRapProd {
+    height: 58px;
+    width: 250px;
+    background-color: #203A45;
+    position: relative;
+    margin-top: -58px;
+}
+
+
+/* Menu*/
+
+.barra-nav {
+    background: #001F2C;
+    padding: 1em;
+    margin: 0;
+    height: 100%;
+    width: 90%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: -90%;
+    transition: left 0.3s ease-out;
+}
+
+.menu-ativo .barra-nav {
+    left: 0.1%;
+}
+
+.menu-principal li {
+    padding: 1em 0;
+    width: 100%;
+}
+
+.menu-ativo:after {
+    content: "";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.BotaoEnviarNews {
+    align-items: center;
+    text-align: center;
+    width: 190px;
+    height: 51px;
+    font-size: 16px;
+    margin-bottom: 0px;
+    background-color: #001F2C;
+    color: white !important;
+    padding-top: 8px;
+    margin-top: -1px;
+}
+
+
+/* Carrinho*/
+
+.barra-nav-carrinho {
+    background: #001F2C;
+    margin: 0;
+    min-height: 200px;
+    height: auto;
+    width: 90%;
+    max-width: 433px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: -90%;
+    transition: right 0.3s ease-out;
+    margin-left: 0px;
+}
+
+.menu-ativo-carrinho .barra-nav-carrinho {
+    right: 0;
+}
+
+.menu-principal-carrinho li {
+    padding: 1em 0;
+    width: 100%;
+}
+
+.menu-ativo-carrinho:after {
+    content: "";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.menu-anchor-carrinho {
+    width: 54px;
+    height: 51px;
+    margin-top: -16px;
+    float: right;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    margin-top: -59px;
+    margin-right: 90px;
+}
+
+
+/* fim */
+
+.descProdutosCarrinho {
+    margin-bottom: 4px;
+}
+
+.BotaoEncerrarCompra {
+    align-items: center;
+    text-align: center;
+    font-size: 20px;
+    width: 391px;
+    margin-bottom: 0px;
+    margin-top: 20px;
+    margin-left: 8px;
+    background-color: #008529;
+    color: white !important;
+    height: 40px;
+    margin-bottom: 130px;
+}
+
+    .BotaoEncerrarCompra:hover {
+        font-size: 21px;
+    }
+
+.baixarCarEMenu {
+    position: fixed;
+    z-index: 9999;
+}
+
+.remodal {
+    max-width: 760px;
+    padding: 0px;
+    margin: 0px;
+    height: 377px;
+}
+
+.fade {
+    opacity: 1;
+}
+
+.owl-item {
+    margin-left: 3.0% !important;
+    margin-right: -3.1% !important;
+}
+
+.loader {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 9999;
+    margin: 0px auto;
+    width: 65px;
+    height: 73px;
+    margin-left: -30px;
+    margin-top: -34px;
+    padding: 5px;
+    /* para mobile max-width 640px */
+    /*mobile only*/
+    @media only screen and (max-width: 40em) {
+        /*width: 50px;
+        height: 50px;
+        margin-left: -25px;
+        margin-top: -25px;*/
+    }
+
+    background-color: #fff;
+    /*border-radius: 50%;*/
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.loader-overlay {
+    position: fixed;
+    z-index: 99999;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    /*background-color:rgba(0, 0, 0, 0.70)*/
+    background-color: rgba(255, 255, 255, 0.70);
+}
+
+    .loader-overlay.ng-hide-add, .loader-overlay.ng-hide-remove {
+        transition: all linear 0.5s;
+    }
+
+    .loader-overlay.ng-hide {
+        line-height: 0;
+        opacity: 0;
+        padding: 0 10px;
+    }
+
+.loader:before {
+    content: '';
+    display: block;
+    /*padding-top: 100%;*/
+}
+
+
+
+.fade.ng-enter {
+    -webkit-transition: 0.5s linear all;
+    -moz-transition: 0.5s linear all;
+    -o-transition: 0.5s linear all;
+    transition: 0.5s linear all;
+    opacity: 0;
+}
+
+    .fade.ng-enter.ng-enter-active, .ng-move-active {
+        opacity: 1;
+    }
+
+
+/* Cadastro Passo 1 */
+
+
+@media (max-width:1000px) {
+    .cadNome {
+        height: 50px;
+        width: 100%;
+    }
+
+    .cadEmail {
+        height: 50px;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .cadInfo {
+        height: 50px;
+        width: 82%;
+        margin-top: 20px;
+    }
+
+    .cadInfo2 {
+        height: 50px;
+        width: 82%;
+        margin-top: 20px;
+    }
+
+    .cadINt {
+        height: 50px;
+        width: 82%;
+        margin-top: -25px;
+        margin-left: -9px;
+    }
+
+
+    .cadDDD {
+        height: 50px;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .cadTelefone {
+        height: 50px;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .cadCpf {
+        height: 50px;
+        width: 100%;
+    }
+
+    .cadCpf2 {
+        height: 50px;
+        width: 100%;
+    }
+
+    .cadSexo {
+        margin-top: 20px;
+        height: 50px;
+        width: 100%;
+    }
+
+    .cadDtNas {
+        margin-top: 20px;
+        height: 50px;
+        width: 100%;
+    }
+
+    .cadSenha {
+        height: 50px;
+        width: 100%;
+    }
+
+    .cadConfirSenha {
+        margin-top: 20px;
+        height: 50px;
+        width: 100%;
+    }
+
+    .cadEnd {
+        height: 50px;
+        width: 100%;
+    }
+
+    .cadCep {
+        height: 50px;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .cadRua {
+        height: 50px;
+    }
+
+    .cadNumero {
+        height: 50px;
+        width: 100%;
+    }
+
+    .cadComplemento {
+        height: 50px;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .cadBairro {
+        height: 50px;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .cadCidade {
+        height: 50px;
+        width: 100%;
+    }
+
+    .cadEstado {
+        margin-top: 20px;
+        height: 50px;
+        width: 100%;
+    }
+
+
+    .grupoEndereco {
+        width: 80%;
+        margin: auto;
+        text-align: center;
+    }
+
+    .faleNome {
+        margin-top: 20px;
+    }
+
+    .faleEmail {
+        margin-top: 20px;
+    }
+
+    .faleDDD {
+        margin-top: 20px;
+    }
+
+    .faleTelefone {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .faleMensagem {
+        height: 100px !important;
+    }
+}
+
+@media (min-width:1000px) {
+    .cadEnd {
+        height: 50px;
+        float: left;
+        width: 49%;
+        margin-right: 1%;
+    }
+
+    .cadCep {
+        height: 50px;
+        float: left;
+        width: 49%;
+        margin-left: 1%;
+    }
+
+    .cadRua {
+        height: 50px;
+    }
+
+    .cadNumero {
+        height: 50px;
+        float: left;
+        width: 33%;
+        margin-right: 1%;
+    }
+
+    .cadComplemento {
+        height: 50px;
+        float: left;
+        width: 33%;
+        margin-right: 1%;
+    }
+
+    .cadBairro {
+        height: 50px;
+        float: left;
+        width: 32%;
+    }
+
+    .cadCidade {
+        height: 50px;
+        float: left;
+        width: 49%;
+        margin-right: 1%;
+    }
+
+    .cadEstado {
+        height: 50px;
+        float: left;
+        width: 49%;
+        margin-left: 1%;
+    }
+
+    .grupoEndereco {
+        width: 100%;
+    }
+
+    .cadNome {
+        height: 50px;
+        width: 100%;
+        margin-left: 2%;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        max-width: 950px;
+    }
+
+    .cadEmail {
+        float: left;
+        height: 50px;
+        width: 49%;
+        margin-right: 1%;
+    }
+
+    .cadInfo {
+        height: 50px;
+        width: 27%;
+        margin-top: 20px;
+    }
+
+    .cadInfo2 {
+        height: 50px;
+        width: 28%;
+        margin-top: 20px;
+    }
+
+    .cadINt {
+        height: 50px;
+        width: 82%;
+        margin-top: -25px;
+        margin-left: -7px;
+    }
+
+    .cadDDD {
+        float: left;
+        height: 50px;
+        width: 19%;
+        margin-right: 1%;
+    }
+
+    .cadTelefone {
+        float: left;
+        height: 50px;
+        width: 30%;
+    }
+
+    .cadCpf {
+        float: left;
+        height: 50px;
+        width: 30%;
+        margin-right: 1%;
+    }
+
+    .cadCpf2 {
+        float: left;
+        height: 50px;
+        width: 49%;
+        margin-right: 1%;
+    }
+
+    .cadSexo {
+        float: left;
+        height: 50px;
+        width: 18%;
+        margin-right: 1%;
+    }
+
+    .cadDtNas {
+        float: left;
+        height: 50px;
+        width: 50%;
+    }
+
+    .cadSenha {
+        float: left;
+        height: 50px;
+        width: 49%;
+        margin-right: 1%;
+    }
+
+    .cadConfirSenha {
+        float: left;
+        height: 50px;
+        width: 50%;
+    }
+
+    .faleNome {
+        float: left;
+        height: 50px;
+        width: 30%;
+        margin-right: 1%;
+    }
+
+    .faleEmail {
+        float: left;
+        height: 50px;
+        width: 35%;
+        margin-right: 3%;
+    }
+
+    .faleDDD {
+        float: left;
+        height: 50px;
+        width: 10%;
+        margin-right: 1%;
+    }
+
+    .faleTelefone {
+        float: left;
+        height: 50px;
+        width: 20%;
+    }
+
+    .faleMensagem {
+        height: 200px !important;
+    }
+}
+
+
+
+
+
+/*
+*/
+
+/* */
+
+
+.number {
+    padding: 3px 0;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 18px !important;
+    background-color: #333;
+    color: #FFF;
+}
+
+.ativado {
+    background-color: #1a9474 !important;
+    color: #FFF;
+}
+
+input[type=radio], input[type=checkbox] {
+    display: none;
+}
+
+/*input[type=checkbox] + label:before {
+        content: "";
+        display: inline-block;
+        height: 17px;
+        width: 17px;
+        vertical-align: middle;
+        margin-right: 8px;
+        background-color: #aaa;
+        box-shadow: inset 0px 2px 2px rgba(0, 0, 0, .3);
+        border-radius: 4px;
+    }*/
+
+/*input[type=checkbox]:checked + label:before {
+        content: "\2714";
+        color: #8D2B2C;
+        background-color: #EDEEF0;
+        text-align: center;
+        line-height: 15px;
+        text-shadow: 0px 0px 3px #EDEEF0;
+        height: 17px;
+        width: 17px;
+    }*/
+
+
+
+@media (min-width:1000px) {
+    .calculoFrete {
+        width: 40%;
+        float: left;
+        margin-top: 20px;
+    }
+
+    .calculoCupom {
+        width: 40%;
+        float: left;
+        margin-top: 20px;
+    }
+
+    .containerFrete {
+        text-align: center;
+        height: 140px;
+        width: 80%;
+        margin-top: 30px;
+        border: 1px solid #d9d9d9;
+        margin-bottom: 20px;
+    }
+
+    .valores {
+        margin-top: 20px;
+        float: left;
+        text-align: left;
+    }
+
+
+    .textoCupom {
+        font-size: 17px;
+        margin-right: 29%;
+    }
+
+    .btnFinalizarCompra {
+        height: 50px;
+        padding: 0 !important;
+        width: 30%;
+        font-size: 13px !important;
+        padding: 0;
+    }
+
+    .btnContinuarCompra {
+        height: 50px;
+        padding: 0 !important;
+        width: 30%;
+        font-size: 13px !important;
+    }
+
+    .AlinharBtnCarrinho {
+        text-align: right;
+    }
+
+    .InputLogin {
+        margin-top: 20px;
+        width: 30%;
+    }
+
+    .InputSenha {
+        margin-top: 20px;
+        width: 30%;
+    }
+
+    .btnLogin {
+        width: 30% !important;
+    }
+
+    .MCEmail {
+        width: 49%;
+        margin-right: 10px;
+        height: 130px;
+    }
+
+    .MCECPF {
+        width: 49%;
+        height: 130px;
+    }
+
+    .MCEDD {
+        width: 10%;
+        margin-right: 10px;
+    }
+
+    .MCTelefone {
+        width: 38%;
+        margin-right: 10px;
+    }
+
+    .MCDtNasc {
+        width: 48%;
+    }
+
+    .MCBtnSalvar {
+        width: 217px;
+        float: right;
+    }
+
+    .localEntregaCarrinho {
+        width: 30%;
+        float: left;
+    }
+
+    .containerData {
+        width: 83%;
+    }
+
+    .containerCalendario {
+        text-align: center;
+        width: 60%;
+        float: right;
+    }
+
+    .tamanhoMenuDesk {
+        width: 320px;
+    }
+}
+
+@media (max-width:1000px) {
+
+
+    .containerCalendario {
+        margin-top: 20px;
+    }
+
+    .alinhar {
+        clear: both;
+    }
+
+    .containerFrete {
+        text-align: center;
+        height: 90%;
+        width: 100%;
+        margin-top: 30px;
+        border: 1px solid #d9d9d9;
+        margin-bottom: 20px;
+    }
+
+    .valores {
+        float: left;
+        text-align: left;
+        padding: 50px 50px;
+    }
+
+    .textoCupom {
+        font-size: 17px;
+        margin-right: 19%;
+    }
+
+    .btnFinalizarCompra {
+        width: 100%;
+        font-size: 13px !important;
+    }
+
+    .btnContinuarCompra {
+        padding-right: 0px !important;
+        padding-left: 0px !important;
+        padding-top: 20px !important;
+        width: 100%;
+        font-size: 13px !important;
+        margin-top: 20px;
+    }
+
+    .InputLogin {
+        margin-top: 20px;
+        width: 80%;
+    }
+
+    .InputSenha {
+        margin-top: 20px;
+        width: 80%;
+    }
+
+    .btnLogin {
+        margin-top: 20px;
+        width: 80% !important;
+    }
+
+    .h1PrincipalTelas {
+        font-size: 27px;
+    }
+
+
+    .MCEmail {
+        width: 100%;
+    }
+
+    .MCECPF {
+        width: 100%;
+    }
+
+    .MCEDD {
+        width: 30%;
+        margin-right: 10px;
+    }
+
+    .MCTelefone {
+        width: 65%;
+    }
+
+    .MCDtNasc {
+        width: 100%;
+    }
+}
+
+
+.MenuCadEscolhido {
+    color: #1daee4 !important;
+}
+
+
+
+/*
+    Minha conta | Meus Endereços -  INICIO
+*/
+
+
+@media (min-width:1000px) {
+    .divTodosEnderecos {
+        width: 40%;
+        float: left;
+        margin-top: 30px;
+    }
+
+    .divNovosEnderecos {
+        float: right;
+        width: 53%;
+        margin-top: 25px;
+    }
+}
+
+@media (max-width:1000px) {
+    .divTodosEnderecos {
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    .nomeLogado {
+        font-size: 16px;
+        width: 100%;
+    }
+}
+
+/*
+    Minha conta | Meus Endereços FIM
+*/
+
+.webapp .mainngview .carrinho .frete-box .tiposfrete label input[type=radio] {
+    margin-right: 10px;
+    margin-top: 5px;
+    width: 20px;
+    height: 20px;
+}
+
+
+
+/*
+  PAGAMENTO
+*/
+
+@media (min-width:1000px) {
+    .containerPagamento {
+        text-align: left;
+        width: 65%;
+    }
+
+    .ContainerNome {
+        width: 54%;
+        float: left;
+        margin-right: 1%;
+    }
+
+    .ContainerNumero {
+        width: 45%;
+        float: left;
+    }
+
+    .ContainerMes {
+        width: 36%;
+        float: left;
+        margin-right: 1%;
+    }
+
+    .ContainerAno {
+        width: 31%;
+        float: left;
+        margin-right: 1%;
+    }
+
+    .ContainerCod {
+        width: 31%;
+        float: left;
+    }
+}
+
+@media (max-width:1000px) {
+    .containerPagamento {
+        width: 80%;
+    }
+
+    .btnVoltar {
+        width: 100%;
+        color: white;
+    }
+
+    .btnContinuar {
+        width: 100%;
+        color: white;
+        margin-bottom: 10px;
+    }
+}
+
+
+
+/*
+  PAGAMENTO FIM
+*/
+
+
+
+/*
+  Modal Endereço Carrinho
+*/
+@media (max-width:1000px) {
+    .adicioneModalCarrinho {
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .BairroModalCad {
+        width: 100%;
+    }
+
+    .EstadoModalCad {
+        width: 100%;
+    }
+
+    .CidadeModalCad {
+        width: 100%;
+    }
+}
+
+
+@media (min-width:1000px) {
+    .ContainerModalCarrinho {
+        width: 40%;
+        float: left;
+    }
+
+    .ContainerCadModalCarrinho {
+        width: 50%;
+        float: left;
+        margin-left: 30px;
+    }
+
+    .BairroModalCad {
+        width: 35%;
+        float: left;
+        margin-right: 2%;
+    }
+
+    .EstadoModalCad {
+        width: 26%;
+        float: left;
+    }
+
+    .CidadeModalCad {
+        width: 35%;
+        float: left;
+        margin-right: 2%;
+    }
+}
+
+
+/*
+  Modal Endereço Carrinho FIM
+*/
+
+
+
+
+/*
+  Tela Produto
+*/
+@media (max-width:1000px) {
+    .ImgTelaProduto {
+        height: 300px;
+        width: 265px;
+    }
+
+    .btn-telaProdAdic {
+        margin-top: 30px;
+        font-size: 15px !important;
+        line-height: 1.5;
+        background-color: #008529;
+        margin-left: 19px;
+        height: 65px;
+    }
+
+    .produtoHome {
+        width: 50%;
+        height: 400px;
+        float: left;
+    }
+
+    .imgProdProduto {
+        display: block;
+        margin-left: 0px;
+        margin-right: 0px;
+        width: 150px;
+    }
+}
+
+
+@media (min-width:1000px) {
+
+    #deskprod {
+        margin-left: 0px;
+        margin-right: 0px;
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin: 1.6%;
+    }
+
+    .imgProdProduto {
+        display: block;
+        margin-left: 0px;
+        margin-right: 0px;
+        width: 250px;
+    }
+
+    .ImgTelaProduto {
+        height: 500px;
+        width: 500px;
+        border: 1px solid black;
+    }
+
+    .OrganizaImgsProd {
+        width: 49%;
+        float: left;
+    }
+
+    .OrganizaDescrProd {
+        width: 49%;
+        float: left;
+        text-align: left;
+    }
+
+    .btn-telaProdAdic {
+        margin-top: 30px;
+        font-size: 15px !important;
+        line-height: 1.5;
+        background-color: #008529;
+        width: 380px;
+        height: 65px;
+    }
+}
+
+
+/*
+ Tela Produto FIM
+*/
+
+
+
+@media (max-width:320px) {
+    .quadroProdutos {
+        margin-left: -21px !important;
+    }
+
+    .quadroFrete {
+        width: 302px !important;
+    }
+
+    .localEntrega {
+        width: 270px !important;
+    }
+}
+
+
+.check {
+    display: inline-block;
+    height: 17px;
+    width: 17px;
+    vertical-align: middle;
+    margin-right: 8px;
+    background-color: #aaa;
+    box-shadow: inset 0px 2px 2px rgba(0, 0, 0, .3);
+    border-radius: 4px;
+    display: inline !important;
+}
+
+
+.bola {
+    border-radius: 50%;
+    display: inline-block;
+    height: 28px;
+    width: 35px;
+    border: 1px solid #000000;
+    background-color: #f2a30a !important;
+    color: white !important;
+    position: relative;
+}
+
+
+.bolaVazia {
+    border-radius: 50%;
+    display: inline-block;
+    height: 28px;
+    width: 35px;
+    background-color: #0a293b;
+    border: 0 !important;
+    color: #0a293b;
+}
+
+/*
+  Filtro INICIO
+*/
+@media (min-width:1000px) {
+    .containerFiltro {
+        background-color: #EDEEF0;
+        padding: 0% 0% 0% 20%;
+    }
+
+    .alinhamentoOpcCorte {
+        height: 265px;
+        width: 51%;
+        float: left;
+    }
+
+    .alinhaApresent {
+        height: 186px;
+        width: 152px;
+    }
+
+    .overMenuNav {
+        overflow: auto;
+    }
+
+    .BuscaConsulta {
+        margin-top: 4px;
+    }
+}
+
+@media (max-width:1000px) {
+    .overMenu {
+        overflow: auto;
+    }
+
+    .containerFiltro {
+        background-color: #EDEEF0;
+        padding: 0% 0% 0% 3%;
+    }
+
+    .alinhamentoOpcCorte {
+        float: left;
+    }
+
+    .AlinhaMobile {
+        margin-top: 25px;
+    }
+
+    .alinhaOcaApres {
+    }
+
+    .alinhaApresent {
+        height: 100px;
+    }
+
+    .alinhaApresMob {
+        float: left;
+        width: 115px;
+    }
+
+    .alinhaEsquerdaMobile {
+        height: 82px;
+    }
+
+    .alinharOcasiaoMobile {
+        width: 115px;
+        float: left;
+    }
+
+    .BuscaConsulta {
+        margin-top: 7px;
+    }
+}
+/*
+  Filtro FIM
+*/
+
+
+
+.liMenu {
+    background-color: #23404E;
+    color: white;
+}
+
+.aMenu {
+    color: white !important;
+    margin-left: -57px;
+    font-size: 14px;
+    padding-left: 110px;
+}
+
+
+.flexcroll {
+    scrollbar-face-color: #001F2C;
+    scrollbar-shadow-color: #FFFFFF;
+    scrollbar-highlight-color: #FFFFFF;
+    scrollbar-3dlight-color: #FFFFFF;
+    scrollbar-darkshadow-color: #FFFFFF;
+    scrollbar-track-color: #FFFFFF;
+    scrollbar-arrow-color: #FFFFFF;
+}
+
+    /* Let's get this party started */
+    .flexcroll::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    /* Track */
+    .flexcroll::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+    }
+
+    /* Handle */
+    .flexcroll::-webkit-scrollbar-thumb {
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+        background: #001F2C;
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+    }
+
+.esconderMenu {
+    opacity: 0.1;
+}
+
+
+
+
+
+/*BUSCA*/
+input:focus {
+    outline: none;
+}
+
+
+#myInput1 {
+    width: 0%;
+    -webkit-transition: width 0.3s ease-in-out;
+    background-color: #0A293B;
+}
+
+    #myInput1:focus {
+        width: 70%;
+        -webkit-transition: width 0.5s ease-in-out;
+        background-color: white;
+    }
+
+#myInput2 {
+    width: 0%;
+    -webkit-transition: width 0.3s ease-in-out;
+    background-color: #0A293B;
+}
+
+    #myInput2:focus {
+        width: 70%;
+        -webkit-transition: width 0.5s ease-in-out;
+        background-color: white;
+    }
+/*FIM BUSCA*/
+
+
+@media (max-width:1000px) {
+    .btnXfecharMenu {
+        color: white;
+        margin-top: 10px;
+        font-size: 32px;
+        margin-left: 200px;
+    }
+
+    #mosaicoFeed {
+        max-width: 1400px;
+        height: 108px;
+        background-image: url(../Images/Imagens/toposite_mobile.png);
+        background-repeat: round;
+    }
+}
+
+@media (min-width:1000px) {
+    .btnXfecharMenu {
+        color: white;
+        margin-top: 10px;
+        font-size: 32px;
+        margin-left: 200px;
+    }
+
+    #mosaicoFeed {
+        max-width: 1400px;
+        height: 108px;
+        background-image: url(../Images/Imagens/toposite_desktop.png);
+        background-repeat: round;
+    }
+}
+
+
+
+.checkpreferencia {
+    position: relative;
+    width: 90px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.checkpreferencia-checkbox {
+    display: none;
+}
+
+.checkpreferencia-label {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid #999999;
+    border-radius: 20px;
+}
+
+.checkpreferencia-inner {
+    display: block;
+    width: 200%;
+    margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+
+    .checkpreferencia-inner:before, .checkpreferencia-inner:after {
+        display: block;
+        float: left;
+        width: 50%;
+        height: 30px;
+        padding: 0;
+        line-height: 30px;
+        font-size: 14px;
+        color: white;
+        font-family: Trebuchet, Arial, sans-serif;
+        font-weight: bold;
+        box-sizing: border-box;
+    }
+
+    .checkpreferencia-inner:before {
+        content: "ON";
+        padding-left: 10px;
+        background-color: #34A7C1;
+        color: #FFFFFF;
+    }
+
+    .checkpreferencia-inner:after {
+        content: "OFF";
+        padding-right: 10px;
+        background-color: #EEEEEE;
+        color: #999999;
+        text-align: right;
+    }
+
+.checkpreferencia-switch {
+    display: block;
+    width: 18px;
+    margin: 6px;
+    background: #FFFFFF;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 56px;
+    border: 2px solid #999999;
+    border-radius: 20px;
+    transition: all 0.3s ease-in 0s;
+}
+
+.checkpreferencia-checkbox:checked + .checkpreferencia-label .checkpreferencia-inner {
+    margin-left: 0;
+}
+
+.checkpreferencia-checkbox:checked + .checkpreferencia-label .checkpreferencia-switch {
+    right: 0px;
+}
+
+
+@media (min-width: 780px) and (max-width: 810px) {
+    .facalogin {
+        margin-top: -17px;
+    }
+
+    .txtLogin {
+        height: 100px !important;
+        font-size: 22px !important;
+    }
+
+    .txtSenha {
+        height: 100px !important;
+        font-size: 22px !important;
+    }
+
+    .btnEnviar {
+        height: 73px !important;
+    }
+
+    .select6 {
+        height: 61px;
+        width: 236px !important;
+        font-size: 20px;
+        padding-left: 20px;
+    }
+
+    .btnBus6 {
+        width: 237px !important;
+        height: 53px;
+    }
+
+    .txtBusca4 {
+        width: 544px;
+        height: 68px;
+        margin: auto;
+        font-size: 22px !important;
+    }
+
+    .btnBuscar4 {
+        margin-top: 20px;
+        font-size: 20px !important;
+        width: 542px !important;
+        height: 44px !important;
+    }
+
+    .btnAlterarOrigem4 {
+        margin-top: 20px;
+        font-size: 20px !important;
+        width: 542px !important;
+        height: 44px !important;
+    }
+
+    .txtBusca1 {
+        width: 544px;
+        height: 68px;
+        margin: auto;
+        margin-bottom: 15px;
+        font-size: 22px !important;
+    }
+
+
+    .searchable-container {
+        margin: 20px 0 0 0;
+    }
+
+        .searchable-container label.btn-default.active {
+            background-color: #007ba7;
+            color: #FFF;
+        }
+
+        .searchable-container label.btn-default {
+            width: 90%;
+            border: 1px solid #efefef;
+            margin: 5px;
+            box-shadow: 5px 8px 8px 0 #ccc;
+        }
+
+        .searchable-container label .bizcontent {
+            width: 100%;
+        }
+
+        .searchable-container .btn-group {
+            width: 90%;
+        }
+
+        .searchable-container .btn span.glyphicon {
+            opacity: 0;
+        }
+
+        .searchable-container .btn.active span.glyphicon {
+            opacity: 1;
+        }
+
+        .form-group input[type="checkbox"] {
+    display: none;
+}
+
+.form-group input[type="checkbox"] + .btn-group > label span {
+    width: 20px;
+}
+
+.form-group input[type="checkbox"] + .btn-group > label span:first-child {
+    display: none;
+}
+.form-group input[type="checkbox"] + .btn-group > label span:last-child {
+    display: inline-block;   
+}
+
+.form-group input[type="checkbox"]:checked + .btn-group > label span:first-child {
+    display: inline-block;
+}
+.form-group input[type="checkbox"]:checked + .btn-group > label span:last-child {
+    display: none;   
+}
+}
+
+
+.emailinvalido{
+    border:2px solid red;
+}

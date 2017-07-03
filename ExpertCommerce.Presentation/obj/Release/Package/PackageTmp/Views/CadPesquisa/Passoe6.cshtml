@@ -1,0 +1,10 @@
+﻿<div class="row passo6">
+    <form novalidate name="cadastroform" ng-submit="submitEndereco(cadastroform.$valid)" class="" style="border: 1px solid white;float: left;margin: auto;width:100%;">
+        <div class="form-group grupoEndereco">
+            <select class="select6" ng-model="selectedName" ng-options="y.Descricao for (x, y) in jsonOrigem"></select>
+            <div class="">
+                <button type="submit" class="btn active BotaoVerItens btnBus6" ng-disabled="cadastroform.$invalid">BUSCAR OU INSERIR</button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,58 @@
+﻿@model Boolean
+
+<div class="main-placeholder cortes">
+    <div class="row">
+        @if (Model)
+        {
+            <div class="small-12 columns paddingless show-for-small-only" ng-if="promocao.BannerImagemMobile"><img alt="" ng-src="{{promocao.BannerImagemMobile}}" fallback-src="~/Images/assets/unavailable-banner.png" /></div>
+        }
+        else
+        {
+            <div class="small-12 columns paddingless show-for-medium" ng-if="promocao.BannerImagem"><img alt="" ng-src="{{promocao.BannerImagem}}" fallback-src="~/Images/assets/unavailable-banner.png" /></div>
+        }
+    </div>
+
+    <div class="grey">
+        @*vitrine*@
+        <div class="row">
+            <div class="small-12 columns vitrine">
+                <h1>Promoção</h1>
+
+                <div class="small-12 columns paddingless-on-desktop">
+                    <section class="produto mais-vendidos small-6 medium-4 large-3 columns float-left" ng-repeat="item in promocao.Itens">
+                        <a href="#!/produto/{{item.Produto.ID}}">
+                            <header>
+                                <div class="nome">{{item.Produto.SubCategoria.Descricao | limitTo:20}}</div>
+                            </header>
+
+                            <figure>
+                                <div class="promocao show-for-medium hide">até 10% off</div>
+                                @if (Model)
+                                {
+                                    <img alt="" ng-src="{{item.Produto.ImagemMobile}}" fallback-src="~/Images/assets/unavailable.png" />
+                                }
+                                else
+                                {
+                                    <img alt="" ng-src="{{item.Produto.Imagem}}" fallback-src="~/Images/assets/unavailable.png" />
+                                }
+                            </figure>
+
+                            <footer>
+                                <div class="small-12 columns">
+                                    @*<div class="corte">{{item.Produto.ProdutoTipo.Descricao | capitalize}}</div>*@
+                                    <div class="corte">
+                                        <span>{{item.Produto.Descricao | capitalize}}</span>
+                                        <label ng-class="item.Produto.Marca.Descricao | lowercase">{{item.Produto.Marca.Descricao}}</label>
+                                    </div>
+                                    <div class="preco">A partir de <strong>{{item.Produto.PrecoVigente | currency:"R$ "}}</strong></div>
+                                </div>
+
+                                <div class="promocao show-for-small-only hide">até 10% off</div>
+                            </footer>
+                        </a>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

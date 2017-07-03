@@ -1,0 +1,79 @@
+﻿<nav class="" ng-controller="CarrinhoProdutosController">
+    <div id="menuHeaderMobile" class="escondeMenuFixo" style="height: 50px !important;">
+        <div class="" id="barraMenu">
+            <div style="text-align: center;">
+                <a href="/">
+                    <img src="~/Images/Imagens/logo.jpg" style="margin-top: 3px;height: 66px;" />
+                </a>
+            </div>
+
+            <p class="menu-anchor posicaoChamaMenu grow menu-abrir" style="margin-top: -63px;"></p>
+            <p id="carrinhoFixo" class="menu-anchor-carrinho posicaoChamaMenu  menu-abrir-carrinho CarrinhoMobile" style="">
+               
+                <span ng-class="{bola : totalItens > 0  }" class="bolaVazia" style="margin-left: 21px;font-weight: bold;padding-top: 3px;">
+                    {{totalItens}}
+                </span>
+                <img src="~/Images/Imagens/carrinho_.png" type="image" style="margin-top: -24px;height: 34px;" />
+            </p>
+            <div style="color:white;height:30px;float:right;margin-top: -53px; margin-right: 165px; " class="hidden-xs hidden-sm">
+                <a href="/#!/minha-conta/meu-cadastro"> <input src="~/Images/Imagens/login_.png" type="image" style="width: 38px;"></a>
+            </div>
+            <div style="height: 30px;float: right;margin-top: -49px;margin-right: 240px; " class="hidden-xs hidden-sm">
+                <div id="">
+                    <div id="">
+                        <form class="" ng-submit="buscar(term)">
+                            <img style="width: 39px;float: right;height: 33px;" onclick="abriBusca1()" id="lupaBusca" src="~/Images/Imagens/lupa_.png" type="image">
+                            <input id="myInput1" placeholder="Digite sua busca" ng-model="term"
+                                   style="border: 0px;float: right;height: 43px;margin-right: 10px;padding: 5px;" type="text" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+    <div class="main" id="main">
+        <div class="" id="mosaicoFeed"></div>
+        <div id="menuHeader">
+            <div class="" id="barraMenu">
+                <div style="text-align: center;">
+                    <a href="/">
+                        <img src="~/Images/Imagens/logo.jpg" class="logoMobile" style="height: 92px;margin-top: -77px;" />
+                    </a>
+                    <p class="textoLogo" style="color:white;">A MELHOR EXPERIÊNCIA</p>
+                    <p style="color:white;margin-top: -12px;">DA CARNE TODOS OS DIAS</p>
+                </div>
+                <p id="mobilefecharMenu" class="menu-anchor posicaoChamaMenu grow menu-abrir2"></p>
+
+                <p id="carrinhoTopo" class="menu-anchor-carrinho posicaoChamaMenu  menu-abrir-carrinho CarrinhoMobile" style="">
+
+                    <span ng-class="{bola : totalItens > 0  }" class="bolaVazia" style="margin-left: 21px;font-weight: bold;padding-top: 3px;">{{totalItens}}</span>
+                    <img src="~/Images/Imagens/carrinho_.png" type="image"  style="margin-top: -24px;height: 34px;" />
+                </p>
+                <div style="color:white;height:30px;float:right;margin-top: -53px; margin-right: 165px; " class="hidden-xs hidden-sm">
+                    <a href="/#!/minha-conta/meu-cadastro"> <input src="~/Images/Imagens/login_.png" type="image" style="width: 38px;"></a>
+                </div>
+                <div style="height: 30px;float: right;margin-top: -49px;margin-right: 240px; " class="hidden-xs hidden-sm">
+                    <div id="">
+                        <div id="">
+                            <form class="" ng-submit="buscar(term)">
+                                <img style="width: 39px;float: right;height: 33px;"
+                                     onclick="abriBusca2()" id="lupaBusca" src="~/Images/Imagens/lupa_.png" type="image">
+                                <input id="myInput2" placeholder="Digite sua busca" ng-model="term"
+                                       style="border: 0px;float: right;height: 43px;margin-right: 10px;padding: 5px;" type="text" />
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+

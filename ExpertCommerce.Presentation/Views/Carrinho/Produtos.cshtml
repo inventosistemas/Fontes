@@ -1,0 +1,211 @@
+﻿@model string
+
+<div class="container quadroProdutos" ng-show="!noitens">
+    <div class="">
+        @*pedidos*@
+        <table class="fd-table" style="color:black;margin: auto;width: 80%;margin-top: 20px;">
+            <thead style="border: 0;">
+                <tr>
+                    <th style="border-right: 0px solid #d9d9d9;">produto</th>
+                    <th style="text-align:center;border-right: 0px solid #d9d9d9;">qtd</th>
+                    <th style="text-align:center;border-right: 0px solid #d9d9d9;">valor</th>
+                </tr>
+            </thead>
+            <tbody style="border: 0;">
+                <tr class="list" ng-model="carrinho" ng-repeat="item in carrinho.Itens">
+                    <td class="" style="text-align:left;">
+                        <a ui-sref="produto({id:item.ProdutoID})">
+                            <strong>{{item.SubCategoria}} - {{item.Marca}}</strong><br />
+                            <span class="hidden-xs hidden-sm">{{item.Tipo}} - {{item.ProdutoDescricao}} -  {{item.Peso}} Kg - {{item.ValorUnit | currency:"R$ "}} </span>
+                            <img class="hidden-lg" fallback-src="/Images/assets/unavailable.png" src="{{item.ProdutoImagem}}" style="margin-top: 15px;width: 117px;height: 117px;">
+                        </a>
+                    </td>
+                    <td class="">
+                        <div class="">
+                          
+                            <button onclick="atualizarCarrinho()" style="color: white;background-color: #001F2C;border: 0;width:40px;height:40px;" class="left" ng-click="changeQtd(item, 'remove')" ng-disabled="item.Quantidade == 1">-</button>
+                            <input style="border: 0px solid black;height: 40px;width: 40px;text-align: center;margin-left: -4px;margin-right: -4px;font-weight: bold;font-size: 15px;" type="text" value="{{item.Quantidade}}" readonly="readonly" />
+                            <button onclick="atualizarCarrinho()" style="color: white;background-color: #001F2C;border: 0;width:40px;height:40px;" ng-click="changeQtd(item, 'add')">+</button>
+                          
+
+                           
+                        </div>
+                    </td>
+                    <td data-value="{{item.ValorUnit * item.Quantidade}}">
+                        <span style="color: #1daee4;font-weight: bold;">{{item.ValorUnit * item.Quantidade | currency:"R$ "}}</span><br /><a ng-click="removeItem(item)">Excluir</a>
+                        <span class="sumvalues hide" style="font-weight: bold;">{{item.ValorUnit * item.Quantidade}}</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div style="clear:both;"></div>
+    <div class="container containerFrete quadroFrete" >
+        @*frete-cupom-desconto*@
+        <div class="">
+            <div class="frete-cupom-sumario" style="margin: 0 auto;">
+                <div class="calcular-frete calculoFrete" ng-show="!credentials.isAuthorized" style="padding-top: 15px;">
+                    <label style="font-size: 17px;margin-right: 45%;">Calcular frete</label>
+                    <div class="holder">
+                        <input style="height: 35px !important;" id="cepcarrinho" type="tel" class="fd-input cep" placeholder="CEP" ng-model="frete" required ng-required="true" ng-init="frete=''" />
+                        <button style="height: 35px !important;width: 60px;padding: 0;" type="button" class="fd-button fd-primary float-right" ng-click="frete.length == 9 ? calculaFrete(frete, true) : ''" ng-blur="frete.length == 9 ? calculaFrete(frete, true) : ''" ng-disabled="frete.length < 9 || frete.length == null" maxlength="9" disabled="disabled">Ok</button>
+                    </div>
+                </div>
+                <div class="alinhar"></div>
+                <div class="calcular-cupom calculoCupom" style="padding-top: 15px;">
+                    <label class="textoCupom">Cupom de desconto</label>
+                    <div class="">
+                        <input style="height: 35px !important;" id="calccupom" type="text" class="fd-input" placeholder="Cupom" ng-model="carrinho.CodigoVoucher" required ng-required="true" maxlength="10" />
+                        <button style="height: 35px !important;width: 60px;padding: 0;" type="button" class="fd-button fd-primary float-right" ng-click="carrinho.CodigoVoucher.length == 10 ? calculaCupom(carrinho.CodigoVoucher, true) : ''" ng-disabled="carrinho.CodigoVoucher.length < 10 || carrinho.CodigoVoucher.length == null" ng-hide="jatemcupom">Ok</button>
+                        <button id="lmpCup" style="height: 35px !important;width: 60px;padding: 0;" type="button" class="fd-button fd-secondary float-right" ng-click="limpaCupom()" ng-show="jatemcupom">Limpar</button>
+                    </div>
+                </div>
+                <div class="alinhar"></div> 
+                <div style="" class="valores">
+                    <table class="">
+                        <tbody style="font-weight: bold;">
+                            <tr>
+                                <td style="padding-right: 20px;">Subtotal</td>
+                                <td>{{subtotal | currency:"R$ "}}</td>
+                            </tr>
+
+                            <tr>
+                                <td>Frete</td>
+                                <td>{{$root.carrinho.Frete | currency:"R$ "}}</td>
+                            </tr>
+
+                            <tr>
+                                <td>Desconto</td>
+                                <td>{{$root.carrinho.ValorDesconto | currency:"R$ "}}</td>
+                            </tr>
+
+                            <tr>
+                                <td class="">Total</td>
+                                <td id="totaldacompra" style="color: #1daee4;" class="total">{{subtotal + $root.carrinho.Frete - $root.carrinho.ValorDesconto | currency:"R$ "}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="clear:both;"></div>
+    <div class="container containerData" ng-show="credentials.isAuthorized" style="">
+
+        <div class="">
+            <div class="local-entrega-box localEntregaCarrinho localEntrega" style=" ">
+                <div class="thick-border">
+                    <div class="small-12 columns grey lighter">
+                        <h1 style="font-weight:bold;font-size: 21px;padding: 16px 44px;" class="title-local">Local de entrega</h1>
+                    </div>
+
+                    <div class="small-12 columns address-box" style="text-align: left;">
+                        <div class="title">
+                            <div class="name">
+                                <span style="font-weight:bold;padding-left: 10px;">{{enderecoEntrega.Identificacao}}</span>
+                                <button type="button" class="fd-button fd-primary fd-small-font float-right" ng-click="toggleModalEndereco()" style="float: right;margin-top: 4px;margin-right: 10px;padding: 10px 16px;">Trocar</button>
+                            </div>
+
+                            <div style="padding-left: 10px;" class="description border-top">
+                                {{enderecoEntrega.Logradouro}}, {{enderecoEntrega.Numero}}, {{enderecoEntrega.Complemento}} - {{enderecoEntrega.CEP}}, {{enderecoEntrega.Bairro}}<br />
+                                {{enderecoEntrega.Cidade.Nome}} - {{enderecoEntrega.Cidade.Estado.Nome}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          
+            <div class="small-12 medium-12 large-8 columns paddingless containerCalendario localEntrega" style="border: 8px solid #efefef;">
+                <div class="small-12 columns paddingless " >
+                    <div class="small-12 columns grey lighter" ng-click="toggleModalResumo()">
+                        <h1 style="font-weight:bold;font-size: 30px;padding: 16px 44px;"  class="title-local">Entrega</h1>
+                    </div>
+
+                    <div class="small-12 columns frete-box" >
+                        <div class="small-12 medium-7 columns paddingless-on-mobile">
+                            @*tipos de frete*@
+                            <div class="tiposfrete">
+                                <p class="subtitle">Escolha entre as opções a seguir:</p>
+                                @*<div style="width:100%;" >
+                                    <label ng-repeat="frete in tiposfrete" >
+                                        <input style="display:inherit;" type="radio" name="rdbtipofrete" ng-click="calculaFreteProgramacao(frete)" id="frete-{{$index}}" />
+                                      
+                                        <span class="descricao">
+                                            <span class="texto">{{frete.ProgramacaoEntregaDescricao}}</span>
+                                            <span class="valor">{{frete.ValorServicoEntrega | currency: 'R$ '}}</span>
+                                        </span>
+                                    </label>
+                                </div>*@
+                                <div class="col-md-12">
+                                   
+                                    <div class="funkyradio">
+                                       
+                                        <div style="text-align: justify;" class="funkyradio-success" ng-repeat="frete in tiposfrete">
+                                            <input type="radio" name="rdbtipofrete" ng-click="calculaFreteProgramacao(frete)" id="frete-{{$index}}" value="{{frete.ValorServicoEntrega}}"/> 
+                                            <label for="frete-{{$index}}">{{frete.ProgramacaoEntregaDescricao}} {{frete.ValorServicoEntrega | currency: 'R$ '}}</label>
+                                        </div>
+
+                                        @*<div class="funkyradio-success">
+                                            <input type="radio" name="radio" id="radio4" />
+                                            <label for="radio4">Third Option success</label>
+                                        </div>*@
+                                      
+                                    </div>
+                                </div>
+                                @*<div style="">
+                                    <div class="col-lg-5" ng-repeat="frete in tiposfrete" style="">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <input name="rdbtipofrete" style="display:inherit;" type="radio" aria-label="...">
+                                            </span>
+                                            <span class="texto form-control">{{frete.ProgramacaoEntregaDescricao}}</span>
+                                            <span class="valor form-control">{{frete.ValorServicoEntrega | currency: 'R$ '}}</span>
+                                          
+                                        </div><!-- /input-group -->
+                                    </div><!-- /.col-lg-6 -->
+                                </div>*@
+                            </div>
+                            <div style="clear:both"></div>
+                            <div class="programacao">
+                                <div ng-show="freteprogramacao">
+                                    <p class="subtitle">Escolha entre os períodos a seguir:</p>
+                                    <select ng-model="pgmcetrg" ng-options="programacao as programacao.ProgramacaoEntregaIntervaloDescricao for programacao in freteprogramacao" ng-change="updateEntregaCombo()">
+                                        <option value="" ng-if="false"></option>
+                                    </select>
+                                </div>
+                                <p class="msg-error" ng-hide="freteprogramacao != null">Por favor, selecione uma data para a entrega de seu pedido e a modalidade de frete desejada</p>
+                            </div>
+                        </div>
+                        @*<div style="clear:both;"></div>*@
+                        <div class="small-12 medium-5 columns">
+                            @*calendario*@
+
+                            <feed-calendario hoje="@Model"></feed-calendario>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="clear:both;"></div>
+
+    <div class="actions container" style="width:80%;padding-right: 0;margin-bottom: 15px;">
+        <div class="AlinharBtnCarrinho" style="margin-top: 20px;">
+            <button style="color:white;" type="button" class="fd-button fd-secondary fd-large float-right btnFinalizarCompra" ng-click="keepgoing()" ng-disabled="(credentials.isAuthorized == true) && (pedidodata.ProgramacaoEntrega.ID == null || pedidodata.ProgramacaoEntrega.IntervaloID == null)" style="width:auto">
+                <span style="color:white;"  ng-show="(credentials.isAuthorized == true) && (pedidodata.ProgramacaoEntrega.ID == null || pedidodata.ProgramacaoEntrega.IntervaloID == null)">selecione o frete para </span>
+                Finalizar compra
+            </button>
+            <button style="color:white;"  type="button" class="fd-button fd-primary fd-large float-right btnContinuarCompra" ui-sref="cortes">Continuar comprando</button>
+        </div>
+    </div>
+</div>
+
+<div class="row" ng-show="noitens">
+    <p class="text-center" style="padding:100px 0px">Você ainda não possui nenhum item no carrinho</p>
+
+    <div class="small-12 medium-12 columns paddingless actions">
+        <div class="small-12 medium-12 columns paddingless">
+            <a href="javascript:history.back(-2);" class="fd-button fd-primary fd-large float-right">Continuar comprando</a>
+        </div>
+    </div>
+</div>

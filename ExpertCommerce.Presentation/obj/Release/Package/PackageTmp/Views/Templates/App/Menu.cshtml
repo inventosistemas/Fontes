@@ -1,0 +1,136 @@
+﻿<div class="menu" style="width: 63%;margin-left: -88px;">
+    @*<li class="hello show-for-small-only" ng-if="credentials.isAuthorized">Olá {{credentials.userName}} :)</li>
+    <li class="show-for-small-only">
+        <a ui-sref="home" ng-click="menumobile = false">Home</a>
+    </li>
+
+    <li class="show-for-small-only" ng-show="credentials.isAuthorized">
+        <a ui-sref="minhaconta.pedidos" ng-click="menumobile = false">Minha conta</a>
+    </li>
+
+    <li>
+        <a ui-sref="cortes" ng-click="menumobile = false">Cortes</a>
+    </li>
+    <li>
+        <a ui-sref="emporio" ng-click="menumobile = false">Emporio</a>
+    </li>
+
+    <li>
+        <a href="http://www.feed.com.br/institucional/receitas/" target="_blank" ng-click="menumobile = false">Receitas</a>
+    </li>
+
+    <li>
+        <a href="http://www.feed.com.br/institucional" target="_blank" ng-click="menumobile = false">Mundo feed</a>
+    </li>
+
+    <li class="show-for-small-only" ng-if="credentials.isAuthorized">
+        <a ng-click="logout();">Sair</a>
+    </li>
+
+    <li class="show-for-small-only" ng-if="!credentials.isAuthorized">
+        <a ui-sref="login" ng-click="menumobile = false">Login</a>
+    </li>*@
+    <ul style="margin-top: -4px;">
+        <li class="drop prim ulmaiorli" style="z-index:9999;left: -4px;   ">
+           <a href="/"class="ullia" style="font-weight:bold;color:white;line-height: 30px;">HOME</a>
+           
+        </li>
+        <li class="drop prim ulmaiorli" style="z-index:9999; left: -18px; padding-bottom: 9px; ">
+            <a href="/#!/cortes" class="ullia" style="font-weight:bold;color:white;line-height: 19px;">AÇOUGUE</a>
+            <div class="dropdownContain2" style="margin-top:-50px!important">
+                <div style="clear:both;"></div>
+                <div class="dropOut" style="margin-left: -49px;margin-top: 13px;">
+                    <div class="triangle3"></div>
+                    <ul style="border-top: 4px solid #FF6B00; width:100%">
+                        <li style="font-weight:bold;"><a href="/#!/cortes" onclick="selecionaoOcasiao2('26')"> DIA A DIA</a></li>
+                        <li style="font-weight:bold;"><a href="/#!/cortes" onclick="selecionaoOcasiao2('24')"> CHURRASCO</a></li>
+                        <li style="font-weight:bold;"><a href="/#!/cortes" onclick="limparFiltro()">TODOS OS CORTES</a></li>
+                        @*<li style="font-weight:bold;"><a href="" ng-click="logout();">Sair</a></li>*@
+                    </ul>
+                </div>
+            </div>
+        </li>
+        <li class="drop prim ulmaiorli" style="z-index:9999; left: -34px;padding-bottom: 9px;  ">
+            <a href="/#!/emporio" class="ullia" style="font-weight:bold;color:white;line-height: 19px;">EMPÓRIO</a>
+            <div class="dropdownContain2" style="margin-top:-50px!important">
+                <div class="dropOut" style="margin-left: -49px;margin-top: 13px;">
+                    <div class="triangle3"></div>
+                    <ul style="border-top: 4px solid #FF6B00; width:100%">
+                        @*<li style="font-weight:bold;"><a href="/#!/minha-conta/meu-cadastro"> ACOMPANHAMENTO</a></li>*@
+                        <li style="font-weight:bold;"><a  href="/#!/emporio" onclick="selecionaocarvao('46')"> CARVÃO</a></li>
+                        <li style="font-weight:bold;"><a href="/#!/emporio" onclick="selecionaoTempero('corte2585')"> TEMPEROS</a></li>
+                        @*<li style="font-weight:bold;"><a href="/#!/minha-conta/meu-cadastro"> LATICÍNIOS</a></li>*@
+                        <li style="font-weight:bold;"><a  href="/#!/emporio" onclick="limparFiltro()"> TODOS OS PRODUTOS</a></li>
+                    </ul>
+                </div>
+            </div>
+        </li>
+        <li class="drop prim ulmaiorli" style="z-index:9999;left: -49px;padding-bottom: 9px;   ">
+            <a href="#" class="ullia" style="font-weight:bold;color:white;line-height: 19px;">MUNDO FEED</a>
+            <div class="dropdownContain2" style="margin-top:-50px!important">
+                <div class="dropOut" style="margin-left: -49px;margin-top: 13px;">
+                    <div class="triangle3"></div>
+                    <ul style="border-top: 4px solid #FF6B00; width:100%">
+                        <li style="font-weight:bold;"><a href="/#!/quem-somos"> QUEM SOMOS</a></li>
+                        <li style="font-weight:bold;"><a href="https://www.feed.com.br/institucional/agenda-de-aulas/" target="_blank"> CURSOS</a></li>
+                        <li style="font-weight:bold;"><a href="https://www.feed.com.br/institucional/eventos/" target="_blank"> EVENTOS</a></li>
+                        @*<li style="font-weight:bold;"><a href="/#!/minha-conta/meu-cadastro"> ESPAÇO GOURMET</a></li>*@
+                        <li style="font-weight:bold;"><a href="https://www.feed.com.br/institucional/" target="_blank"> BLOG</a></li>
+                        <li style="font-weight:bold;"><a  href="https://www.feed.com.br/institucional/receitas/" target="_blank"> RECEITAS</a></li>
+                        <li style="font-weight:bold;"><a href="https://goo.gl/GMHMjY" target="_blank"> ONDE ESTAMOS</a></li>
+                        <li style="font-weight:bold;"><a target="_blank" href="https://www.feed.com.br/institucional/categoria-mundo-feed/feed-e-eleita-melhor-carne-de-sao-paulo-pelas-revistas-veja-sp-e-epoca-sp/"> FEED NA MÍDIA</a></li>
+                        <li style="font-weight:bold;"><a target="_blank" href="https://goo.gl/ODj0ep"> VISITA 3D</a></li>
+                    </ul>
+                </div>
+            </div>
+        </li>
+        <li class="drop prim ulmaiorli" style="z-index:9999;   left:-64px">
+            <a href="/#!/fale-conosco" class="ullia" style="font-weight:bold;color:white;line-height: 19px;">FALE CONOSCO</a>
+
+        </li>
+    </ul>
+  
+
+        @*<nav id="primary_nav_wrap">
+            <ul style="margin-top: -2px;margin-left: 27px;">
+           
+
+                <li><a href="/">HOME</a></li>
+                <li style="z-index:9999;">
+                    <a href="/#!/cortes">AÇOUGUE</a>
+                   
+                    <ul>
+                        <li><a href="/#!/cortes" onclick="selecionaoOcasiao2('26')">DIA A DIA</a></li>
+                        <li><a href="/#!/cortes" onclick="selecionaoOcasiao2('24')">CHURRASCO</a></li>
+                        <li><a href="/#!/cortes" onclick="limparFiltro()">TODOS OS CORTES</a></li>
+                    </ul>
+                </li>
+                <li style="z-index:9999;">
+                    <a href="/#!/emporio">EMPÓRIO</a>
+               
+                    <ul>
+                        <li><a href="/#!/emporio" onclick="selecionaoTempero('corte2585')">TEMPEROS</a></li>
+                        <li><a href="/#!/emporio" onclick="selecionaocarvao('46')">CARVÃO</a></li>
+                        <li><a href="/#!/emporio" onclick="limparFiltro()">NOSSO EMPÓRIO</a></li>
+                    </ul>
+                </li>
+                
+                <li>
+                    <a href="http://www.feed.com.br/institucional" target="_blank">MUNDO FEED</a>
+                    <ul style="z-index:9999;">
+                        <li><a href="/#!/quem-somos">QUEM SOMOS</a></li>
+                        <li><a  href="https://www.feed.com.br/institucional/receitas/">RECEITAS</a></li>
+                        <li><a  href="https://www.feed.com.br/institucional/tecnicas-de-cozinha/">TÉCNICAS DE COZINHA</a></li>
+                      
+                       
+                    </ul>
+                </li>
+                <li><a href="/#!/fale-conosco">FALE CONOSCO</a></li>
+                <li style="cursor: pointer;" onclick="fecharmodal2(this)" data-toggle="modal" data-target="#myModal3" class="show-for-small-only" ng-if="credentials.isAuthorized">
+                    <a ng-click="logout();">SAIR</a>
+                </li>
+            
+            </ul>
+        </nav>*@
+   
+</div>

@@ -1,0 +1,28 @@
+﻿<div class="main-placeholder minha-conta">
+    <div class="grey">
+        <div class="">
+            <div class="small-12 medium-11 medium-centered columns">
+                <h1 class="nomeLogado" style="font-weight: bold;">MINHA CONTA</h1>
+                @*<h1 class="nomeLogado" style="font-weight: bold;">Minha conta | Olá {{credentials.userName}}</h1>*@
+            </div>
+        </div>
+    </div>
+
+    <div class="" style="font-size:19px;padding:5px;">
+        <div class="row">
+            <div class="small-12 columns">
+                <ul class="">
+                    @*background-color:#00953A;*@
+                  
+                    <a ng-class="placeholder == 'meuspedidos' ? 'MenuCadEscolhido' : ''" style="color:white;font-weight:bold;" href="#!/minha-conta/meus-pedidos"> <li style="" class="small-4 columns btnMeusPedidos" ng-class="placeholder == 'meuspedidos' ? 'MenuCadEscolhido' : ''">Meus pedidos</li></a>
+                    <a ng-class="placeholder == 'meucadastro' ? 'MenuCadEscolhido' : ''" style="color:white;font-weight:bold;" href="#!/minha-conta/meu-cadastro">  <li style="" class="small-4 columns btnMeuCadastro" ng-class="placeholder == 'meucadastro' ? 'MenuCadEscolhido' : ''">Meu cadastro</li></a>
+                    <a ng-class="placeholder == 'meusenderecos' ? 'MenuCadEscolhido' : ''" style="color:white;font-weight:bold;" href="#!/minha-conta/meus-enderecos">  <li style="" class="small-4 columns btnMeusEnderecos" ng-class="placeholder == 'meusenderecos' ? 'MenuCadEscolhido' : ''">Meus endereços</li></a>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div ui-view="child1"></div>
+    </div>
+</div>

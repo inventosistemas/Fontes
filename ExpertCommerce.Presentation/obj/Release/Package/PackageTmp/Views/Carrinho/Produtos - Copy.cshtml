@@ -1,0 +1,172 @@
+﻿@model string
+
+<div class="row" ng-show="!noitens">
+    <div class="small-12 medium-12 columns paddingless">
+        @*pedidos*@
+        <table class="small-12 medium-12 columns fd-table fd-white-background">
+            <thead>
+                <tr class="small-12 columns paddingless">
+                    <th class="small-4 medium-7 columns">produto</th>
+                    <th class="small-4 medium-2 columns">qtd</th>
+                    <th class="small-4 medium-3 columns">valor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="small-12 columns paddingless list" ng-model="carrinho" ng-repeat="item in carrinho.Itens">
+                    <td class="small-4 medium-7 columns">
+                        <a ui-sref="produto({id:item.ProdutoID})">
+                            <strong>{{item.SubCategoria}} - {{item.Marca}}</strong><br />
+                            <span class="hide-for-small-only">{{item.Tipo}} - {{item.ProdutoDescricao}} -  {{item.Peso}} Kg - {{item.ValorUnit | currency:"R$ "}} </span>
+                        </a>
+                    </td>
+                    <td class="small-4 medium-2 columns text-center paddingless-on-mobile">
+                        <div class="fd-qtd-field">
+                            <button class="left" ng-click="changeQtd(item, 'remove')" ng-disabled="item.Quantidade == 1">-</button>
+                            <input type="text" value="{{item.Quantidade}}" readonly="readonly" />
+                            <button class="right" ng-click="changeQtd(item, 'add')">+</button>
+                        </div>
+                    </td>
+                    <td class="small-4 medium-3 columns valor borderless" data-value="{{item.ValorUnit * item.Quantidade}}">
+                        {{item.ValorUnit * item.Quantidade | currency:"R$ "}}<br /><a ng-click="removeItem(item)">Excluir</a>
+                        <span class="sumvalues hide">{{item.ValorUnit * item.Quantidade}}</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="small-12 medium-12 columns paddingless">
+        @*frete-cupom-desconto*@
+        <div class="small-12 medium-12 columns paddingless">
+            <div class="small-12 columns paddingless frete-cupom-sumario">
+                <div class="small-12 medium-6 large-4 columns calcular-frete" ng-show="!credentials.isAuthorized">
+                    <label>Calcular frete</label>
+                    <div class="holder">
+                        <input id="cepcarrinho" type="tel" class="fd-input cep" placeholder="CEP" ng-model="frete" required ng-required="true" ng-init="frete=''" />
+                        <button type="button" class="fd-button fd-primary float-right" ng-click="frete.length == 9 ? calculaFrete(frete, true) : ''" ng-blur="frete.length == 9 ? calculaFrete(frete, true) : ''" ng-disabled="frete.length < 9 || frete.length == null" maxlength="9" disabled="disabled">Ok</button>
+                    </div>
+                </div>
+                <div class="small-12 medium-6 large-4 columns calcular-cupom">
+                    <label>cupom de desconto</label>
+                    <div class="holder">
+                        <input id="calccupom" type="text" class="fd-input" placeholder="Cupom" ng-model="carrinho.CodigoVoucher" required ng-required="true" maxlength="10" />
+                        <button type="button" class="fd-button fd-primary float-right" ng-click="carrinho.CodigoVoucher.length == 10 ? calculaCupom(carrinho.CodigoVoucher, true) : ''" ng-disabled="carrinho.CodigoVoucher.length < 10 || carrinho.CodigoVoucher.length == null" ng-hide="jatemcupom">Ok</button>
+                        <button type="button" class="fd-button fd-secondary float-right" ng-click="limpaCupom()" ng-show="jatemcupom">Limpar</button>
+                    </div>
+                </div>
+                <div class="small-12 medium-12 large-4 columns ">
+                    <table class="small-12 table-sumario">
+                        <tbody class="borderless">
+                            <tr>
+                                <td>Subtotal</td>
+                                <td>{{carrinho.SubTotal | currency:"R$ "}}</td>
+                            </tr>
+
+                            <tr>
+                                <td>Frete</td>
+                                <td>{{carrinho.Frete | currency:"R$ "}}</td>
+                            </tr>
+
+                            <tr>
+                                <td>Desconto</td>
+                                <td>{{carrinho.ValorDesconto | currency:"R$ "}}</td>
+                            </tr>
+
+                            <tr>
+                                <td class="">Total</td>
+                                <td class="total">{{carrinho.SubTotal + carrinho.Frete - carrinho.ValorDesconto | currency:"R$ "}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="small-12 medium-12 columns entrega paddingless" ng-show="credentials.isAuthorized">
+
+        <div class="small-12 medium-12 columns paddingless">
+            <div class="small-12 medium-12 large-4 columns local-entrega-box">
+                <div class="small-12 columns paddingless thick-border">
+                    <div class="small-12 columns grey lighter">
+                        <h1 class="title-local">Local de entrega</h1>
+                    </div>
+
+                    <div class="small-12 columns address-box">
+                        <div class="title">
+                            <div class="name">
+                                <span>{{enderecoEntrega.Identificacao}}</span>
+                                <button type="button" class="fd-button fd-primary fd-small-font float-right" ng-click="toggleModalEndereco()">Trocar</button>
+                            </div>
+
+                            <div class="description border-top">
+                                {{enderecoEntrega.Logradouro}}, {{enderecoEntrega.Numero}}, {{enderecoEntrega.Complemento}} - {{enderecoEntrega.CEP}}, {{enderecoEntrega.Bairro}}<br />
+                                {{enderecoEntrega.Cidade.Nome}} - {{enderecoEntrega.Cidade.Estado.Nome}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="small-12 medium-12 large-8 columns paddingless">
+                <div class="small-12 columns paddingless thick-border">
+                    <div class="small-12 columns grey lighter" ng-click="toggleModalResumo()">
+                        <h1 class="title-local">Entrega</h1>
+                    </div>
+
+                    <div class="small-12 columns frete-box">
+                        <div class="small-12 medium-7 columns paddingless-on-mobile">
+                            @*tipos de frete*@
+                            <div class="tiposfrete">
+                                <p class="subtitle">Escolha entre as opções a seguir:</p>
+                                <label ng-repeat="frete in tiposfrete">
+                                    <input type="radio" name="rdbtipofrete" ng-click="calculaFreteProgramacao(frete)" id="frete-{{$index}}"/>
+                                    <span class="descricao">
+                                        <span class="texto">{{frete.ProgramacaoEntregaDescricao}}</span>
+                                        <span class="valor">{{frete.ValorServicoEntrega | currency: 'R$ '}}</span>
+                                    </span>
+                                </label>
+                            </div>
+
+                            <div class="programacao">
+                                <div ng-show="freteprogramacao">
+                                    <p class="subtitle">Escolha entre os períodos a seguir:</p>
+                                    <select ng-model="pgmcetrg" ng-options="programacao as programacao.ProgramacaoEntregaIntervaloDescricao for programacao in freteprogramacao" ng-change="updateEntregaCombo()">
+                                        <option value="" ng-if="false"></option>
+                                    </select>
+                                </div>
+                                <p class="msg-error" ng-hide="freteprogramacao != null">NENHUM HORÁRIO DISPONÍVEL PARA ESTA OPÇÃO DE ENTREGA</p>
+                            </div>
+                        </div>
+
+                        <div class="small-12 medium-5 columns">
+                            @*calendario*@
+                            <feed-calendario hoje="@Model"></feed-calendario>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="small-12 medium-12 columns paddingless actions">
+        <div class="small-12 medium-12 columns paddingless">
+            <button type="button" class="fd-button fd-secondary fd-large float-right" ng-click="keepgoing()" ng-disabled="(credentials.isAuthorized == true) && (pedidodata.ProgramacaoEntrega.ID == null || pedidodata.ProgramacaoEntrega.IntervaloID == null)" style="width:auto">
+                <span ng-show="(credentials.isAuthorized == true) && (pedidodata.ProgramacaoEntrega.ID == null || pedidodata.ProgramacaoEntrega.IntervaloID == null)">selecione o frete para </span>
+                Finalizar compra
+            </button>
+            <button type="button" class="fd-button fd-primary fd-large float-right" ng-click="goback()">Continuar comprando</button>
+        </div>
+    </div>
+</div>
+
+<div class="row" ng-show="noitens">
+    <p class="text-center" style="padding:100px 0px">Você ainda não possui nenhum item no carrinho</p>
+
+    <div class="small-12 medium-12 columns paddingless actions">
+        <div class="small-12 medium-12 columns paddingless">
+            <a href="javascript:history.back(-1);" class="fd-button fd-primary fd-large float-right">Continuar comprando</a>
+        </div>
+    </div>
+</div>

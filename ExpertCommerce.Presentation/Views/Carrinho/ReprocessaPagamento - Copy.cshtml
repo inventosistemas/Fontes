@@ -1,0 +1,100 @@
+﻿<div class="container carrinho-pagamento containerPagamento" style="">
+    <div class="small-12 medium-10 columns medium-centered">
+        <div class="">
+            <div class="small-12 columns ">
+                <form novalidate name="cadastroform" ng-submit="submitCadastro(cadastroform.$valid)">
+                    <div class="small-12 medium-6 columns ContainerNome">
+                        <label class="fd-label" style="width: 100%;">
+                            <span>Nome (como no cartão)</span>
+                            <input style="width: 100%;" type="text" class="fd-input fd-medium fd-lt-spacing" placeholder="Nome completo" ng-model="pedidodata.DadosCartao.Titular" required ng-required="true" />
+                        </label>
+                    </div>
+
+                    <div class="small-12 medium-6 columns numero-cartao">
+                        <div class="pagamento-bandeira">
+                            <img alt="" src="~/Images/cardflags/bandeira-visa.svg" ng-show="showflag == 'Visa'" />
+                            <img alt="" src="~/Images/cardflags/bandeira-master.svg" ng-show="showflag == 'Mastercard'" />
+                            <img alt="" src="~/Images/cardflags/bandeira-amex.svg" ng-show="showflag == 'AMEX'" />
+                            <img alt="" src="~/Images/cardflags/bandeira-diners.svg" ng-show="showflag == 'Diners'" />
+                            <img alt="" src="~/Images/cardflags/bandeira-elo.svg" ng-show="showflag == 'Elo'" />
+                        </div>
+                        <label class="fd-label">
+                            <span>Número do cartão</span>
+                            <input id="numerocartao" type="tel" class="fd-input fd-medium fd-lt-spacing" placeholder="Número do cartão" ng-model="pedidodata.DadosCartao.Numero" required ng-required="true" ng-blur="pedidodata.DadosCartao.Numero.length>=13 ? identifyCard(pedidodata.DadosCartao.Numero): '';" />
+                        </label>
+                    </div>
+
+                    <div class="small-6 medium-2 columns">
+                        <label class="fd-label">
+                            <span>Mês val.</span>
+                            <input id="mes" type="tel" class="fd-input fd-medium fd-lt-spacing" ng-model="pedidodata.DadosCartao.Mes" required ng-required="true" placeholder="MM" />
+                        </label>
+                    </div>
+
+                    <div class="small-6 medium-3 columns">
+                        <label class="fd-label">
+                            <span>Ano val.</span>
+                            <input id="ano" type="tel" class="fd-input fd-medium fd-lt-spacing" ng-model="pedidodata.DadosCartao.Ano" required ng-required="true" placeholder="AAAA" />
+                        </label>
+                    </div>
+
+                    <div class="small-12 medium-4 columns">
+                        <label class="fd-label">
+                            <span>Código de segurança</span>
+                            <input id="cvv" type="tel" class="fd-input fd-medium fd-lt-spacing" placeholder="CVV" ng-model="pedidodata.DadosCartao.CodigoSeguranca" required ng-required="true" />
+                        </label>
+                    </div>
+
+                    <div class="small-12 medium-4 columns position-right">
+                        <label class="fd-label">
+                            <span>&nbsp;</span>
+                        </label>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        @*<div class="row grey sumario">
+            <div class="small-12 columns paddingless">
+                <table class="small-12 table-sumario float-right">
+                    <tbody class="borderless">
+                        <tr>
+                            <td>Subtotal</td>
+                            <td>{{carrinho.SubTotal | currency:"R$ "}}</td>
+                        </tr>
+
+                        <tr>
+                            <td>Frete</td>
+                            <td>{{carrinho.Frete | currency:"R$ "}}</td>
+                        </tr>
+
+                        <tr>
+                            <td>Desconto</td>
+                            <td>{{carrinho.ValorDesconto | currency:"R$ "}}</td>
+                        </tr>
+
+                        <tr>
+                            <td class="">Total</td>
+                            <td class="total">{{carrinho.SubTotal + carrinho.Frete - carrinho.ValorDesconto | currency:"R$ "}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+               <table class="small-12 table-sumario float-right">
+                        <tbody class="borderless">
+                            <tr>
+                                <td class="text-right">Total</td>
+                                <td class="text-left total">{{carrinho.SubTotal + carrinho.Frete - carrinho.Desconto | currency:"R$ "}}</td>
+                            </tr>
+                        </tbody>
+                    </table>*@
+    </div>
+</div>
+
+        <div class="small-12 medium-12 columns paddingless actions">
+            <div class="small-12 medium-12 columns paddingless">
+                <button type="button" class="fd-button fd-secondary fd-large float-right" ng-click="gravaPedido(true);">continuar</button>
+                <button type="button" class="fd-button fd-primary fd-large float-right" ui-sref="carrinho.produtos">< voltar</button>
+            </div>
+        </div>
+    </div>
+</div>

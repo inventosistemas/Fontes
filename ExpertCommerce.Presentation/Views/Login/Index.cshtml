@@ -1,0 +1,34 @@
+﻿<div class="container login" style="" >
+    <div class="grey">
+        <div class="row">
+            <div class="small-12 medium-11 medium-centered columns">
+                <h1 style="font-weight: bold;">Faça seu login</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="small-12 medium-4 medium-centered columns">
+            <form class="form-login container" ng-if="!credentials.isAuthorized" novalidate name="loginform" ng-submit="submitLogin(loginform.$valid, true)" >
+
+
+                <input type="text" style="text-transform: inherit !important;" class="fd-input InputLogin" placeholder="email" ng-model="$parent.login.UserName" required ng-required="true" ng-trim="false" />
+
+                <br />
+                <input type="password" style="text-transform: inherit !important;" class="fd-input InputSenha" placeholder="senha" ng-model="$parent.login.Password" required ng-required="true" />
+
+
+                <p class="error" ng-if="usernotfound" >E-mail ou senha não conferem</p><br />
+                <div style="margin:13px 0 13px 0px">
+                    
+                        <a ui-sref="esqueciminhasenha" class="forgot">Esqueci minha senha</a> <br />
+                    </div>
+
+                <button  style="margin-bottom: 50px;" type="submit" class="fd-button fd-primary fd-full-width fd-small-font btnLogin" ng-disabled="loginform.$invalid">Enviar</button><br />
+
+
+                <a ng-click="MeCadastrar();" class="fd-button fd-hollow fd-full-width fd-small-font" style="padding: 20px 40px !important;">Fazer cadastro</a>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,55 @@
+﻿<div class="row passo1">
+
+    <form novalidate name="cadastroform" ng-submit="submitCadastro(cadastroform.$valid)" class="" style="border: 1px solid white;float: left;margin: auto;width:100%;">
+        <div class="form-group grupoEndereco" >
+
+            <input type="text" class="form-control cadNome" placeholder="Nome completo" ng-model="usuario.RazaoSocial" required ng-required="true" maxlength="150" tabindex="1">
+
+            <div style="max-width: 950px;margin:auto;">
+                <input type="email" class="form-control cadEmail" placeholder="Email" ng-model="usuario.Email" required ng-required="true" maxlength="200" tabindex="2">
+                <input id="dddtelefone" type="number" class="form-control cadDDD" placeholder="DDD" ng-model="usuario.DDDTelefone" required ng-required="true" maxlength="2" tabindex="3">
+                <input id="telefone" type="tel" class="form-control cadTelefone" placeholder="Telefone" ng-model="usuario.Telefone" required ng-required="true" tabindex="4">
+            </div>
+
+            <div style="clear:both;"></div>
+
+            <div style="max-width: 950px;margin:auto;margin-top:20px;">
+                <input id="cpf" type="tel" class="form-control cadCpf" placeholder="CPF" ng-model="usuario.CNPJ" required ng-required="true" maxlength="14" tabindex="5">
+
+                <select style="font-size: 14px;" class="form-control cadSexo" placeholder="CPF" ng-model="usuario.Sexo"  tabindex="6">
+                    <option value="">Sexo</option>
+                    <option value="1">MASCULINO</option>
+                    <option value="0">FEMININO</option>
+                    @*<option value="0">NÃO INFORMAR</option>*@
+                </select>
+
+                <input id="nascimento" type="tel" class="form-control cadDtNas" placeholder="Data de nascimento" ng-model="usuario.DataNascimento" tabindex="7">
+            </div>
+
+            <div style="clear:both;"></div>
+
+            <div style="max-width: 950px;margin:auto;margin-top:20px;">
+                <input type="password" class="form-control cadSenha" placeholder="Senha" ng-model="usuario.Senha" required ng-required="true" maxlength="16" tabindex="8" minlength="6">
+
+
+
+                <input class="form-control cadConfirSenha" ng-class="{ 'erroDeCadastro' : usuario.ConfirmarSenha != usuario.Senha}" type="password" placeholder="Confirmação de senha" ng-model="usuario.ConfirmarSenha" compare-to="usuario.Senha" required ng-required="true" minlength="6" maxlength="16" tabindex="9">
+            </div>
+            <div style="clear:both;"></div>
+            @*<span ng-hide="!usuario.Senha" style="color:red;font-weight:900;" class="CorInvalid">°A Senha tem que ter mais de 6 digitos e menor que 16</span>*@
+            <div style="clear:both;"></div>
+            <p ng-hide="usuario.Senha == usuario.ConfirmarSenha" class="CorInvalid" style="color: red;font-weight: 900;float: left;margin-left: 167px;">° Senhas não conferem.</p>
+            <div style="clear:both;"></div>
+            <div style="font-weight:900;float: left;margin-top:20px;margin-left: 167px;">
+                <p style="float: left;">° Todos os campos acima são obrigatórios</p>
+                <div style="clear:both;"></div>
+                <p style="float: left;">°A Senha tem que ter mais de 6 digítos e menor que 16.</p>
+            </div>
+            <div style="clear:both;"></div>
+            <div class="">
+                <button type="submit" class="btn active BotaoVerItens " ng-disabled="cadastroform.$invalid">Salvar</button>
+            </div>
+        </div>
+
+    </form>
+</div>

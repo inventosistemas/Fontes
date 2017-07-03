@@ -1,0 +1,58 @@
+﻿<div class="main-placeholder fale-conosco">
+    <div class="grey">
+        <div class="row">
+            <div class="small-12 medium-11 medium-centered columns">
+                <h1>Fale conosco</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row spacing">
+        <div class="small-12 medium-10 columns medium-centered">
+            <form novalidate name="contatoform" ng-submit="submitContato(contatoform.$valid)">
+                <div class="small-12 columns">
+                    <div class="small-12 medium-3 columns">
+                        <label class="fd-label">
+                            <span>Nome</span>
+                            <input type="text" class="fd-input fd-medium fd-lt-spacing" ng-model="faleconosco.Nome" required ng-required="true" maxlength="95" />
+                        </label>
+                    </div>
+
+                    <div class="small-12 medium-4 columns">
+                        <label class="fd-label">
+                            <span>Email</span>
+                            <input type="email" class="fd-input fd-medium fd-lt-spacing" ng-model="faleconosco.Email" required ng-required="true" maxlength="150"/>
+                        </label>
+                    </div>
+
+                    <div class="small-12 medium-2 columns">
+                        <label class="fd-label">
+                            <span>DDD</span>
+                            <input id="dddtelefone" type="text" class="fd-input fd-medium fd-lt-spacing" ng-model="faleconosco.DDD" required ng-required="true" />
+                        </label>
+                    </div>
+
+                    <div class="small-12 medium-3 columns">
+                        <label class="fd-label">
+                            <span>Telefone</span>
+                            <input id="telefone" type="text" class="fd-input fd-medium fd-lt-spacing" ng-model="faleconosco.Telefone" required ng-required="true" />
+                        </label>
+                    </div>
+                </div>
+
+                <div class="small-12 columns">
+                    <div class="small-12 columns">
+                        <label class="fd-label">
+                            <span>Mensagem<span style="color:#ccc;"> ({{4000-faleconosco.Mensagem.length}} caracteres)</span></span>
+                            <textarea style="width:100%" type="text" class="fd-input fd-medium fd-lt-spacing" ng-model="faleconosco.Mensagem" required ng-required="true" maxlength="4000"> </textarea> 
+                        </label>
+                    </div>
+                </div>
+
+                <div class="small-12 medium-3 columns position-right  paddingless">
+                    <button type="submit" class="small-12 medium-4 columns fd-button fd-primary fd-full-width" ng-disabled="contatoform.$invalid">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

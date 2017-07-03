@@ -1,0 +1,193 @@
+﻿@model Boolean
+
+<div class="main-placeholder produto">
+    <div class="fd-modal modal-aviseme">
+        <div class="title grey lighter row">
+            <div class="small-12 columns">
+                <h1>Avise-me</h1>
+                <div class="close" ng-click="toggleModalAviseme();">x</div>
+            </div>
+        </div>
+
+        <div class="content row">
+            <form class="form-aviseme" novalidate name="avisemeform" ng-submit="submitAviseme(avisemeform.$valid, aviseme.email)">
+                <div class="small-12 columns">
+                    Digite seu e-mail abaixo. Avisaremos assim que o produto estiver disponível :)
+                    <div class="row">
+                        <div class="small-12 columns">
+                            <label class="fd-label">
+                                <span>&nbsp;</span>
+                                <input type="email" class="fd-input fd-lt-spacing fd-full-width" placeholder="Email" ng-model="aviseme.email" required ng-required="true" />
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="small-12 columns paddingless">
+                    <button type="submit" class="fd-button fd-secondary fd-large fd-full-width float-right bt-confirmar" ng-disabled="avisemeform.$invalid">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="fd-modal-overlay">&nbsp;</div>
+
+    <div class="grey show-for-medium">
+        <div class="row">
+            <div class="small-12 medium-11 medium-centered columns">
+                <h1 ng-show="produtos">{{subcategoria}} | {{tipoproduto}}</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="small-12 medium-11 medium-centered columns paddingless-on-desktop">
+            @*breadcrumb*@
+            <div class="breadcrumb">
+                
+               
+                <span ng-show="teste">
+                    <a ui-sref='cortes' ng-click='menumobile = false'>CORTES</a>  / <a ui-sref='cortes' ng-click='menumobile = false'>{{subcategoria}}</a>  / <strong class='show-for-small-only'> {{tipoproduto}} </strong>
+                </span>
+                <span ng-hide="teste">
+                    <a ui-sref='emporio' ng-click='menumobile = false'>EMPORIO</a>  / <a ui-sref='emporio' ng-click='menumobile = false'>{{subcategoria}}</a>  / <strong class='show-for-small-only'> {{tipoproduto}} </strong>
+                </span>
+              
+              
+                <select class="fd-input fd-lt-spacing show-for-medium" ng-model="combo" ng-options="item.ProdutoID as item.ProdutoTipo.Descricao for item in breadcrumb" ng-change="setTipo()"></select>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="small-12 medium-11 medium-centered columns">
+            @*slider*@
+            <div class="small-12 medium-6 columns paddingless">
+                <div class="img-produto">
+                    @if (Model)
+                    {
+                        <img id="img-produto" ng-src="{{selecionado.ImagemMobile}}" fallback-src="~/Images/assets/unavailable.png" />
+                    }
+                    else
+                    {
+                        <img id="img-produto" ng-src="{{selecionado.Imagem}}" fallback-src="~/Images/assets/unavailable.png" />
+                    }
+
+                </div>
+            </div>
+
+            @*marcas*@
+            <div class="small-12 medium-6 columns produtos">
+                <h2>Selecione o tipo de raça/carne</h2>
+
+                <div ng-repeat="item in produtos" class="small-12 columns paddingless produto-box" ng-class="item.Produto.ID == selecionado.ID && !item.Produto.Esgotado ? 'selected' : ''" ng-click="!item.Produto.Esgotado ? setProduto(item.Produto) : toggleModalAviseme(item.Produto.ID)">
+                    <div class="small-12 columns paddingless">
+                        <span class="marca">{{item.Produto.Marca.Descricao}}</span>
+                    </div>
+
+                    <div class="small-9 columns paddingless">
+                        <span class="descricao">{{item.Produto.Descricao}}</span>
+                    </div>
+
+                    <div class="small-3 columns paddingless text-right">
+                        <div ng-if="!item.Produto.Esgotado">
+                            <span class="preco">{{item.Produto.PrecoVigente | currency:"R$ "}}</span>
+                            <span class="peso">({{item.Produto.Skus[0].Peso}}kg)</span>
+                        </div>
+                        <div class="aviseme" ng-if="item.Produto.Esgotado">
+                            <img alt="" src="~/Images/assets/aviseme.png" />
+                            Avise me quando chegar
+                        </div>
+                        <div class="promocao hide">20% off</div>
+                    </div>
+                </div>
+
+                <div class="small-12 columns paddingless actions">
+                    <div class="row">
+                        <div class="small-12 columns">
+                            <div class="fd-qtd-field">
+                                <label>QTD</label>
+                                <button class="left" ng-click="quantidade > 1 ? quantidade = quantidade - 1 : ''" ng-disabled="quantidade == 1">-</button>
+                                <input type="text" value="{{quantidade}}" />
+                                <button class="right" ng-click="quantidade = quantidade + 1">+</button>
+                            </div>
+
+                            <div class="preco valor">
+                                Valor
+                                <strong>{{selecionado.PrecoVigente * quantidade | currency:"R$ "}}</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row add-cart-row">
+                        <div class="small-12 columns">
+                            <div class="small-12 medium-8 medium-centered columns">
+                                <button class="fd-button fd-secondary fd-small-font fd-full-width" style="margin-top:30px;font-size:11px !important;line-height:1.5" ng-click="addToCart(selecionado, quantidade)" ng-disabled="selecionado.Esgotado || selecionado.ID == undefined">Adicionar ao carrinho</button>
+                            </div>
+
+                            @*<div class="small-12 medium-6 columns">
+                                    <button class="fd-button fd-secondary fd-small-font fd-full-width" ui-sref="carrinho.produtos">Comprar</button>
+                                </div>*@
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row desc-tipo-produto">
+        <div class="small-12 medium-11 medium-centered columns">
+            <h2>Descrição de {{tipoproduto}}</h2>
+            <p ng-bind-html="descricaotipoproduto"></p>
+        </div>
+    </div>
+
+    <div class="grey">
+        @*vitrine*@
+        <div class="row">
+            <div class="small-12 columns">
+                <div class="small-12 medium-11 medium-centered columns paddingless">
+                    <h1>Produtos relacionados</h1>
+                </div>
+
+                <div class="small-12 columns vitrine">
+                    <section class="produto small-6 medium-4 large-3 columns float-left" ng-repeat="item in relacionados">
+                        <a ui-sref="produto({id:item.ID})">
+                            <header>
+                                <div class="nome">{{item.SubCategoria.Descricao | limitTo:20}}</div>
+                                <div class="promocao show-for-medium hide">até 10% off</div>
+                            </header>
+
+                            <figure>
+                                @if (Model)
+                                {
+                                    <img alt="" ng-src="{{item.ImagemMobile}}" fallback-src="~/Images/assets/unavailable-banner.png" />
+                                }
+                                else
+                                {
+                                    <img alt="" ng-src="{{item.Imagem}}" fallback-src="~/Images/assets/unavailable.png" />
+                                }
+                            </figure>
+                        </a>
+
+                        <footer>
+                            <a ui-sref="produto({id:item.ID})">
+                                <div class="small-12 columns">
+                                    @*<div class="corte">{{item.ProdutoTipo.Descricao | capitalize}}</div>*@
+                                    <div class="corte">
+                                        <span>{{item.ProdutoTipo.Descricao | capitalize}}</span>
+                                        <label ng-class="item.Marca.Descricao | lowercase">{{item.Marca.Descricao}}</label>
+                                    </div>
+
+                                    <div class="preco">A partir de <strong>{{item.PrecoVigente | currency:"R$ "}}</strong></div>
+                                </div>
+
+                                <div class="promocao show-for-small-only hide">até 10% off</div>
+                            </a>
+                        </footer>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+﻿<div class="main-placeholder fale-conosco">
+    <div class="grey">
+        <div class="row">
+            <div class="small-12 medium-11 medium-centered columns">
+                <h1 style="font-weight:900;">Fale conosco</h1>
+            </div>
+        </div>
+    </div>
+    <form novalidate name="contatoform" ng-submit="submitContato(contatoform.$valid)" style="border: 1px solid white;float: left;margin: auto;width:100%;">
+        <div class="form-group grupoEndereco">
+
+
+
+            <div style="max-width: 950px;margin:auto;margin-top:20px;">
+
+                <input type="text" class="form-control faleNome" ng-model="faleconosco.Nome" required ng-required="true" maxlength="95" placeholder="Nome" />
+                <input type="email" class="form-control faleEmail" ng-model="faleconosco.Email" required ng-required="true" maxlength="150" placeholder="Email" />
+                <input id="dddtelefone" class="form-control faleDDD" type="text" ng-model="faleconosco.DDD" required ng-required="true" placeholder="DDD" />
+                <input id="telefone" class="form-control faleTelefone" type="text" ng-model="faleconosco.Telefone" required ng-required="true" placeholder="Telefone" />
+
+            </div>
+
+
+
+
+
+            <div style="clear:both;"></div>
+
+            <div style="max-width: 950px;margin:auto;margin-top:20px;">
+
+                <span style="">Mensagem<span style="color:#ccc;"> ({{4000-faleconosco.Mensagem.length}} caracteres)</span></span>
+                <textarea style="" class="form-control faleMensagem"  type="text"  ng-model="faleconosco.Mensagem" required ng-required="true" maxlength="4000"> </textarea>
+
+            </div>
+            <div style="clear:both;"></div>
+            <div class="">
+                <button style="margin-top: 20px;" type="submit" class="btn active BotaoVerItens" ng-disabled="contatoform.$invalid">Enviar</button>
+
+            </div>
+        </div>
+
+    </form>
+
+    <div style="clear:both;"></div> 
+</div>
